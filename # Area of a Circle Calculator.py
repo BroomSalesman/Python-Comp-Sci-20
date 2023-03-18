@@ -16,5 +16,8 @@ print("The area of the circle is: ", area)
 
 import turtle
 
+turtle.pendown()
 turtle.circle(radius)
+turtle.done()
+
 
