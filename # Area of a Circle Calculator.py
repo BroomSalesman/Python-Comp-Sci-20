@@ -19,4 +19,5 @@ import turtle
 turtle.pendown()
 turtle.circle(radius)
 turtle.done()
-
+turtle.pen
+turtle.write
