@@ -7,5 +7,5 @@
 # Purpose: To convert a temperature from celsius to fahrenheit.
 #################################################################
 
-print("Press C to convert from Celsius to another 
-print("Press F 
+print("Press C to convert from celsius to another temperature unit." )
+print("\nPress F to convert from fahrenheit to another temperature unit.")
