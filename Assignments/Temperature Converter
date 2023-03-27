@@ -6,3 +6,6 @@
 #Temperature Conversion Program
 # Purpose: To convert a temperature from celsius to fahrenheit.
 #################################################################
+
+print("Press C to convert from Celsius to another 
+print("Press F 
