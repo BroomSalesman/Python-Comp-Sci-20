@@ -13,8 +13,3 @@ else:
 area = math.pi*radius**2
 
 print("The area of the circle is: ", area)
-
-turtle.pendown()
-turtle.circle(radius)
-turtle.done()
-print("Task Executed Successfully")
