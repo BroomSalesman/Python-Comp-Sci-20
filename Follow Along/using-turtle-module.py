@@ -12,6 +12,5 @@ monkey.pensize(100)
 for i in range(4):
     monkey.forward(10000)
     monkey.left(90)
-    
-    
-canvas.exitonclick() #Closes window when you click it
+
+canvas.exitonclick()  # Closes window when you click it

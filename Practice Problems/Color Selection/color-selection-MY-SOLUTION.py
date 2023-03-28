@@ -6,23 +6,24 @@
     Hint: you can find a list of permitted color names at https://www.w3schools.com/colors/colors_names.asp . 
     It includes some quite unusual ones, like “PeachPuff” and “HotPink”.'''
 
-
-
-
 # Color Selection
 
 import turtle
 
 # create window, and set it's color
 canvas = turtle.Screen()
-canvas.bgcolor("lightgreen")
+canvas_colour = canvas.textinput(
+    "Window Name", "Enter a color for background \n(Check https://www.w3schools.com/colors/colors_names.asp for possible colors)")  # My changes
 
-#create the turtle, and it's attributes
+canvas.bgcolor(str(canvas_colour))  # My changes
+
+# create the turtle, and it's attributes
 bree = turtle.Turtle()
-bree.color("blue")
+bree_colour = canvas.textinput("Window Name", "Enter color")
+bree.color(str(bree_colour))
 bree.pensize(3)
 
-#draw!
+# draw!
 bree.forward(100)
 bree.right(60)
 bree.forward(100)
