@@ -13,13 +13,14 @@ import turtle
 # create window, and set it's color
 canvas = turtle.Screen()
 canvas_colour = canvas.textinput(
-    "Window Name", "Enter a color for background \n(Check https://www.w3schools.com/colors/colors_names.asp for possible colors)")  # My changes
+    "Window Name", "Enter a color for canvas background (check https://www.w3schools.com/colors/colors_names.asp for possible colors).")  # My changes
 
 canvas.bgcolor(str(canvas_colour))  # My changes
 
 # create the turtle, and it's attributes
 bree = turtle.Turtle()
-bree_colour = canvas.textinput("Window Name", "Enter color")
+bree_colour = canvas.textinput(
+    "Window Name", "Enter color for turtle (check https://www.w3schools.com/colors/colors_names.asp for possible colours).")
 bree.color(str(bree_colour))
 bree.pensize(3)
 
@@ -27,3 +28,5 @@ bree.pensize(3)
 bree.forward(100)
 bree.right(60)
 bree.forward(100)
+
+canvas.exitonclick()

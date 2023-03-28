@@ -3,17 +3,11 @@
 # Computer Science 20
 # March 27, 2023
 #
-#Temperature Conversion Program
+# Temperature Conversion Program
 # Purpose: To convert a temperature from celsius to fahrenheit.
 #################################################################
 
-#      All possible conversions        # 
-
-
-
-
-
-
+#      All possible conversions        #
 
 
 print("Press C to convert from celsius to another unit of temperature.")
@@ -24,5 +18,4 @@ temp_unit_to_convert_from = input("\nEnter your selection:  ")
 
 
 if temp_unit_to_convert_from == "C":
-    temp_unit_to_convert_from = "Celsius"   
-    
+    temp_unit_to_convert_from = "Celsius"
