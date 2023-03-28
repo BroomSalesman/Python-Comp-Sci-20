@@ -7,6 +7,15 @@
 # Purpose: To convert a temperature from celsius to fahrenheit.
 #################################################################
 
+#      All possible conversions        # 
+
+
+
+
+
+
+
+
 print("Press C to convert from celsius to another unit of temperature.")
 print("\nPress F to convert from fahrenheit to another unit of temperature.")
 print("\n Press K to convert from kelvin to another unit of temperautre.")
@@ -14,6 +23,8 @@ print("\n Press K to convert from kelvin to another unit of temperautre.")
 temp_unit_to_convert_from = input("\nEnter your selection:  ")
 
 
-if temp_unit_to_convert_from == "K":
-    print("hello")
+if temp_unit_to_convert_from == "C":
+    temp_unit_to_convert_from = "Celsius"
+    
+    
     
