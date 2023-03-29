@@ -14,8 +14,17 @@ print("Press C to convert from celsius to another unit of temperature.")
 print("\nPress F to convert from fahrenheit to another unit of temperature.")
 print("\n Press K to convert from kelvin to another unit of temperautre.")
 
-temp_unit_to_convert_from = input("\nEnter your selection:  ")
+possible_temp_units = ["C", "F", "K"]
+temp_unit_to_convert_from = input("\nEnter your selection:  ").upper()
+
+if not temp_unit_to_convert_from in possible_temp_units:
+    
+
 temp_unit_to_convert_from.upper()
 
 if temp_unit_to_convert_from == "C":
     temp_unit_to_convert_from = "Celsius"
+elif temp_unit_to_convert_from == "F"
+    temp_unit_to_convert_from = "Fahrenheit"
+else:
+    temp_unit_to_convert_from = "Kelvin"
