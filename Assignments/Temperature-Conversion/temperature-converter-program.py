@@ -19,12 +19,17 @@ temp_unit_to_convert_from = input("\nEnter your selection:  ").upper()
 
 if not temp_unit_to_convert_from in possible_temp_units:
     print("That is not an option")
-    show_options("Enter your selection:") # type: ignore
+    show_options()
     temp_unit_to_convert_from = input("\nEnter your seleection:  ").upper() # type: ignore
 
 if temp_unit_to_convert_from == "C":
     temp_unit_to_convert_from = "Celsius"
+    print("You chose " + temp_unit_to_convert_from + ".")
+
 elif temp_unit_to_convert_from == "F":
     temp_unit_to_convert_from = "Fahrenheit"
+    print("You chose " + temp_unit_to_convert_from + ".")
+    
 else:
     temp_unit_to_convert_from = "Kelvin"
+    print("You chose " + temp_unit_to_convert_from + ".")
