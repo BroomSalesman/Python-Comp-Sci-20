@@ -25,7 +25,7 @@ temp_unit_to_convert_from = input("\nEnter your selection:  ").upper()
 # If input is not C, F, or K, user will be prompted for input again.
 if not temp_unit_to_convert_from in possible_temp_units:
     print("That is not an option")
-    show_first_options()
+    show_options()
     temp_unit_to_convert_from = input("\nEnter your seleection:  ").upper() # type: ignore
 
 if temp_unit_to_convert_from == "C":
