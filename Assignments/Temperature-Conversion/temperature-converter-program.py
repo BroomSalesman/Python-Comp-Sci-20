@@ -9,7 +9,7 @@
 
 #      All possible conversions        #
 
-def show_options():
+def show_first_options():
     print("Press C to convert from celsius to another unit of temperature.")
     print("\nPress F to convert from fahrenheit to another unit of temperature.")
     print("\n Press K to convert from kelvin to another unit of temperautre.")
@@ -19,7 +19,7 @@ temp_unit_to_convert_from = input("\nEnter your selection:  ").upper()
 
 if not temp_unit_to_convert_from in possible_temp_units:
     print("That is not an option")
-    show_options()
+    show_first_options()
     temp_unit_to_convert_from = input("\nEnter your seleection:  ").upper() # type: ignore
 
 if temp_unit_to_convert_from == "C":
@@ -33,3 +33,5 @@ elif temp_unit_to_convert_from == "F":
 else:
     temp_unit_to_convert_from = "Kelvin"
     print("You chose " + temp_unit_to_convert_from + ".")
+    
+
