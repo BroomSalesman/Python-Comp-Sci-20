@@ -9,7 +9,7 @@
 
 #      All possible conversions        #
 
-def show_first_options():
+def show_options():
     print("Enter C for Celsius.")
     print("\nEnter F for Fahrenheit")
     print("\nEnter K for Kelvin")
@@ -17,10 +17,12 @@ def show_first_options():
 #Defines all possible input options
 possible_temp_units = ["C", "F", "K"]
 
-print
+# Prompts user for unit of temperature they want to convert from.
+print("What temperature unit would you like to convert from?")
+show_options()
 temp_unit_to_convert_from = input("\nEnter your selection:  ").upper()
 
-# If input is not C, F, or K, user will have to enter again.
+# If input is not C, F, or K, user will be prompted for input again.
 if not temp_unit_to_convert_from in possible_temp_units:
     print("That is not an option")
     show_first_options()
