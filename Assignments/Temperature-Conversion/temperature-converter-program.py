@@ -53,7 +53,7 @@ else:
     
 
 # Prompts user to input the unit of temperature they want to convert to.
-print("What unit of temperature would you like to convert to?")
+print("\n\nWhat unit of temperature would you like to convert to?")
 show_options()
 temp_unit_to_convert_to = input("\nEnter your selection:  ")
 
