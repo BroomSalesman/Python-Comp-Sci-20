@@ -1,1 +1,2 @@
-import monty
+import this
+print(this)
