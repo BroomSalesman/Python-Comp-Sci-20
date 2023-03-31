@@ -4,16 +4,18 @@ import microbit as mcb
 window = turtle.Screen()
 monkey = turtle.Turtle()
 monkey.color("Yellow")
-monkey.shape("Turtle")
+monkey.shape("turtle")
 
 while True:
     x = mcb.accelerometer.get_x()
     print(x)
 
-    if x > 300:
+    if mcb.button_a.was_pressed():
         print("Right!")
-        laura.forward(5)
+        monkey.forward(5)
     
-    if x < -300:
+    if mcb.button_b.was_pressed():
         print("LEFT!")
-        laura.backward(5)
+        monkey.backward(5)
+
+
