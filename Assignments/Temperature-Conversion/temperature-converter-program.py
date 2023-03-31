@@ -33,7 +33,7 @@ if not temp_unit_to_convert_from in possible_temp_units:
     print("\n\nThat is not an option")
     time.sleep(1)
     show_options()
-    time.sleep(0.75)
+    time.sleep(1)
     temp_unit_to_convert_from = input("\nEnter your selection:  ").upper() # type: ignore
 
 if temp_unit_to_convert_from == "C":
