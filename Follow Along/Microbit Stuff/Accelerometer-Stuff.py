@@ -15,13 +15,13 @@ pen_down = True
 
 while True:
 
-    x = mcb.accelerometer.get_x()
-    print(x)
+    x_axis = mcb.accelerometer.get_x()
+    print(x_axis)
 
-    if x < -400:
+    if x_axis < -400:
         monkey.left(5)
 
-    elif x > 400:
+    elif x_axis > 400:
         monkey.right(5)
 
     # Check if button A is pressed
