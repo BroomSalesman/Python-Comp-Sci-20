@@ -1,5 +1,5 @@
 import turtle
-import microbit as mcb
+import microbit
 
 window = turtle.Screen()
 monkey = turtle.Turtle()
@@ -13,9 +13,10 @@ last_pressed_time = 0
 double_pressed = False
 pen_down = True
 
+
 while True:
 
-    x_axis = mcb.accelerometer.get_x()
+    x_axis = microbit.accelerometer.get_x()
     print(x_axis)
 
     if x_axis < -400:
@@ -25,9 +26,9 @@ while True:
         monkey.right(5)
 
     # Check if button A is pressed
-    if mcb.button_a.is_pressed():
+    if microbit.button_a.is_pressed():
         # Calculate time since last button press
-        current_time = mcb.running_time()
+        current_time = microbit.running_time()
         time_since_last_press = current_time - last_pressed_time
 
         if time_since_last_press < DOUBLE_PRESS_TIME:
@@ -45,10 +46,10 @@ while True:
 
         # If double press not detected, turtle moves
         elif time_since_last_press > DOUBLE_PRESS_TIME:
-            if mcb.button_a.is_pressed():
-                while mcb.button_a.is_pressed():
+            if microbit.button_a.is_pressed():
+                while microbit.button_a.is_pressed():
                     monkey.forward(5)
 
-            if mcb.button_b.is_pressed():
-                while mcb.button_b.is_pressed():
+            if microbit.button_b.is_pressed():
+                while microbit.button_b.is_pressed():
                     monkey.backward(5)
