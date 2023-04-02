@@ -3,6 +3,7 @@ import microbit as mcb
 import time
 
 window = turtle.Screen()
+window.bgcolor("Gray")
 monkey = turtle.Turtle()
 monkey.color("Yellow")
 monkey.shape("turtle")
@@ -14,8 +15,6 @@ pen_up_words = list("PenUp")
 
 while True:
     x = mcb.accelerometer.get_x()
-    print(x)
-
     # Turtle turns left when microbit is tilted enough to the left
     if x < -300:
         monkey.left(10)
@@ -25,23 +24,20 @@ while True:
         monkey.right(10)
         
     if mcb.button_b.is_pressed():
-        while mcb.button_a.is_pressed:
-            monkey.forward(10)
+        while mcb.button_b.is_pressed():
+            monkey.forward(5)
 
-    if mcb.button_a.is_pressed():
+    if mcb.button_a.was_pressed():
         if pen_down == True:
             monkey.penup()
             pen_down = False
+            for letter in pen_up_words:
+                mcb.display.show(letter)
+                mcb.sleep(700)
             
         elif pen_down == False:
             monkey.pendown()
             pen_down = True
-    
-    if pen_down == True:
-        for letter in pen_down_words:
-            mcb.display.show(letter)
-            mcb.sleep(250)
-    if pen_down == False:
-        for letter in pen_up_words:
-            mcb.display.show(letter)
-            mcb.sleep(250)
+            for letter in pen_down_words:
+                mcb.display.show(letter)
+                mcb.sleep(700)
