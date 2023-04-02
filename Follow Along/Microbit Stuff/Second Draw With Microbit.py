@@ -33,11 +33,11 @@ while True:
             pen_down = False
             for letter in pen_up_words:
                 mcb.display.show(letter)
-                mcb.sleep(700)
+                mcb.sleep(450)
             
         elif pen_down == False:
             monkey.pendown()
             pen_down = True
             for letter in pen_down_words:
                 mcb.display.show(letter)
-                mcb.sleep(700)
+                mcb.sleep(450)
