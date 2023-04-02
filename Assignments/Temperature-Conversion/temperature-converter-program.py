@@ -23,7 +23,7 @@ possible_temp_units = ["C", "F", "K"]
 print("\n\n\n\nWhat temperature unit would you like to convert from?")
 show_options()
 time.sleep(1)
-temp_unit_to_convert_from = input("\nEnter your selection:  ").upper()
+temp_unit_to_convert_from = input("\n\nEnter your selection:  ").upper()
 
 
 
@@ -34,7 +34,7 @@ if not temp_unit_to_convert_from in possible_temp_units:
     time.sleep(1)
     show_options()
     time.sleep(1)
-    temp_unit_to_convert_from = input("\nEnter your selection:  ").upper() # type: ignore
+    temp_unit_to_convert_from = input("\nRenter your selection:  ").upper() # type: ignore
 
 if temp_unit_to_convert_from == "C":
     time.sleep(0.5)
@@ -53,6 +53,7 @@ else:
     
 
 # Prompts user to input the unit of temperature they want to convert to.
+time.sleep(0.65)
 print("\n\nWhat unit of temperature would you like to convert to?")
 show_options()
 temp_unit_to_convert_to = input("\nEnter your selection:  ")
