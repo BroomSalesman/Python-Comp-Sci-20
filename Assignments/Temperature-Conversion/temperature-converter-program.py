@@ -16,6 +16,12 @@ def show_options():
     print("\nEnter F for Fahrenheit")
     print("\nEnter K for Kelvin")
 
+print("Initializing...")
+time.sleep(3)
+print("This program, written by Labeeb Farooqi, is designed to convert one unit of temperature to another.\n")
+print("To use it, you must enter what unit you want to convert from (), what unit you would like to convert to,\n and the temperature that y")
+
+
 #Defines all possible input options
 possible_temp_units = ["C", "F", "K"]
 
