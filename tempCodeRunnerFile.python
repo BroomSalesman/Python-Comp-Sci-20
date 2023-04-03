@@ -1,5 +1,0 @@
-import microbit
-import time
-while True:
-    print(microbit.temperature())
-    microbit.sleep(0.5)
