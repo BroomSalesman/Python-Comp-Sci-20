@@ -12,3 +12,5 @@ turt.speed(0)
 
 for side in range(2, 100):
     turt.stamp()
+    turt.forward(side)
+    turt.left(50)
