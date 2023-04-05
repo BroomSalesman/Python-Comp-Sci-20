@@ -98,7 +98,8 @@ else:
     temp_unit_to_convert_to = "Kelvin"
     print("\nYou chose " + temp_unit_to_convert_to + ".")
 
-user_temp = input("\n\nEnter temperature (should be a number):")
+user_temp = float(input("\n\nEnter temperature (should be a number)):"))
 
-if
+while not type(user_temp) == float or type(user_temp) == int:
+if not user_temp:
     
