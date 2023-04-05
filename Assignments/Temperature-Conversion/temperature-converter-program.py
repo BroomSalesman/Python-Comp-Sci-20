@@ -86,15 +86,19 @@ if not temp_unit_to_convert_from in possible_temp_units:
 if temp_unit_to_convert_to == "C":
     time.sleep(1.25)
     temp_unit_to_convert_to = "Celsius"
-    print("\n\nYou chose " + temp_unit_to_convert_to + ".")
+    print("\nYou chose " + temp_unit_to_convert_to + ".")
 
 elif temp_unit_to_convert_to == "F":
     time.sleep(1.25)
     temp_unit_to_convert_to = "Fahrenheit"
-    print("\n\nYou chose " + temp_unit_to_convert_to + ".")
+    print("\nYou chose " + temp_unit_to_convert_to + ".")
 
 else:
     time.sleep(1.25)
     temp_unit_to_convert_to = "Kelvin"
-    print("\n\nYou chose " + temp_unit_to_convert_to + ".")
+    print("\nYou chose " + temp_unit_to_convert_to + ".")
+
+user_temp = input("\n\nEnter temperature (should be a number):")
+
+if
     
