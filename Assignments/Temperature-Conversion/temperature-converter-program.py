@@ -100,6 +100,6 @@ else:
 
 user_temp = float(input("\n\nEnter temperature (should be a number)):"))
 
-while not type(user_temp) == float or type(user_temp) == int:
+while not type(user_temp) == float or type(user_temp) == int: #checking for integer is there  
 if not user_temp:
     
