@@ -103,5 +103,4 @@ user_temp = float(input("\n\nEnter temperature (should be a number)):"))
 while not type(user_temp) == float or type(user_temp) == int: #checking for integer is there  
     print("\nThat is not a valid number. Make sure there are no letters or special characters in your input.")
     
-if not user_temp:
 
