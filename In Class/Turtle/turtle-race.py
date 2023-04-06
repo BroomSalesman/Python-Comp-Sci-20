@@ -43,4 +43,7 @@ while bob.xcor() < FINISH_LINE and stuart.xcor() < FINISH_LINE:
     
 #victory message
 if bob.xcor() > stuart.xcor():
+    bob.write("KING BOB!!!!! ", False, "right", ("Arial", 32, "normal"))
     
+elif stuart.xcor() > bob.xcor():
+    stuart.write("Stuart wins... KING BOB!!!!! ", False, "right", ("Arial", 32, "normal"))
