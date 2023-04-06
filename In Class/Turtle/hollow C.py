@@ -62,3 +62,6 @@ turt.pendown()
 turt.forward(160)
 turt.penup()
 
+#Draws last line, connecting the top inside line with bottom inside line
+turt.left(90)
+turt.forward(160)
