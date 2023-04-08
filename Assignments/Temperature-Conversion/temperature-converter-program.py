@@ -38,66 +38,65 @@ print("\n\n\n\nWhat temperature unit would you like to convert from?")
 time.sleep(2)
 show_options()
 time.sleep(1.5)
-temp_unit_to_convert_from = input("\n\nEnter your selection:  ").upper()
+temp_unit_from = input("\n\nEnter your selection:  ").upper()
 
 
 
 
 # If input is not C, F, or K, user will be prompted for input again.
-if not temp_unit_to_convert_from in possible_temp_units:
+if not temp_unit_from in possible_temp_units:
     print("\n\nThat is not an option")
     time.sleep(1.5)
     show_options()
     time.sleep(1.5)
-    temp_unit_to_convert_from = input("\nRenter your selection:  ").upper()
+    temp_unit_from = input("\nRenter your selection:  ").upper()
 
-if temp_unit_to_convert_from == "C":
+if temp_unit_from == "C":
     time.sleep(1.25)
-    temp_unit_to_convert_from_word = "Celsius"
-    print("\n\nYou chose " + temp_unit_to_convert_from + ".")
+    temp_unit_from_word = "Celsius"
+    print("\n\nYou chose " + temp_unit_from + ".")
 
-elif temp_unit_to_convert_from == "F":
+elif temp_unit_from == "F":
     time.sleep(1.25)
-    temp_unit_to_convert_from_word = "Fahrenheit"
-    print("\n\nYou chose " + temp_unit_to_convert_from + ".")
+    temp_unit_from_word = "Fahrenheit"
+    print("\n\nYou chose " + temp_unit_from + ".")
     
 else:
     time.sleep(1.25)
-    temp_unit_to_convert_from_word = "Kelvin"
-    print("\n\nYou chose " + temp_unit_to_convert_from + ".")
+    temp_unit_from_word = "Kelvin"
+    print("\n\nYou chose " + temp_unit_from + ".")
     
 
 # Prompts user to input the unit of temperature they want to convert to.
 time.sleep(0.65)
 print("\n\nWhat unit of temperature would you like to convert to?")
 show_options()
-temp_unit_to_convert_to = input("\nEnter your selection:  ").upper()
+temp_unit_to = input("\nEnter your selection:  ").upper()
 
 
 
 # If input is not C, F, or K, user will be prompted for input again.
-if not temp_unit_to_convert_from in possible_temp_units:
+if not temp_unit_from in possible_temp_units:
     print("\n\nThat is not an option")
     time.sleep(1.5)
     show_options()
     time.sleep(1.5)
-    temp_unit_to_convert_from = input("\nRenter your selection:  ").upper()
+    temp_unit_from = input("\nRenter your selection:  ").upper()
     
-if temp_unit_to_convert_to == "C":
+if temp_unit_to == "C":
     time.sleep(1.25)
-    temp_unit_to_convert_to = "Celsius"
-    print("\nYou chose " + temp_unit_to_convert_to + ".")
+    temp_unit_to_word = "Celsius"
+    print("\nYou chose " + temp_unit_to + ".")
 
-elif temp_unit_to_convert_to == "F":
+elif temp_unit_to == "F":
     time.sleep(1.25)
-    temp_unit_to_convert_to = "Fahrenheit"
-    print("\nYou chose " + temp_unit_to_convert_to + ".")
+    temp_unit_to_word = "Fahrenheit"
+    print("\nYou chose " + temp_unit_to + ".")
 
 else:
     time.sleep(1.25)
-    temp_unit_to_convert_to = "Kelvin"
-    if temp_unit_to_convert_from_word == "Celsius"
-    print("\nYou chose " + temp_unit_to_convert_to + ".")
+    temp_unit_to = "Kelvin"
+    print("\nYou chose " + temp_unit_to + ".")
 
 user_temp = float(input("\n\nEnter temperature (should be a number):"))
 
@@ -105,7 +104,17 @@ while not type(user_temp) == float or type(user_temp) == int: #checking for inte
     print("\nThat is not a valid number. Make sure there is nothing but numbers in your response.")
     user_temp = float(input("\n\nEnter temperature (should be a number):"))
 
-if tem
+# Celsius to Fahrenheit:
+if temp_unit_from == "C" and temp_unit_to == "F"
+    conversion = 
+#   Celsius 
+#
+#
+#
+#
+#
+#
+
 
     
 
