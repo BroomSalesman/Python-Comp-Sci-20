@@ -96,6 +96,7 @@ elif temp_unit_to_convert_to == "F":
 else:
     time.sleep(1.25)
     temp_unit_to_convert_to = "Kelvin"
+    if temp_unit_to_convert_from_word == "Celsius"
     print("\nYou chose " + temp_unit_to_convert_to + ".")
 
 user_temp = float(input("\n\nEnter temperature (should be a number):"))
@@ -104,7 +105,7 @@ while not type(user_temp) == float or type(user_temp) == int: #checking for inte
     print("\nThat is not a valid number. Make sure there is nothing but numbers in your response.")
     user_temp = float(input("\n\nEnter temperature (should be a number):"))
 
-if Celsius 
+if tem
 
     
 
