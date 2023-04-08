@@ -13,3 +13,13 @@ K = °C + 273.15
 K = (°F + 459.67) x 5/9
 °C = K - 273.15
 °F = (K x 1.8) - 459.67
+
+Code version:
+
+Celsius to Fahrenheit:
+F = (C * 1.8) + 32
+
+Celsius to Kelvin:
+K = C + 273.15
+
+
