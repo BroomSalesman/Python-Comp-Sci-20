@@ -53,17 +53,17 @@ if not temp_unit_to_convert_from in possible_temp_units:
 
 if temp_unit_to_convert_from == "C":
     time.sleep(1.25)
-    temp_unit_to_convert_from = "Celsius"
+    temp_unit_to_convert_from_word = "Celsius"
     print("\n\nYou chose " + temp_unit_to_convert_from + ".")
 
 elif temp_unit_to_convert_from == "F":
     time.sleep(1.25)
-    temp_unit_to_convert_from = "Fahrenheit"
+    temp_unit_to_convert_from_word = "Fahrenheit"
     print("\n\nYou chose " + temp_unit_to_convert_from + ".")
     
 else:
     time.sleep(1.25)
-    temp_unit_to_convert_from = "Kelvin"
+    temp_unit_to_convert_from_word = "Kelvin"
     print("\n\nYou chose " + temp_unit_to_convert_from + ".")
     
 
@@ -98,9 +98,13 @@ else:
     temp_unit_to_convert_to = "Kelvin"
     print("\nYou chose " + temp_unit_to_convert_to + ".")
 
-user_temp = float(input("\n\nEnter temperature (should be a number)):"))
+user_temp = float(input("\n\nEnter temperature (should be a number):"))
 
 while not type(user_temp) == float or type(user_temp) == int: #checking for integer is there  
-    print("\nThat is not a valid number. Make sure there are no letters or special characters in your input.")
+    print("\nThat is not a valid number. Make sure there is nothing but numbers in your response.")
+    user_temp = float(input("\n\nEnter temperature (should be a number):"))
+
+if Celsius 
+
     
 
