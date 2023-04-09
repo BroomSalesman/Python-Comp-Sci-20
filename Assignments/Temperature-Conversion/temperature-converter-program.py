@@ -34,7 +34,7 @@ for dot in range(4):
 time.sleep(0.5)
 print("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThis program, written by Labeeb Farooqi, is designed to convert one unit of temperature to another."
          " To use it, you must enter what unit you want to convert from (), what unit you would like to" 
-         "\nconvert to, and then enter the temperature to be calculated (which must be a number)")
+         "\nconvert to, and then enter the temperature to be calculated (which must be a number).")
 time.sleep(2)
 next = input("\nPress enter if you have finished reading.")
 
@@ -43,9 +43,9 @@ next = input("\nPress enter if you have finished reading.")
 # Prompts user to input the unit of temperature they want to convert from.
 time.sleep(1)
 print("\nWhat temperature unit would you like to convert from? Example: CELSIUS to fahrenheit")
-time.sleep(1.75)
+time.sleep(2)
 show_options()
-time.sleep(1.5)
+time.sleep()
 temp_unit_from = input("\nEnter your selection:  ").upper()
 
 
@@ -107,10 +107,10 @@ else:
 
 temp = float(input("\n\nEnter temperature (should be a number):"))
 
-while not type(temp) == float or type(temp) == int: #checking 
+while not type(temp) == float or type(temp) == int:
     time.sleep(0.5)
     print("\nThat is not a valid input. Make sure there is nothing but numbers in your response.")
-    user_temp = float(input("\n\nEnter temperature (should be a number):"))
+    user_temp = float(input("\n\nEnter temperature (must be a number):"))
 
 
 
@@ -144,9 +144,15 @@ print("\n\n\n\n\n\n\n\n\n\n\n\n\n\nCalculating. This may take some time.")
 time.sleep(8)
 
 #Since Kelvin does not have degrees before it, a boolean must be used to not include the degree symbol if Kelvin is selected.
-if temp_unit_to == "K":
+if temp_unit_from == "K":
+    print(f"\n{temp} K is {conversion} \u00b0{temp_unit_to}\n\n\n")
+    
+elif temp_unit_to == "K":
     print(f"\n{temp} \u00b0{temp_unit_from} is {conversion} K.\n\n\n")
-       
+    
+elif temp_unit_from == "K" and temp_unit_to == "K":
+    print(f"\n{temp} K is {conversion} K.\n\n\n")
+    
 else:
     print(f"\n{temp} \u00b0{temp_unit_from} is {conversion} \u00b0{temp_unit_to}.\n\n\n")
     
