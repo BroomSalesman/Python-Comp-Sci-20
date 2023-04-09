@@ -22,23 +22,27 @@ def show_options():
     print("\nEnter K for Kelvin")
 
 #Program startup
-for dot in range(3):
-print("\n\n\n\n\n\n\n\n\n\n\n\n\n\nInitializing.")
-time.sleep(0.3333)
-print("\n\n\n\n\n\n\n\n\n\n\n\n\n\nInitalizing..")
-time.sleep(0.3333)
-print("\n\n\n\n\n\n\n\n\n\n\n\n\n\nInitalizing...")
-time.sleep(0.3333)
+for dot in range(4):
+    print("\n\n\n\n\n\n\n\n\n\n\n\n\n\nInitializing.")
+    time.sleep(0.20)
+    print("\n\n\n\n\n\n\n\n\n\n\n\n\n\nInitalizing..")
+    time.sleep(0.2)
+    print("\n\n\n\n\n\n\n\n\n\n\n\n\n\nInitalizing...")
+    time.sleep(0.2)
 
-time.sleep(3)
+# User is presented with some information about the program, and how to use it
+time.sleep(0.5)
 print("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThis program, written by Labeeb Farooqi, is designed to convert one unit of temperature to another."
-         "To use it, you must enter what unit you want to convert from (), what unit you would like to" 
+         " To use it, you must enter what unit you want to convert from (), what unit you would like to" 
          "\nconvert to, and then enter the temperature to be calculated (which must be a number)")
+next = input("Press enter if you have finished reading.")
+
+
 
 # Prompts user to input the unit of temperature they want to convert from.
-time.sleep(5)
-print("\n\nWhat temperature unit would you like to convert from?")
-time.sleep(2)
+time.sleep(1)
+print("\nWhat temperature unit would you like to convert from?")
+time.sleep(1.75)
 show_options()
 time.sleep(1.5)
 temp_unit_from = input("\nEnter your selection:  ").upper()
