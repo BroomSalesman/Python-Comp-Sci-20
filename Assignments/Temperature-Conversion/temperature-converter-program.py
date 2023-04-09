@@ -98,16 +98,26 @@ else:
     temp_unit_to = "Kelvin"
     print("\nYou chose " + temp_unit_to + ".")
 
-user_temp = float(input("\n\nEnter temperature (should be a number):"))
+temp = float(input("\n\nEnter temperature (should be a number):"))
 
-while not type(user_temp) == float or type(user_temp) == int: #checking for integer is there  
+while not type(temp) == float or type(temp) == int: #checking 
+    time.sleep(0.5)
     print("\nThat is not a valid number. Make sure there is nothing but numbers in your response.")
     user_temp = float(input("\n\nEnter temperature (should be a number):"))
 
+
+
 # Celsius to Fahrenheit:
-if temp_unit_from == "C" and temp_unit_to == "F"
-    conversion = 
-#   Celsius 
+if temp_unit_from == "C" and temp_unit_to == "F":
+    conversion = (temp * 1.8) + 32
+
+# Celsius to Kelvin
+if temp_unit_from == "C" and temp_unit_to == "K":
+    conversion = temp + 273.15
+
+# Fahrenheit to Celsius
+    
+
 #
 #
 #
