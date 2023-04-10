@@ -59,6 +59,9 @@ if not temp_unit_from in possible_temp_units:
     time.sleep(1.5)
     temp_unit_from = input("\nRenter your selection:  ").upper()
 
+
+
+# The letter determines what string to use for 
 if temp_unit_from == "C":
     time.sleep(1.25)
     temp_unit_from_word = "Celsius"
