@@ -1,4 +1,5 @@
 {
     "python.analysis.typeCheckingMode": "basic",
-    "editor.fontFamily": "Comic Sans MS"
+    "editor.fontFamily": "Comic Sans MS",
+    "python.defaultInterpreterPath": "C:\\Users\\Labeeb & Menaal\\AppData\\Local\\Programs\\Python\\Python311\\python.exe"
 }
