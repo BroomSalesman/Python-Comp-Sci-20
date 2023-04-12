@@ -139,7 +139,7 @@ while not type(temp_to_be_converted) == float or type(temp_to_be_converted) == i
 
 
 
-##### Calculates conversions based on user inputs #######
+##### Uses all three parts to calculate the conversion #######
 
 # Celsius to Fahrenheit
 if temp_unit_from == "C" and temp_unit_to == "F":
@@ -180,11 +180,6 @@ if temp_unit_from == "K":
     
 elif temp_unit_to == "K":
     print(f"\n{temp_to_be_converted} \u00b0{temp_unit_from} is {converted_temperature} K.\n\n\n")
-    
-elif temp_unit_from == "K" and temp_unit_to == "K":
-    print(f"\n{temp_to_be_converted} K is {converted_temperature} K.\n\n\n") # Remove this later
-    
+
 else:
     print(f"\n{temp_to_be_converted} \u00b0{temp_unit_from} is {converted_temperature} \u00b0{temp_unit_to}.\n\n\n")
-    
-
