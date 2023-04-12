@@ -83,6 +83,7 @@ elif temp_unit_from == "F":
     time.sleep(1.25)
     temp_unit_from_word = "Fahrenheit"
     print(f"\n\nYou chose  {temp_unit_from_word}.")
+
 else:
     time.sleep(1.25)
     temp_unit_from_word = "Kelvin"
@@ -96,7 +97,7 @@ show_options()
 temp_unit_to = input("\nEnter your selection:  ").upper()
 
 
-# If input is not C, F, or K, user will be prompted for input again.
+# If input is the same unit of temperature selected
 if not temp_unit_to in possible_temp_units:
     if temp_unit_to == temp_unit_from:
         print("\n\nYou have already picked that as the first temperature unit")
