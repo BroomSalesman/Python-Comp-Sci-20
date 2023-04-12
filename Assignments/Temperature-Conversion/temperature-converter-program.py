@@ -34,17 +34,17 @@ def show_options():
  # For loop used to create a loading effect
 for dot in range(4):
     print("\n\n\n\n\n\n\n\n\n\n\n\n\n\nInitializing.")
-    time.sleep(0.20)
+    time.sleep(0.3)
     print("\n\n\n\n\n\n\n\n\n\n\n\n\n\nInitalizing..")
-    time.sleep(0.2)
+    time.sleep(0.3)
     print("\n\n\n\n\n\n\n\n\n\n\n\n\n\nInitalizing...")
-    time.sleep(0.2)
+    time.sleep(0.3)
 
 # Prints introduction to program and how to use it
 time.sleep(0.5)
 print("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThis program, written by Labeeb Farooqi, is designed to convert one unit of temperature to another."
-         "  To use it, you must enter what unit you want to convert from (), what unit you would like to" 
-         "\nconvert to, and then enter the temperature to be calculated (which must be a number).")
+         "\nTo use it, you must enter what unit you want to convert from (), what unit you would like to" 
+         " convert to, and then enter the temperature to be calculated (which must be a number).")
 time.sleep(2)
 
 # Next line of code is executed only after users presses enter
