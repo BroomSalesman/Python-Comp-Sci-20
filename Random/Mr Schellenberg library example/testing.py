@@ -1,0 +1,4 @@
+import library
+
+library.foo()
+
