@@ -16,13 +16,13 @@ def draw_square(my_turtle, side_length):
         my_turtle.right(90)
         
 def draw_inner_square(some_turtle, inner_side_length, buffer_length):
-    """ Draws a square inside of a square
+    """Draws a square with a smaller square inside of it
 
     Args:
-        some_turtle (_type_): _description_
-        inner_side_length (_type_): _description_
-        buffer_length (_type_): _description_
-    """
+        some_turtle (turtle.Turtle() object): Uses a turtle.Turtle() object to draw
+        inner_side_length (integer, float): 
+        buffer_length (float, integer): _description_
+    """     
 
 draw_square(bob, 21)
     
