@@ -5,7 +5,7 @@ def draw_square(my_turtle, side_length):
          side_length -> integer or float
          
          Draws a square according to side_length"""
-    for line in range(4):
+    for side in range(4):
         my_turtle.forward(side_length)
         my_turtle.right(90)
    
@@ -39,7 +39,7 @@ bob.shape("turtle")
 bob.pensize(7)
 bob.color("Hot Pink")
 
-draw_inner_square(bob, 50, 3.5)
+draw_inner_square(bob, 150, 3.5)
         
         
         
