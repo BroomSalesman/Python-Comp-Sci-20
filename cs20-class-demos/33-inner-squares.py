@@ -11,8 +11,8 @@ def draw_square(my_turtle, side_length):
 
 def draw_inner_squares(some_turtle, inner_side_length, buffer_length):
     '''some_turtle -> turtle.Turtle() object
-       inner_side_length -> int
-       buffer_length -> int
+       inner_side_length -> int, float
+       buffer_length -> int, float
        
        Draws two squares, with the smaller one having side lengths of
        inner_side_length, and the distance between the squares being
