@@ -13,6 +13,9 @@ pen_down = True
 pen_down_words = list("PenDown")
 pen_up_words = list("PenUp")
 
+
+DOUBLE_PRESS_TIME = 500
+
 while True:
     x = mcb.accelerometer.get_x()
     # Turtle turns left when microbit is tilted enough to the left
@@ -22,6 +25,8 @@ while True:
     # Turtle turns right
     elif x > 300:
         monkey.right(10)
+        
+     if    
         
     if mcb.button_b.is_pressed():
         while mcb.button_b.is_pressed():
