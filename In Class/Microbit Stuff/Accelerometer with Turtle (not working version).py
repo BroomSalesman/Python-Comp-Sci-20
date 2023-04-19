@@ -25,6 +25,11 @@ while True:
     elif x_axis > 400:
         monkey.right(5)
 
+
+
+
+
+
     # Check if button A is pressed
     if microbit.button_a.is_pressed():
         # Calculate time since last button press

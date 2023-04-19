@@ -1,4 +1,5 @@
 {
     "python.analysis.typeCheckingMode": "basic",
-    "editor.fontFamily": "Comic Sans MS"
+    "editor.fontFamily": "Comic Sans MS",
+    { "key": "ctrl+shift+e =", "command": "editor.action.fontZoomIn" }
 }
