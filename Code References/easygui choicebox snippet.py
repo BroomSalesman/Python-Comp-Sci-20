@@ -1,4 +1,4 @@
-import easygui 
+import easygui
 
 # Define a list of numbers
 banana = []
