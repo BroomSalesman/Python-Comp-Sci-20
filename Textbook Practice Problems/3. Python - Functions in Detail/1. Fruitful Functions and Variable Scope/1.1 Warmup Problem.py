@@ -21,6 +21,6 @@ bob.pensize(4)
 bob.color("sky blue")
 bob.shape("turtle")
 
-for rectangle in range (4):
+for rectangle in range (4):w
     draw_rectangle(bob, 50, 70)
     bob.right(90)
