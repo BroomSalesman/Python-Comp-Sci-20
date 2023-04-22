@@ -22,5 +22,6 @@ bob.color("sky blue")
 bob.shape("turtle")
 
 for rectangle in range (4):w
+for rectangle in range (4):
     draw_rectangle(bob, 50, 70)
     bob.right(90)
