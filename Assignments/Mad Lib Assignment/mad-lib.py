@@ -10,42 +10,39 @@
 import time
 import random
 
-with open('adjectives.txt', 'r', encoding = 'utf-8') as file:  #I already knew about the different file modes ('r', 'w', etc.)
-    adjectives = file.readlines()               # And vaguely remembered how this stuff works
-adjectives = [line.strip() for line in file] #But for making list part, I used Genie (ChatGPT bot)
-    
-with open('adverbs.txt', 'r', encoding = 'utf-8') as file:              # Just wanted to let you know (but I didn't copy and paste)
+with open("adjective.txt", 'r', encoding = 'utf-8') as file:
+    adjectives = file.readlines()
+adjectives = [line.strip() for line in adjectives]
+
+with open("adverbs.txt", "r", encoding = "utf-8") as file:
     adverbs = file.readlines()
-adverbs = [line.strip for line in file]
+adverbs = [line.strip() for line in adverbs]
 
-with open('nouns.txt', 'r', encoding = 'utf-8') as file:
+with open('/m/Python-Comp-Sci-20/Assignments/Mad Lib Assignment/text-files/nouns.txt', 'r', encoding = 'utf-8') as file:
     nouns = file.readlines()
-nouns = [line.strip() for line in file]
+nouns = [line.strip() for line in nouns]
 
-with open('verbs.txt', 'r', encoding = 'utf-8') as file:
+with open('/m/Python-Comp-Sci-20/Assignments/Mad Lib Assignment/text-files/verbs.txt', 'r', encoding = 'utf-8') as file:
     verbs = file.readlines()
-verbs = [line.strip() for line in file]
+verbs = [line.strip() for line in verbs]
 
-with open('verb-ing.txt', 'r', encoding = 'utf-8') as file:
+with open('/m/Python-Comp-Sci-20/Assignments/Mad Lib Assignment/text-files/verb-ing.txt', 'r', encoding = 'utf-8') as file:
     verb_ing = file.readlines()
-verb_ing = [line.strip() for line in file]
+verb_ing = [line.strip() for line in verb_ing]
 
-with open('countries.txt', 'r', encoding = 'utf-8') as file:
-    countries = file.readlines
-countries = [line.strip() for line in file]
+with open('/m/Python-Comp-Sci-20/Assignments/Mad Lib Assignment/text-files/countries.txt', 'r', encoding = 'utf-8') as file:
+    countries = file.readlines()
+countries = [line.strip() for line in countries]
 
-with open('places.txt', 'r', encoding = 'utf-8') as file:
-    places = file.readlines
-places = [line.strip() for line in file]
+with open('/m/Python-Comp-Sci-20/Assignments/Mad Lib Assignment/text-files/places.txt', 'r', encoding = 'utf-8') as file:
+    places = file.readlines()
+places = [line.strip() for line in places]
 
-with open('plural-nouns.txt', 'r', encoding = 'utf-8') as file:
+with open('/m/Python-Comp-Sci-20/Assignments/Mad Lib Assignment/text-files/plural-nouns.txt', 'r', encoding = 'utf-8') as file:
     plural_nouns = file.readlines()
-plural_nouns = [line.strip() for line in file]
+plural_nouns = [line.strip() for line in plural_nouns]
 
-
-
-
-
+print(len(countries))
 
 
 print("\n\n\n\n\n\n\n  In case you don't know what a madlib is, press N and ENTER.\n If you do know what a mad lib is, only press ENTER")
@@ -123,7 +120,7 @@ elif choose_madlib == 2:
 
 
 elif choose_madlib == 3:
-    blank1 = countries[]
+    blank1 = countries[random.randint()]
     blank2 = input("")
     blank3 = input("")
     blank4 = input("")
