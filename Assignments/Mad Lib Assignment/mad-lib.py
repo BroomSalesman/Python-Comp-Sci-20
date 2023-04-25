@@ -10,7 +10,7 @@
 import time
 import random
 
-with open("adjective.txt", 'r', encoding = 'utf-8') as file:
+with open("adjective.txt", "r", encoding = "utf-8") as file:
     adjectives = file.readlines()
 adjectives = [line.strip() for line in adjectives]
 
