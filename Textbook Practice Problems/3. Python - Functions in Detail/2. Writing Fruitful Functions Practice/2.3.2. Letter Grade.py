@@ -33,4 +33,4 @@ assert letter_grade(55) == "F"
 assert letter_grade(45) == "F"
 assert letter_grade(69.7) == "D"
 
-print("All assertions passed. Function works as expc")
+print("\n\n\n\n\n\n\nAll assertions passed. Function works as expc")
