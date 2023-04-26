@@ -18,27 +18,27 @@ with open("adverbs.txt", "r", encoding = "utf-8") as file:
     adverbs = file.readlines()
 adverbs = [line.strip() for line in adverbs]
 
-with open('/m/Python-Comp-Sci-20/Assignments/Mad Lib Assignment/text-files/nouns.txt', 'r', encoding = 'utf-8') as file:
+with open('nouns.txt', 'r', encoding = 'utf-8') as file:
     nouns = file.readlines()
 nouns = [line.strip() for line in nouns]
 
-with open('/m/Python-Comp-Sci-20/Assignments/Mad Lib Assignment/text-files/verbs.txt', 'r', encoding = 'utf-8') as file:
+with open('verbs.txt', 'r', encoding = 'utf-8') as file:
     verbs = file.readlines()
 verbs = [line.strip() for line in verbs]
 
-with open('/m/Python-Comp-Sci-20/Assignments/Mad Lib Assignment/text-files/verb-ing.txt', 'r', encoding = 'utf-8') as file:
+with open('verb-ing.txt', 'r', encoding = 'utf-8') as file:
     verb_ing = file.readlines()
 verb_ing = [line.strip() for line in verb_ing]
 
-with open('/m/Python-Comp-Sci-20/Assignments/Mad Lib Assignment/text-files/countries.txt', 'r', encoding = 'utf-8') as file:
+with open('countries.txt', 'r', encoding = 'utf-8') as file:
     countries = file.readlines()
 countries = [line.strip() for line in countries]
 
-with open('/m/Python-Comp-Sci-20/Assignments/Mad Lib Assignment/text-files/places.txt', 'r', encoding = 'utf-8') as file:
+with open('places.txt', 'r', encoding = 'utf-8') as file:
     places = file.readlines()
 places = [line.strip() for line in places]
 
-with open('/m/Python-Comp-Sci-20/Assignments/Mad Lib Assignment/text-files/plural-nouns.txt', 'r', encoding = 'utf-8') as file:
+with open('plural-nouns.txt', 'r', encoding = 'utf-8') as file:
     plural_nouns = file.readlines()
 plural_nouns = [line.strip() for line in plural_nouns]
 
