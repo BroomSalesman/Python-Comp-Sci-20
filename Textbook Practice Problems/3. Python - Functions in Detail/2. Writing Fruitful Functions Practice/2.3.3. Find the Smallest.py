@@ -8,20 +8,6 @@ def find_min(a, b, c):
     else:
         return a
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 assert find_min(4, 7, 5) == 4
 assert find_min(4, 5, 5) == 4
 assert find_min(4, 4, 4) == 4
