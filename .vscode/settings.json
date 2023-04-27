@@ -1,5 +1,12 @@
 {
     "python.analysis.typeCheckingMode": "basic",
     "editor.fontFamily": "Comic Sans MS",
-    { "key": "ctrl+shift+e =", "command": "editor.action.fontZoomIn" }
+    { "key": "ctrl+shift+e =", "command": "editor.action.fontZoomIn" },
+   
+    "emmet.includeLanguages": {
+        "html": "html",
+        "vue-html": "html",
+        "razor": "html",
+        "plaintext": "jade"
+    }
 }
