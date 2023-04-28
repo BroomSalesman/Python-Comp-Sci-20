@@ -123,7 +123,7 @@ elif choose_madlib == 2:
 
 
 elif choose_madlib == 3:
-    blank1 = countries[]
+    blank1 = countries[random.randint(0, 98)]
     blank2 = input("")
     blank3 = input("")
     blank4 = input("")
