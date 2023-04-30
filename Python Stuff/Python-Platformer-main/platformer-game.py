@@ -21,12 +21,26 @@ window = pygame.display.set_mode((WIDTH, HEIGHT))
 
 def get_background(name):  #name is color of background
     image = pygame.image.load(join("assets", "Background", name))
-    
+    _,  _, width, height, = image.get_rect()     # Underscores mean don't care about values, x and y
+    tiles = []
 
+    for i in range(WIDTH // width + 1):
+        for j in range(HEIGHT // height + 1):
+            pos = [i * width, j * height]
+            tiles.append(pos)
 
+    return tiles, image
+
+def draw(window, background):
+    for tile in background:
+        window.blit()
+
+    pygame.display.update()
 
 def main(window):
     clock = pygame.time.Clock()
+    background, bg_image = get_background(Yellow.png)
+
 
     run = True
     while run:
