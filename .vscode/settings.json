@@ -1,17 +1,20 @@
 {
     "python.analysis.typeCheckingMode": "basic",
     "editor.fontFamily": "Comic Sans MS",
-{
-    "key": "ctrl + =", "command": "editor.action.fontZoomIn"
-    }.
-    {
-        "key": "ctr + -",
-        "command": "editor.action.fontZoomOut"
-    },
+
+    "keybindings": [
+        {"key": "ctrl + =", "command": "editor.action.fontZoomIn"},
+        {"key": "ctrl + -", "command": "editor.action.fontZoomOut"}
+    ],
+
     "emmet.includeLanguages": {
         "html": "html",
         "vue-html": "html",
         "razor": "html",
         "plaintext": "jade"
-    }
+    },
+    
+    "python.linting.pylintArgs": [
+        "--extension-pkg-whitelist=pygame"
+    ]
 }
