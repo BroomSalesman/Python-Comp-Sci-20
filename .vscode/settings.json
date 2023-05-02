@@ -16,5 +16,7 @@
     
     "python.linting.pylintArgs": [
         "--extension-pkg-whitelist=pygame"
-    ]
+    ],
+    "editor.suggest.filterGraceful": false
+
 }
