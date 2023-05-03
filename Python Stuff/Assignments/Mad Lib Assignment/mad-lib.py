@@ -42,8 +42,12 @@ with open('plural-nouns.txt', 'r', encoding = 'utf-8') as file:
     plural_nouns = file.readlines()
 plural_nouns = [line.strip() for line in plural_nouns]
 
+with open('names.txt', 'r', encoding="utf-8") as file:
+    names = file.readlines()
+names = [line.strip() for line in names]
 
-
+with open("clothings.accessories.txt", "r", encoding="utf-8") as file:
+    clothi
 
  # For loop used to create a loading effect
 for dot in range(4):
