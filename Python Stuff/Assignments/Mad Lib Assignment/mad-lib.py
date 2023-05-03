@@ -86,7 +86,7 @@ time.sleep(0.5)
 
 while True:
     try:
-        choose_madlib = int(input("To select one, press 1, 2, or 3, then press enter (see above)."))
+        choose_madlib = int(input("To select one, press 1, 2, or 3, then press enter (see above):\n"))
         if choose_madlib not in possible_selections:
             raise ValueError
         break
@@ -95,7 +95,7 @@ while True:
         time.sleep(0.5)
         continue
 
-if choose_madlib == 1:
+if choose_madlib == "1":
     blank1 = input("Enter a verb:  ")
     blank2 = input("Type of feeling:  ")
     blank3 = input("Adjective:  ")
@@ -118,7 +118,7 @@ if choose_madlib == 1:
     print(f"in \033[1m{blank7}\033[0m. I enjoy drinking this coffee while reading \033[1m{blank8}\033[0m")
     print(f"my java break, I turn into a \033[1m{blank9} {blank10}\033[0m.")
 
-elif choose_madlib == 2:
+elif choose_madlib == "2":
     blank1_bot = countries[random.randint(0, len(countries))]
     blank2 = input("Enter a type of vehicle (or transportation):  ")
     blank3_bot = places[random.randint(0, len(places))]
@@ -142,8 +142,9 @@ elif choose_madlib == 2:
     print(f"back on the memories! I even made a {blank8.rstrip()} to")
     print(f"all my {blank9_bot} photos in! I love {blank10.rstrip()} family vacations!")
 
-elif choose_madlib == 2:
-    blank1 = input("")
+# Third mad lib where every word is bot generated
+elif choose_madlib == "3":
+    blank1 = random.randint(0, 10)
     blank2 = input("")
     blank3 = input("")
     blank4 = input("")
