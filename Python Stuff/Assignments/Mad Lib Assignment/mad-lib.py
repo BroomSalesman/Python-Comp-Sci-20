@@ -42,8 +42,17 @@ with open('plural-nouns.txt', 'r', encoding = 'utf-8') as file:
     plural_nouns = file.readlines()
 plural_nouns = [line.strip() for line in plural_nouns]
 
-print(len(countries))
 
+
+
+ # For loop used to create a loading effect
+for dot in range(4):
+    print("\n\n\n\n\n\n\n\n\n\n\n\n\n\nInitializing.")
+    time.sleep(0.3)
+    print("\n\n\n\n\n\n\n\n\n\n\n\n\n\nInitalizing..")
+    time.sleep(0.3)
+    print("\n\n\n\n\n\n\n\n\n\n\n\n\n\nInitalizing...")
+    time.sleep(0.3)
 
 print("\n\n\n\n\n\n\n  In case you don't know what a madlib is, press N and ENTER.\n If you do know what a mad lib is, only press ENTER")
 time.sleep(0.5)
@@ -98,6 +107,9 @@ if choose_madlib == 1:
     blank9 = input("Adjective:  ")
     blank10 = input("Type of monster:  ")
 
+    print("Standby...")
+    time.sleep(5)
+
     print(f"Do not \033[1m{blank1}\033[0m to me before I have had my coffee!")
     print(f"Before I get my first sip, I am \033[1m{blank2}\033[0m.")
     print("If I do not get to practice my morning routine, then the day")
@@ -105,6 +117,30 @@ if choose_madlib == 1:
     print(f"Then I brew some \033[1m{blank6}\033[0m coffee. Next, I mix")
     print(f"in \033[1m{blank7}\033[0m. I enjoy drinking this coffee while reading \033[1m{blank8}\033[0m")
     print(f"my java break, I turn into a \033[1m{blank9} {blank10}\033[0m.")
+
+elif choose_madlib == 2:
+    blank1_bot = countries[random.randint(0, len(countries))]
+    blank2 = input("Enter a type of vehicle (or transportation):  ")
+    blank3_bot = places[random.randint(0, len(places))]
+    blank4 = input("Enter a type of flavor:  ")
+    blank5_bot = plural_nouns[random.randint(0, len(plural_nouns))]
+    blank6 = input("Enter a number:  ")
+    blank7_bot = verbs[random.randint(0, len(verbs))]
+    blank8 = input("Something can hold things inside:  ")
+    blank9_bot = adjectives[random.randint(0, len(adjectives))]
+    blank10 = input("Enter an adjective:  ")
+
+    print("Standby...")
+    time.sleep(5)
+
+    print(f"My family and I love to vacation in {blank1_bot}")
+    print(f"We take the {blank2.rstrip} to the {blank3_bot},")
+    print(f"and eat {blank4.rstrip()}-covered {blank5_bot} by the")
+    print("shore! Sometimes, we stay 10 to 11 days. Other times,")
+    print(f"we stay on vacation for {blank6.rstrip()} days!")
+    print(f"I like to take photos with my family so I can {blank7_bot}")
+    print(f"back on the memories! I even made a {blank8.rstrip()} to")
+    print(f"all my {blank9_bot} photos in! I love {blank10.rstrip()} family vacations!")
 
 elif choose_madlib == 2:
     blank1 = input("")
@@ -118,16 +154,5 @@ elif choose_madlib == 2:
     blank9 = input("")
     blank10 = input("")
 
-
-elif choose_madlib == 3:
-    blank1 = countries[random.randint()]
-    blank2 = input("")
-    blank3 = input("")
-    blank4 = input("")
-    blank5 = input("")
-    blank6 = input("")
-    blank7 = input("")
-    blank8 = input("")
-    blank9 = input("")
-    blank10 = input("")
-
+    print("Standby...")
+    time.sleep(5)
