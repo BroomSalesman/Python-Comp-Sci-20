@@ -2,6 +2,11 @@ h1 {
     text-align: center;
     background-color:rgba(0, 255, 242, 0.438);
     color: rgb(255, 251, 0);
+    border-style: dashed;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    margin-left: 200px;
+    margin-right: 200px;
 }
 
 body {
@@ -9,9 +14,14 @@ body {
     background-color: transparent;
 }
 
+.cargame{
+    
+}
+
 nav ul {
     list-style: none;
     background-color: chartreuse;
+
 }
 
 nav ul li{
@@ -23,5 +33,5 @@ nav ul li a {
     padding-right: 15px;
     padding-top: 10px;
     padding-bottom: 10px;
-    
+
 }
