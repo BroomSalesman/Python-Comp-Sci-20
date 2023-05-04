@@ -120,32 +120,32 @@ if choose_madlib == 1:
     print("Standby...")
     time.sleep(5)
 
-    print(f"Do not \033[1m{blank1.rstrip}\033[0m to me before I have had my coffee!")
-    print(f"Before I get my first sip, I am \033[1m{blank2.rstrip}\033[0m.")
+    print(f"Do not \033[1m{blank1.rstrip()}\033[0m to me before I have had my coffee!")
+    print(f"Before I get my first sip, I am \033[1m{blank2.rstrip()}\033[0m.")
     print("If I do not get to practice my morning routine, then the day")
-    print(f"is sure to be \033[1m{blank3.rstrip}\033[0m. First I get \033[1m{blank4.rstrip} {blank5.rstrip}\033[0m mug.")
-    print(f"Then I brew some \033[1m{blank6.rstrip}\033[0m coffee. Next, I mix")
-    print(f"in \033[1m{blank7.rstrip}\033[0m. I enjoy drinking this coffee while reading \033[1m{blank8.rstrip}\033[0m")
-    print(f"my java break, I turn into a \033[1m{blank9.rstrip} {blank10.rstrip}\033[0m.")
+    print(f"is sure to be \033[1m{blank3.rstrip()}\033[0m. First I get \033[1m{blank4.rstrip} {blank5.rstrip()}\033[0m mug.")
+    print(f"Then I brew some \033[1m{blank6.rstrip()}\033[0m coffee. Next, I mix")
+    print(f"in \033[1m{blank7.rstrip()}\033[0m. I enjoy drinking this coffee while reading \033[1m{blank8.rstrip()}\033[0m")
+    print(f"my java break, I turn into a \033[1m{blank9.rstrip()} {blank10.rstrip()}\033[0m.")
 
 elif choose_madlib == 2:
-    blank1_bot = countries[random.randint(0, len(countries))]
+    blank1_bot = countries[random.randint(0, len(countries)-1)]
     blank2 = input("Enter a type of vehicle (or transportation):  ")
-    blank3_bot = places[random.randint(0, len(places))]
+    blank3_bot = places[random.randint(0, len(places)-1)]
     blank4 = input("Enter a type of flavor:  ")
-    blank5_bot = plural_nouns[random.randint(0, len(plural_nouns))]
+    blank5_bot = plural_nouns[random.randint(0, len(plural_nouns)-1)]
     blank6 = input("Enter a number:  ")
-    blank7_bot = verbs[random.randint(0, len(verbs))]
+    blank7_bot = verbs[random.randint(0, len(verbs)-1)]
     blank8 = input("Something can hold things inside:  ")
-    blank9_bot = adjectives[random.randint(0, len(adjectives))]
+    blank9_bot = adjectives[random.randint(0, len(adjectives)-1)]
     blank10 = input("Enter an adjective:  ")
 
     print("Standby...")
     time.sleep(5)
 
-    print(f"My family and I love to vacation in \033[1m{blank1_bot.rstrip}\033[0m.")
-    print(f"We take the \033[1m{blank2.rstrip}\033[0m to the \033[1m{blank3_bot.rstrip}\033[0m,")
-    print(f"and eat \033[1m{blank4.rstrip()}\033[0m-covered \033[1m{blank5_bot.rstrip}\033[0m by the")
+    print(f"My family and I love to vacation in \033[1m{blank1_bot.rstrip()}\033[0m.")
+    print(f"We take the \033[1m{blank2.rstrip()}\033[0m to the \033[1m{blank3_bot.rstrip()}\033[0m,")
+    print(f"and eat \033[1m{blank4.rstrip()}\033[0m-covered \033[1m{blank5_bot.rstrip()}\033[0m by the")
     print("shore! Sometimes, we stay 10 to 11 days. Other times,")
     print(f"we stay on vacation for \033[1m{blank6.rstrip()}\033[0m days!")
     print(f"I like to take photos with my family so I can \033[1m{blank7_bot}\033[0m")
@@ -155,22 +155,22 @@ elif choose_madlib == 2:
 # Third mad lib where every word is bot generated
 elif choose_madlib == 3:
     blank1 = random.randint(0, 10)
-    blank2 = names[random.randint(0, len(names))]
-    blank3 = verb_ings[random.randint(0, len(verb_ings))]
-    blank4 = clothings_accessories[random.randint(0, len(clothings_accessories))]
-    blank5 = verb_ings[random.randint(0, len(verb_ings))]
-    blank6 = adjectives[random.randint(0, len(adjectives))]
-    blank7 = verb_ings[random.randint(0, len(verb_ings))]
-    blank8 = adjectives[random.randint(0, len(adjectives))]
-    blank9 = nouns[random.randint(0, len(nouns))]   
-    blank10 = fluids[random.randint(0, len(fluids))]
+    blank2 = names[random.randint(0, len(names)-1)]
+    blank3 = verb_ings[random.randint(0, len(verb_ings)-1)]
+    blank4 = clothings_accessories[random.randint(0, len(clothings_accessories)-1)]
+    blank5 = verb_ings[random.randint(0, len(verb_ings)-1)]
+    blank6 = adjectives[random.randint(0, len(adjectives)-1)]
+    blank7 = verb_ings[random.randint(0, len(verb_ings)-1)]
+    blank8 = adjectives[random.randint(0, len(adjectives)-1)]
+    blank9 = nouns[random.randint(0, len(nouns)-1)]   
+    blank10 = fluids[random.randint(0, len(fluids)-1)]
 
     print("Standby...")
     time.sleep(5)
 
-    print(f"Magicians have been around for {blank1} centuries.")
-    print(f"One famous magician was named {blank2.rstrip()} the {blank3.rstrip()} trickster!")
-    print(f"He had 21 invisibility {blank4.rstrip()}, twelve {blank5.rstrip()} doves,")
+    print(f"Magicians have been around for \033[1m{blank1.rstrip}\033[0m centuries.")
+    print(f"One famous magician was named \033[1m{blank2.rstrip()}\033[0m the \033[1m{blank3.rstrip()}\033[0m trickster!")
+    print(f"He had 21 invisibility \033[1m{blank4.rstrip()}\033[0m, twelve {blank5.rstrip()} doves,")
     print(f"and one {blank6.rstrip()} talking lion. He roamed the earth searching")
     print(f"for an apprentice. However, all he found was a(n) {blank7.rstrip()}, annoying,")
     print(f"{blank8.rstrip()}, smelly, troll. This was no ordinary troll, though! It was")
