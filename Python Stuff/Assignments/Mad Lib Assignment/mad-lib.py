@@ -78,14 +78,14 @@ if continue1 == "N":
     print("but there are also more specific blanks, such as 'a type of food', 'something that flies', 'a country', etc.")
     print("You will not get to see the madlib before choosing words first for this madlib.")
 
-continue2 = input("Press enter once you have finished reading.")
+    continue2 = input("Press enter once you have finished reading.")
 
 print("\nYou have 3 different types of madlibs to choose from:\n")
-time.sleep(0.5)
+time.sleep(1.25)
 print("1. A madlib in which you choose all the words.")
-time.sleep(0.25)
+time.sleep(0.75)
 print("2. A madlib in which you choose half of the words and the rest are randomly generated.")
-time.sleep(0.25)
+time.sleep(0.75)
 print("3. A madlib in which all the words are computer generated.\n")
 
 time.sleep(4)
@@ -105,7 +105,7 @@ while True:
         time.sleep(0.5)
         continue
 
-if choose_madlib == "1":
+if choose_madlib == 1:
     blank1 = input("Enter a verb:  ")
     blank2 = input("Type of feeling:  ")
     blank3 = input("Adjective:  ")
@@ -128,7 +128,7 @@ if choose_madlib == "1":
     print(f"in \033[1m{blank7.rstrip}\033[0m. I enjoy drinking this coffee while reading \033[1m{blank8.rstrip}\033[0m")
     print(f"my java break, I turn into a \033[1m{blank9.rstrip} {blank10.rstrip}\033[0m.")
 
-elif choose_madlib == "2":
+elif choose_madlib == 2:
     blank1_bot = countries[random.randint(0, len(countries))]
     blank2 = input("Enter a type of vehicle (or transportation):  ")
     blank3_bot = places[random.randint(0, len(places))]
@@ -153,7 +153,7 @@ elif choose_madlib == "2":
     print(f"all my \033[1m{blank9_bot.rstrip()}\033[0m photos in! I love \033[1m{blank10.rstrip()}\033[0m] family vacations!")
 
 # Third mad lib where every word is bot generated
-elif choose_madlib == "3":
+elif choose_madlib == 3:
     blank1 = random.randint(0, 10)
     blank2 = names[random.randint(0, len(names))]
     blank3 = verb_ings[random.randint(0, len(verb_ings))]
