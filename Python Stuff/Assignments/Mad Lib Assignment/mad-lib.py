@@ -68,7 +68,7 @@ print("\n\n\n\n\n\n\n  In case you don't know what a madlib is, press N and ENTE
 time.sleep(0.5)
 continue1 = input("")
 
-# The comment below is just to show you what I was originally going to do. I mean it's nothing big, but it's something, eh?
+# The comment below is just to show you what I was originally going to do. I mean it's nothing big, but it's something, eh? Basically I thought it would return an error if I tried to upper() an empty variable
 # if len(continue1) > 0:
 #     continue1 = continue1.upper()
 
@@ -91,6 +91,7 @@ print("3. A madlib in which all the words are computer generated.\n")
 time.sleep(4)
 
 
+import time
 possible_selections = [1, 2, 3]
 time.sleep(0.5)
 
