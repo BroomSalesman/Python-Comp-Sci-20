@@ -19,11 +19,12 @@
     ],
     "editor.suggest.filterGraceful": false,
     "powermode.enabled": true,
-    "powermode.presets": "simple-rift",
+    "powermode.presets": "particles",
     "powermode.combo.counterEnabled": "default",
-    "powermode.shake.intensity": 2,
+    "powermode.shake.intensity": 0.5,
     "powermode.explosions.frequency": 2,
     "powermode.explosions.offset": 0.2,
-    "powermode.explosions.size": 5
+    "powermode.explosions.size": 5,
+    "powermode.shake.enabled": false
 
 }
