@@ -27,8 +27,8 @@ with open('verbs.txt', 'r', encoding = 'utf-8') as file:
 verbs = [line.strip() for line in verbs]
 
 with open('verb-ing.txt', 'r', encoding = 'utf-8') as file:
-    verb_ing = file.readlines()
-verb_ing = [line.strip() for line in verb_ing]
+    verb_ings = file.readlines()
+verb_ings = [line.strip() for line in verb_ings]
 
 with open('countries.txt', 'r', encoding = 'utf-8') as file:
     countries = file.readlines()
@@ -46,8 +46,10 @@ with open('names.txt', 'r', encoding="utf-8") as file:
     names = file.readlines()
 names = [line.strip() for line in names]
 
-with open("clothings.accessories.txt", "r", encoding="utf-8") as file:
-    clothi
+with open("clothings-accessories.txt", "r", encoding="utf-8") as file:
+    clothings_accessories = file.readlines()
+clothings_accessories = [line.strip for line in clothings_accessories]
+
 
  # For loop used to create a loading effect
 for dot in range(4):
@@ -149,15 +151,17 @@ elif choose_madlib == "2":
 # Third mad lib where every word is bot generated
 elif choose_madlib == "3":
     blank1 = random.randint(0, 10)
-    blank2 = input("")
-    blank3 = input("")
-    blank4 = input("")
-    blank5 = input("")
-    blank6 = input("")
-    blank7 = input("")
-    blank8 = input("")
-    blank9 = input("")
-    blank10 = input("")
+    blank2 = names[random.randint(0, len(names))]
+    blank3 = verb_ings[random.randint(0, len(verb_ings))]
+    blank4 = clothings_accessories[random.randint(0, len(clothings_accessories))]
+    blank5 = verb_ings[random.randint(0, len(verb_ings))]
+    blank6 = adjectives[random.randint(0, len(adjectives))]
+    blank7 = verb_ings[random.randint(0, len(verb_ings))]
+    blank8 = adjectives[random.randint(0, len(adjectives))]
+    blank9 = nouns[random.randint(0, len(nouns))]   
+    blank10 = 
 
     print("Standby...")
     time.sleep(5)
+
+    #last line will be changed to 
