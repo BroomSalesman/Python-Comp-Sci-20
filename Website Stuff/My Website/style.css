@@ -14,24 +14,38 @@ body {
     background-color: transparent;
 }
 
+
+
 .cargame{
     
 }
 
 nav ul {
     list-style: none;
-    background-color: chartreuse;
-
+    background-color: ;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
 }
 
-nav ul li{
+nav ul {
     float: left;
 }
 
-nav ul li a {
+nav ul a {
     padding-left: 15px;
     padding-right: 15px;
     padding-top: 10px;
     padding-bottom: 10px;
+    background-color: hotpink;
+    color: #023047;
+    text-decoration: none;
+}
 
+nav ul li a:hover {
+    background-color: #050047;
+    color: purple
 }
