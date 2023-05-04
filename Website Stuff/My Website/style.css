@@ -8,3 +8,20 @@ body {
     background-image: url("monkey wallpaper.png");
     background-color: transparent;
 }
+
+nav ul {
+    list-style: none;
+    background-color: chartreuse;
+}
+
+nav ul li{
+    float: left;
+}
+
+nav ul li a {
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    
+}
