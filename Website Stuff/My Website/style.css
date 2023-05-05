@@ -18,12 +18,12 @@ body {
 .mainpage-first-texts {
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     text-align: center;
-    color: hsl(108, 78%, 42%);
+    color: hsl(64, 100%, 50%);
 }
 
 nav ul {
-    list-style: none;
-    background-color: rgba(255, 203, 125, 0.705);
+    list-style-type: none;
+    background-color: #FFB703;
     margin: 0;
     padding: 0;
     position: absolute;
@@ -41,12 +41,12 @@ nav ul li a {
     padding-right: 15px;
     padding-top: 10px;
     padding-bottom: 10px;
-    background-color: rgba(255, 203, 125, 0.705);
+    background-color: #FFB703;
     color: #023047;
     text-decoration: none;
 }
 
 nav u li a:hover {
-    background-color: #816456;
-    color: rgba(255, 153, 0, 0.705);
+    background-color: #023047;
+    color: #FFB703;
 }
