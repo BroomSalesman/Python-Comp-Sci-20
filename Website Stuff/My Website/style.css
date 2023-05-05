@@ -1,7 +1,7 @@
 h1 {
     text-align: center;
-    background-color: rgba(0, 255, 242, 0.438);
-    color: rgb(255, 251, 0);
+    background-color: #6cc9ff8a;
+    color: #023047;
     border-style: dashed;
     padding-top: 25px;
     padding-bottom: 25px;
@@ -35,7 +35,6 @@ nav ul li {
     float: left;
 }
 
-
 nav ul li a {
     display: block;
     padding-left: 15px;
@@ -48,6 +47,6 @@ nav ul li a {
 }
 
 nav u li a:hover {
-    background-color: #d14200;
-    color: rgba(255, 203, 125, 0.705);
+    background-color: #816456;
+    color: rgba(255, 153, 0, 0.705);
 }
