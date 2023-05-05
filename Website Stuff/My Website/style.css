@@ -46,7 +46,7 @@ nav ul li a {
     text-decoration: none;
 }
 
-nav u li a:hover {
+nav ul li a:hover {
     background-color: #023047;
     color: #FFB703;
 }
