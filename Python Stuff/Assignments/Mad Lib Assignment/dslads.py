@@ -69,10 +69,10 @@ if choose_madlib == 1:
     blank10 = input("Type of monster:  ")
     print("Standby...")
     
-    print(f"\n\n\n\n\n\n\n\nDo not \033[1m{blank1.rstrip()}\033[0m to me before I have had my coffee! Before I get my first sip, I am \033[1m{blank2.rstrip()}\033[0m. If I do not get")
-    print(f"to practice my morning routine, then the day is sure to be \033[1m{blank3.rstrip()}\033[0m. First I get \033[1m{blank4.rstrip} {blank5.rstrip()}\033[0m mug.")
-    print(f"Then I brew some \033[1m{blank6.rstrip()}\033[0m coffee. Next, I mix in \033[1m{blank7.rstrip()}\033[0m. I enjoy drinking this coffee while reading \033[1m{blank8.rstrip()}\033[0m")
-    print(f"my java break, I turn into a \033[1m{blank9.rstrip()} {blank10.rstrip()}\033[0m.")
+    print(f"\n\n\n\n\n\n\n\nDo not \033[33m{blank1.rstrip()}\033[0m to me before I have had my coffee! Before I get my first sip, I am \033[33m{blank2.rstrip()}\033[0m. If I do not get")
+    print(f"to practice my morning routine, then the day is sure to be \033[33m{blank3.rstrip()}\033[0m. First I get \033[33m{blank4.rstrip} {blank5.rstrip()}\033[0m mug.")
+    print(f"Then I brew some \033[33m{blank6.rstrip()}\033[0m coffee. Next, I mix in \033[33m{blank7.rstrip()}\033[0m. I enjoy drinking this coffee while reading \033[33m{blank8.rstrip()}\033[0m")
+    print(f"my java break, I turn into a \033[33m{blank9.rstrip()} {blank10.rstrip()}\033[0m.")
 
 elif choose_madlib == 2:
     blank1_bot = countries[random.randint(0, len(countries)-1)]
@@ -88,10 +88,10 @@ elif choose_madlib == 2:
    
     print("Standby...")
    
-    print(f"My family and I love to vacation in \033[1m{blank1_bot.rstrip()}\033[0m. We take the \033[1m{blank2.rstrip()}\033[0m to the \033[1m{blank3_bot.rstrip()}\033[0m,")
-    print(f"and eat \033[1m{blank4.rstrip()}\033[0m-covered \033[1m{blank5_bot.rstrip()}\033[0m by the shore! Sometimes, we stay 10 to 11 days. Other times,")
-    print(f"we stay on vacation for \033[1m{blank6.rstrip()}\033[0m days! I like to take photos with my family so I can \033[1m{blank7_bot}\033[0m")
-    print(f"back on the memories! I even made a \033[1m{blank8.rstrip()}\033[0m to all my \033[1m{blank9_bot.rstrip()}\033[0m photos in! I love \033[1m{blank10.rstrip()}\033[0m family vacations!")
+    print(f"My family and I love to vacation in \033[33m{blank1_bot.rstrip()}\033[0m. We take the \033[33m{blank2.rstrip()}\033[0m to the \033[33m{blank3_bot.rstrip()}\033[0m,")
+    print(f"and eat \033[33m{blank4.rstrip()}\033[0m-covered \033[33m{blank5_bot.rstrip()}\033[0m by the shore! Sometimes, we stay 10 to 11 days. Other times,")
+    print(f"we stay on vacation for \033[33m{blank6.rstrip()}\033[0m days! I like to take photos with my family so I can \033[33m{blank7_bot}\033[0m")
+    print(f"back on the memories! I even made a \033[33m{blank8.rstrip()}\033[0m to all my \033[33m{blank9_bot.rstrip()}\033[0m photos in! I love \033[33m{blank10.rstrip()}\033[0m family vacations!")
 
 elif choose_madlib == 3:
     blank1 = random.randint(0, 10)
@@ -106,8 +106,9 @@ elif choose_madlib == 3:
     blank9 = nouns[random.randint(0, len(nouns)-1)]
     blank10 = fluids[random.randint(0, len(fluids)-1)]
 
-    print("Standby...")
-    print(f"Magicians have been around for \033[1m{blank1.rstrip}\033[0m centuries. One famous magician was named \033[1m{blank2.rstrip()}\033[0m the \033[1m{blank3.rstrip()}\033[0m trickster!")
-    print(f"He had 21 invisibility \033[1m{blank4.rstrip()}\033[0m, twelve {blank5.rstrip()} doves, and one {blank6.rstrip()} talking lion. He roamed the earth searching")
-    print(f"for an apprentice. However, all he found was a(n) {blank7.rstrip()}, annoying, {blank8.rstrip()}, smelly, troll. This was no ordinary troll, though! It was")
-    print(f"a magical one, who quickly turned the magician into a {blank9.rstrip()}, and tossed him into {blank10.rstrip().title()} Volcano. Yikes!")
+#Uses \033 as escape characters and [33m to make anything before the closing 
+print("Standby...")
+print(f"Magicians have been around for \033[33m{blank1.rstrip()}\033[0m centuries. One famous magician was named \033[33m{blank2.rstrip()}\033[0m the \033[33m{blank3.rstrip()}\033[0m trickster!")
+print(f"He had 21 invisibility \033[33m{blank4.rstrip()}\033[0m, twelve \033[33m{blank5.rstrip()}\033[0m doves, and one \033[33m{blank6.rstrip()}\033[0m talking lion. He roamed the earth searching")
+print(f"for an apprentice. However, all he found was a(n) {blank7.rstrip()}, annoying, \033[33m{blank8.rstrip()}\033[0m, smelly, troll. This was no ordinary troll, though! It was")
+print(f"a magical one, who quickly turned the magician into a \033[33m{blank9.rstrip()}\033[0m, and tossed him into \033[33m{blank10.rstrip().title()}\033[0m Volcano. Yikes!")
