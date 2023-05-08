@@ -1,6 +1,6 @@
 import turtle
 from datetime import datetime
-import easygui
+import easygui as easy
 
 
 canvas = turtle.Screen()
