@@ -21,13 +21,13 @@ while True:
     # Turtle turns left when microbit is tilted enough to the left
     if x < -300:
         monkey.left(10)
-    
+
     # Turtle turns right
     elif x > 300:
         monkey.right(10)
-        
-     if    
-        
+
+     if
+
     if mcb.button_b.is_pressed():
         while mcb.button_b.is_pressed():
             monkey.forward(5)
@@ -39,7 +39,7 @@ while True:
             for letter in pen_up_words:
                 mcb.display.show(letter)
                 mcb.sleep(450)
-            
+
         elif pen_down == False:
             monkey.pendown()
             pen_down = True
