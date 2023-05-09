@@ -1,3 +1,8 @@
+html{
+    scroll-behavior: smooth;
+    scroll-behavior-duration: 100s;
+}
+
 h1 {
     text-align: center;
     background-color: #6cc9ff8a;
@@ -9,6 +14,10 @@ h1 {
     margin-right: 200px;
     margin-top: 75px;
 }
+html, body {
+    scroll-behavior: smooth;
+    scroll-behavior-duration: 100s; /* adjust the duration to your liking */
+  }
 
 body {
     background-image: url("monkey wallpaper.png");
@@ -49,4 +58,20 @@ nav ul li a {
 nav ul li a:hover {
     background-color: #023047;
     color: #FFB703;
+}
+
+#startCredits{
+    color: yellow;
+    background-color: navy;
+}
+
+#scrollCredits{
+    color: yellow;
+    background-color: navy;
+}
+
+#credit{
+    color: palegreen;
+    margin: 50px;
+    padding: 25px;
 }
