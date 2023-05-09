@@ -11,8 +11,7 @@ h1 {
 }
 html body {
     scroll-behavior: smooth;
-    transition: all 10s ease-in-out; /* adjust the duration to your liking */
-  }
+}
 
 body {
     background-image: url("monkey wallpaper.png");
@@ -55,9 +54,11 @@ nav ul li a:hover {
     color: #FFB703;
 }
 
+
 #startCredits{
     color: yellow;
     background-color: navy;
+    transition: all 10s ease-in-out;
 }
 
 #scrollCredits{
