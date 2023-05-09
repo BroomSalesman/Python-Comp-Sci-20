@@ -26,8 +26,6 @@ while True:
     elif x > 300:
         monkey.right(10)
 
-     if
-
     if mcb.button_b.is_pressed():
         while mcb.button_b.is_pressed():
             monkey.forward(5)
