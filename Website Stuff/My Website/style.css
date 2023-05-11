@@ -58,7 +58,6 @@ nav ul li a:hover {
 #startCredits{
     color: yellow;
     background-color: navy;
-    transition: all 10s ease-in-out;
 }
 
 #scrollCredits{
@@ -66,7 +65,7 @@ nav ul li a:hover {
     background-color: navy;
 }
 
-#credit{
+#credits{
     color: palegreen;
     margin: 50px;
     padding: 25px;
