@@ -26,8 +26,8 @@ easygui.msgbox(
                                                                                                                # thus resulting in errors taking me all the way to python environment packages
                                                                                                                    # (like, the files of modules in case environment packages is the wrong terms)
                                                                                                                # The error shown in line 18 is what I mean.
-                                                                                                               # Whew! that was a lot of commenting. I do have a feel for documenting for my final project now, I guess.
-                                                                                                               #And it turns out I didn't even need the  os  module, moving the turtle lines made the image work without file path.
+                                                                                                               # Whew! that was a lot of commenting. I have a feel for documenting for my final project now, I guess.
+                                                                                                               #And it turns out I didn't even need the  os  module, moving the turtle lines made the image work without exact file path.
 
 easygui.msgbox(
     msg = "If you have a microbit laying around, you may want to use it for this program. It's fine if you don't have one too.\n If you do have a microbit, plug it in and make sure its connected properly",
