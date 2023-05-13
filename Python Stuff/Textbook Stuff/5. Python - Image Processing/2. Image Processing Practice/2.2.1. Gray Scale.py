@@ -16,11 +16,8 @@ for x in range(width):
         b = the_pixel.get_blue()
 
         #image processing / mess with the RGB values . . .
-        new_r = 255 - r
-        new_g = 255 - g
-        new_b = 255 - b
 
-        new_pixel =image.Pixel(new_r, new_g, new_b)
+        new_pixel =image.Pixel(the_pixel, the_pixel, the_pixel)
         img.set_pixel(x, y, new_pixel)
 
     img.draw(canvas)
