@@ -29,18 +29,41 @@ easygui.msgbox(
                                                                                                                # Whew! that was a lot of commenting. I do have a feel for documenting for my final project now, I guess.
                                                                                                                #And it turns out I didn't even need the  os  module, moving the turtle lines made the image work without file path.
 
+
+start_up_info = easygui.buttonbox(msg = (
+    "If you want to skip the introduction and how-to's of this program, press skip."
+    "\nIt is advised you don't skip if this is your first time using this program."),
+                                  title = "Choose wisely")
+easygui.buttonbox("s", "se", choices = ("Skip", "Continue"),
+
 easygui.msgbox(
-    msg = "If you have a microbit laying around, you may want to use it for this program. It's fine if you don't have one too.\n If you do have a microbit, plug it in and make sure its connected properly",
+    msg = ("If you have a microbit laying around, you may want to use it for this program. It's fine if you don't have one too.\n"
+           "If you do have a microbit, plug it in and make sure its connected properly"
+           ),
     title = "Heads Up",
     image = microbit_pic_img_path,
-    ok_button = "Click on me or ^^^^^"
-)
+    ok_button = "Click on me or ^^^^^",
+) # type: ignore
+
+easygui.msgbox(
+    msg = "In this program, you will have two options to choose from, a clock or a thermometer.",
+    title = "What To Expect"
+    )
+
+easygui.msgbox(
+    msg = ("If you choose thermometer, and have a microbit, your microbit can detect the temperature."
+           "\nThen, it will draw out a thermometer with the temperature."
+           "\nIf you do not have a microbit, just select 'No Microbit'. This way, you can just enter the temperature."
+           "\nThe thermometer range will be from -5 to 30 degrees celsius (because this is Canada, eh)."
+           "\nThere is a range so users dont think of trying to reach -40 with their microbits."),
+    title = "Thermometer Description"
+    )
 
 easygui.msgbox(
     msg = (
-        "In this program, you will have two options to choose from, a clock or a thermometer.\n"
-        "You can choose to use your microbit for the thermometer (which is the coolest part), but if you don't have one, just input a temperature."
-        "")
+        "The clock will not use a microbit at all, and it will take your local time and then display it on a clock."
+        "It will not change automatically as the time changes, but it will update if you press R"
+        "You can also input the time you want, but you can only input it once, otherwise you'll have to re-run the program."
 )
 
 canvas = turtle.Screen()

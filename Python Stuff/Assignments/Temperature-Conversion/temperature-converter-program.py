@@ -8,19 +8,19 @@
 
 
 # There are 3 key parts to this, all that are determined by input from user:
-#       Part 1: Unit of temperature to convert FROM. Example: CELSIUS to Fahrenheit (Celsius is the unit of temperature to convert from) 
+#       Part 1: Unit of temperature to convert FROM. Example: CELSIUS to Fahrenheit (Celsius is the unit of temperature to convert from)
 #       Part 2: Unit of temperature to convert TO. Example:  Celsius to FAHRENHEIT (Fahrenheit is the unit to convert to)
 #       Part 3: The ACTUAL TEMPERATURE NUMBER that will be converted to another unit of temperature. Example: 12 °C to Fahrenheit (12)
-# 
+#
 # The first two parts will determine what conversion formula must be used.
-#  The last part, the actual temperature, will be plugged into the formula and then returned  
+#  The last part, the actual temperature, will be plugged into the formula and then returned
 #################################################################
 
 
 # Time module will be used to create delays
 import time
 
-#Defines all possible input options, 
+#Defines all possible input options,
 possible_temp_units = ["C", "F", "K"]
 
 # Function to show user what to input their temperature unit as
@@ -28,7 +28,6 @@ def show_options():
     print("\nEnter C for Celsius.")
     print("Enter F for Fahrenheit")
     print("Enter K for Kelvin")
-
 
 
 
@@ -44,7 +43,7 @@ for dot in range(4):
 # Prints introduction to program and how to use it
 time.sleep(0.5)
 print("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThis program, written by Labeeb Farooqi, is designed to convert one unit of temperature to another."
-         "\nTo use it, you must enter what unit you want to convert from, what unit you would like to" 
+         "\nTo use it, you must enter what unit you want to convert from, what unit you would like to"
          " convert to, and then enter the temperature to be calculated.")
 time.sleep(4)
 
@@ -66,7 +65,7 @@ temp_unit_from = input("\nEnter your selection:  ").upper()
 
 
 # Checks if user entered valid option
-if not temp_unit_from in possible_temp_units:    
+if not temp_unit_from in possible_temp_units:
     while not temp_unit_from in possible_temp_units:
         print("\n\nThat is not an option")
         time.sleep(1.5)
@@ -90,7 +89,7 @@ else:
     time.sleep(1.25)
     temp_unit_from_word = "Kelvin"
     print(f"\n\nYou chose {temp_unit_from_word}.")
-    
+
 
 
 
@@ -125,7 +124,7 @@ if not temp_unit_to in possible_temp_units:
 
 
 
-    
+
 # Creates word version of the chosen temperature unit
 if temp_unit_to == "C":
     time.sleep(1.25)
@@ -182,13 +181,13 @@ elif temp_unit_from == "K" and temp_unit_to == "C":
 
 # Kelvin to Fahrenheit
 elif temp_unit_from == "K" and temp_unit_to == "F":
-    converted_temperature = (temp_to_be_converted * 1.8) - 459.67 
+    converted_temperature = (temp_to_be_converted * 1.8) - 459.67
 
 
 
 
 
-######## Prints the converted temperature ######### 
+######## Prints the converted temperature #########
 
 print("\n\n\n\n\n\n\n\n\n\n\n\n\n\nCalculating. This may take some time.")
 time.sleep(8)
@@ -196,7 +195,7 @@ time.sleep(8)
 #Since Kelvin does not have degrees before it, a boolean must be used to not include the degree symbol if Kelvin is either the .
 if temp_unit_from == "K":
     print(f"\n{temp_to_be_converted} K is {converted_temperature} \u00b0{temp_unit_to}\n\n\n")
-    
+
 elif temp_unit_to == "K":
     print(f"\n{temp_to_be_converted} \u00b0{temp_unit_from} is {converted_temperature} K.\n\n\n")
 
