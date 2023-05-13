@@ -1,7 +1,11 @@
+# pylint: disable= line-too-long, missing-module-docstring, invalid-name,
+
+# sourcery skip: use-itertools-product
 import turtle
-import datetime
-import easygui
+import time
 import os
+import easygui
+
 
 
 # current_directory = os.path.dirname(__file__)          # see comments below (lines 17 to 2)
@@ -15,21 +19,6 @@ easygui.msgbox(
             image = cool_emoji_img_path,
             ok_button = "Click on me or my friend above",
             )
-            #image = current_directory + "\smiley-sunglasses-emoji.png")  # This took some thinking,  research, experimentation, but the learning process was neat. I could feel my brain cells expanding.
-                                                                                                               # 5 minutes later: still got the errors , such as:
-                                                                                                               # File "C:\Python311\Lib\tkinter\__init__.py", line 1692, in _configure
-                                                                                                               # self.tk.call(_flatten((self._w, cmd)) + self._options(cnf))
-                                                                                                               # _tkinter.TclError: image "pyimage2" doesn't exist"
-                                                                                                               #I found  a solution through ChatGPT, going to keep original code here to show you what I was doing.
-                                                                                                               # Sad news, it didnt work in this file. Moved turtle code below (setting up turtle and canvas). Going to see if it works.
-                                                                                                               # IT WORKED!!!! Turtle would open for a split second, I don't know why, and it would clash with the easygui msgbox,
-                                                                                                               # thus resulting in errors taking me all the way to python environment packages
-                                                                                                                   # (like, the files of modules in case environment packages is the wrong terms)
-                                                                                                               # The error shown in line 18 is what I mean.
-                                                                                                               # Whew! that was a lot of commenting. I have a feel for documenting for my final project now, I guess.
-                                                                                                               #And it turns out I didn't even need the  os  module, moving the turtle lines made the image work without exact file path.
-
-
 start_up_info = easygui.buttonbox(
     msg = ("If you want to skip the introduction and how-to's of this program, press skip."
            "\nIt is advised you don't skip if this is your first time using this program."),
@@ -70,16 +59,36 @@ if start_up_info == "Continue":
         title = "Clock Explanation",
         ok_button =  "JUST GET TO IT!!!"
     )
-
-choose_microbit = easygui.buttonbox(msg = "Do you have a microbit that you want to use?", title = "Microbit?", choices = ("Yessirree bob", "Nah")
+choose_microbit = easygui.buttonbox(
+    msg="Do you have a microbit that you want to use?",
+    title="Microbit?",
+    choices=("Yessirree bob", "Nah")
+    )
 
 if choose_microbit == "Yessirree bob":
 
     easygui.msgbox(
         msg =("Now you will be given instructions in the terminal."
-              "\nFollow the instructions to successfully connect your microbit."),
-        title = "Connect Microbit"
-        ok_button = "Wait the terminal nooooooooo!!!!"
+              "\nFollow the instructions in the terminal to successfully connect your microbit."),
+        title = "Connect Microbit",
+        ok_button = "Wait no not the terminal nooooooooo!!!!"
+        )
+
+    import microbit
+
+    easygui.msgbox(
+        msg =("Now to check if your microbit is successfully connected. Click 'Test Microbit' to begin testing"
+              "\nIf you see your microbit displaying 'TESTING', then it is connected. If it isnt, rerun this program.)"),
+        title = "Test Microbit",
+        ok_button = "Begin Test"
+        )
+
+    for i in "Testing":
+        for _ in range(3):
+            microbit.display.show(i)
+            time.sleep(0.5)
+
+
 
 
 canvas = turtle.Screen()
@@ -95,7 +104,6 @@ bob.pensize(5)
 
 
 print("\n\n\n\n\n\n\n\n")
-
 
 
 
