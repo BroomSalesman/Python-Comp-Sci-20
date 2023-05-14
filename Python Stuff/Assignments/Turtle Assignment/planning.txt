@@ -1,0 +1,1 @@
+- Add two different methods for compass, one for using just rotation, and one for using North, East, South, West, and in betweens.
