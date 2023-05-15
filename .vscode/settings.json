@@ -13,7 +13,7 @@
         "razor": "html",
         "plaintext": "jade"
     },
-    
+
     "python.linting.pylintArgs": [
         "--extension-pkg-whitelist=pygame"
     ],
@@ -25,6 +25,13 @@
     "powermode.explosions.frequency": 2,
     "powermode.explosions.offset": 0.2,
     "powermode.explosions.size": 5,
-    "powermode.shake.enabled": false
+    "powermode.shake.enabled": false,
+    "tailwindCSS.experimental.configFile": null,
+    "tailwindCSS.emmetCompletions": true,
+    "editor.hover.delay": 750,
+    "wolf.disableHotModeWarning": true,
+    "editor.acceptSuggestionOnEnter": "on",
+    "pieces.autocomplete": true,
+    "pieces.autocompleteKey": "Enter or Tab"
 
 }

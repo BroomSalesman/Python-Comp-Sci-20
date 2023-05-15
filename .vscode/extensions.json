@@ -1,0 +1,10 @@
+{
+    "recommendations": [
+        "metabob.metabob",
+        "sourcery.sourcery", //Refactoring for python
+        "vscode-snippet.snippet", // Search for snippets (the extension with the bird on it)
+        "stkb.rewrap",
+        "dongli.python-preview",
+        "trabpukcip.wolf" // Python live sratchpad
+    ]
+}
