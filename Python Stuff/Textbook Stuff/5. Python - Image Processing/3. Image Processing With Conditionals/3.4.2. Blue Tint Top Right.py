@@ -1,4 +1,5 @@
 import image
+import time
 
 img = image.Image("the_rock.png")
 width = img.get_width()
@@ -15,7 +16,11 @@ for x in range(width):
         g = the_pixel.get_green()
         b = the_pixel.get_blue()
 
-        new_pixel = image.Pixel(r - r, g, b)
-        img.set_pixel(x, y, new_pixel)
+        if x > width // 2 and y < height//2:
+            new_pixel = image.Pixel(r, g, b + 50)
+            img.set_pixel(x, y, new_pixel)
 
-    img.draw(win)
+
+img.draw(win)
+
+time.sleep(10)
