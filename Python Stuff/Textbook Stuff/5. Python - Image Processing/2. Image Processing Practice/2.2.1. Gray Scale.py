@@ -15,9 +15,10 @@ for x in range(width):
         g= the_pixel.get_green()
         b = the_pixel.get_blue()
 
+        gray_scale = (r + g + b) / 3
         #image processing / mess with the RGB values . . .
 
-        new_pixel =image.Pixel(the_pixel, the_pixel, the_pixel)
+        new_pixel =image.Pixel(gray_scale, gray_scale, gray_scale)
         img.set_pixel(x, y, new_pixel)
 
     img.draw(canvas)
