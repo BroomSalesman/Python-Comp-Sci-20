@@ -1,6 +1,6 @@
 import image
 
-the_rock = image.Image("the_rock.png")
+the_rock = image.Image("the_rock2.png")
 width = the_rock.get_width()
 height = the_rock.get_height()
 
