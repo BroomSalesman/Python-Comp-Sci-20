@@ -30,8 +30,13 @@
     "tailwindCSS.emmetCompletions": true,
     "editor.hover.delay": 750,
     "wolf.disableHotModeWarning": true,
-    "editor.acceptSuggestionOnEnter": "on",
+    "editor.acceptSuggestionOnEnter": "smart",
     "pieces.autocomplete": true,
-    "pieces.autocompleteKey": "Enter or Tab"
+    "pieces.autocompleteKey": "Tab",
+    "editor.smoothScrolling": true,
+    "editor.suggest.snippetsPreventQuickSuggestions": false,
+    "editor.inlineSuggest.suppressSuggestions": true,
+
+
 
 }
