@@ -1,19 +1,19 @@
 import image
 
 
-shoes = image.Image("sneakers.jpg")
+the_rock = image.Image("sneakers.jpg")
 
-width = shoes.getWidth()
-height = shoes.getHeight()
+width = the_rock.getWidth()
+height = the_rock.getHeight()
 
 canvas = image.ImageWin(width, height)
 
-shoes.draw(canvas)
+the_rock.draw(canvas)
 
 
 for x in range(width):
     for y in range(height):
-        this_pixel = shoes.getPixel(x, y)
+        this_pixel = the_rock.getPixel(x, y)
 
         r = this_pixel.getRed()
         g = this_pixel.getGreen()
@@ -34,6 +34,6 @@ for x in range(width):
             new_b = 255
 
         sepia_pixel = image.Pixel(new_r, new_g, new_b)
-        shoes.set_pixel(x, y, sepia_pixel)
+        the_rock.set_pixel(x, y, sepia_pixel)
 
-    shoes.draw(canvas)
+    the_rock.draw(canvas)
