@@ -1,23 +1,32 @@
+
+import os
 import image
 
-img = image.Image("skflag.png")
-width = img.get_width()
-height = img.get_height()
 
-canvas =  image.ImageWin(width, height)
-img.draw(canvas)
+directory = os.path.dirname(os.path.abspath(__file__))
+#sub_folder_path = os.path.join()
+print("c:\\image")
+for _ in os.listdir("c:\\Users\Labeeb & Menaal\\Desktop\Labeeb's Stuff\\Python-Comp-Sci-20\\Python Stuff\\In Class\\Image Processing\\images"):
+    print(_)
+    if _.endswith(".png") or _.endswith(".jpg"):
+        img = image.Image(_)
+        width = img.get_width()
+        height = img.get_height()
 
-# Look at every pixel
-for x in range(width):
-    for y in range(height):
-        the_pixel = img.get_pixel(x, y)
+        canvas =  image.ImageWin(width, height)
+        img.draw(canvas)
 
-        r = the_pixel.get_red()
-        g = the_pixel.get_green()
-        b = the_pixel.get_blue()
+        # Look at every pixel
+        for x in range(width):
+            for y in range(height):
+                the_pixel = img.get_pixel(x, y)
 
-        new_pixel = image.Pixel(r - 50, g - 50, b - 50)
+                r = the_pixel.get_red()
+                g = the_pixel.get_green()
+                b = the_pixel.get_blue()
 
-        img.set_pixel(x, y, new_pixel)
+                new_pixel = image.Pixel(r - 50, g - 50, b - 50)
 
-    img.draw(canvas)
+                img.set_pixel(x, y, new_pixel)
+
+            img.draw(canvas)
