@@ -1,0 +1,49 @@
+A little research on how 3d models work and how you voxelize a 3d model, and how simplifying and complicated an image/3d model works
+(more pixels, less pixels, taking average color from an area of pixels, etc.)
+
+Even got a hold of someone who created a website that can do that, taking any 3d model, and you can decrease or increase the amount of voxels in the 3d model (increasing 'resolution'),
+and they gave me some pointers and advice on how I can accomplish voxelization, and how it works.
+
+MAIN THING:
+I included this in the process logging because I was trying to first use the os module to open all files in a folder,
+then then use image processing logic to create a 3d model in minecraft, layer by layer. This was only a small test, because
+my goal is to create my own layer images after voxelizing a 3d model with my own code, not get the layer images from a website.
+That would make my final project too easy.
+Or so I thought.
+
+First, I tried to just jump right ahead to placing blocks in minecraft based on pixel location.
+
+I used a website  https://drububu.com/miscellaneous/voxelizer/index.html?out=obj to get the layer images.
+
+The website already had a demo donut shaped 3d model that was already voxelized (3d model turned into small blocks), and then I just
+turned up the quality of the voxelization (so more voxels were added to make the curve of the donut more detailed)
+
+That stuff is in the commented section of the code, but when it didn't run in minecraft right away (for two reasons, Minecraft timed out, and two... I'm getting to the second reason)
+
+So then I change my code into image processing code, and I saw the problem: The file name was found by the computer, yet it would say the file isn't found (which was funny)
+Turned out it's a common problem when the Pillow library is being used (and so in my case, c20-image library, since it uses Pillow)
+
+
+Traceback (most recent call last):
+  File "c:\Users\Labeeb & Menaal\Desktop\AdventuresInMinecraft-PC\MyAdventures\imge-processing-with-blocks-minecrft.py", line 22, in <module>
+    layer = image.Image(filename)
+            ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\site-packages\image.py", line 518, in __init__
+    super(FileImage, self).__init__(fname = thefile)
+  File "C:\Python311\Lib\site-packages\image.py", line 324, in __init__
+    self.loadImage(fname)
+  File "C:\Python311\Lib\site-packages\image.py", line 357, in loadPILImage
+    self.im = PIL_Image.open(fname)
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Labeeb & Menaal\AppData\Roaming\Python\Python311\site-packages\PIL\Image.py", line 3236, in open
+    fp = builtins.open(filename, "rb")
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'image0001.png'
+
+
+Then I changed some stuff around, and it still wouldn't work. So I decided to try imace processing all files in a folder with one of my previous image processing programs.
+
+I'm 80% sure that the problem was that the path would have double slashes instead of single slashes, because when I hard coded the file path in, all the images were processed.
+
+Was this progress for my project? I'm not sure. Was it a part of my progress that I would potentially have to use? It is, so that's why I included this in the documentation.
+

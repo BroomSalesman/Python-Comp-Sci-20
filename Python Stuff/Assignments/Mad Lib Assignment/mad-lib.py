@@ -57,20 +57,16 @@ fluids = [line.strip() for line in fluids]
 
  # For loop used to create a loading effect
 for dot in range(4):
-    print("\n\n\n\n\n\n\n\n\n\n\n\n\n\nInitializing.")
+    print("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nInitializing.")
     time.sleep(0.3)
-    print("\n\n\n\n\n\n\n\n\n\n\n\n\n\nInitalizing..")
+    print("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nInitalizing..")
     time.sleep(0.3)
-    print("\n\n\n\n\n\n\n\n\n\n\n\n\n\nInitalizing...")
+    print("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nInitalizing...")
     time.sleep(0.3)
 
-print("\n\n\n\n\n\n\n  In case you don't know what a madlib is, press N and ENTER.\n If you do know what a mad lib is, only press ENTER")
+print("\n\n\n\n\n\n\n\n\n\n\n\n\nIn case you don't know what a madlib is, press N and ENTER.\nIf you do know what a mad lib is, only press ENTER")
 time.sleep(0.5)
 continue1 = input("")
-
-# The comment below is just to show you what I was originally going to do. I mean it's nothing big, but it's something, eh? Basically I thought it would return an error if I tried to upper() an empty variable
-# if len(continue1) > 0:
-#     continue1 = continue1.upper()
 
 if continue1 == "N":
     print("\n\nA madib is a game/interactive-story that takes words from the player/reader to fill in little gaps in the story.")
@@ -78,33 +74,32 @@ if continue1 == "N":
     print("but there are also more specific blanks, such as 'a type of food', 'something that flies', 'a country', etc.")
     print("You will not get to see the madlib before choosing words first for this madlib.")
 
-    continue2 = input("Press enter once you have finished reading.")
+    input("Press enter once you have finished reading.")
 
 print("\nYou have 3 different types of madlibs to choose from:\n")
-time.sleep(1.25)
-print("1. A madlib in which you choose all the words.")
-time.sleep(0.75)
-print("2. A madlib in which you choose half of the words and the rest are randomly generated.")
-time.sleep(0.75)
-print("3. A madlib in which all the words are computer generated.\n")
-
-time.sleep(4)
-
 
 possible_selections = [1, 2, 3]
-time.sleep(0.5)
+time.sleep(4)
 
 while True:
     try:
+        print("1. A madlib in which you choose all the words.")
+        time.sleep(1)
+        print("2. A madlib in which you choose half of the words and the rest are randomly generated.")
+        time.sleep(1)
+        print("3. A madlib in which all the words are computer generated.\n")
         choose_madlib = int(input("To select one, press 1, 2, or 3, then press enter (see above):\n"))
         if choose_madlib not in possible_selections:
             raise ValueError
         break
     except ValueError:
+        print("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n")
         print("Invalid input. Try again.")
         time.sleep(0.5)
         continue
 
+
+print("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n")
 if choose_madlib == 1:
     blank1 = input("Enter a verb:  ")
     blank2 = input("Type of feeling:  ")
@@ -119,7 +114,7 @@ if choose_madlib == 1:
 
     print("Standby...")
     time.sleep(5)
-
+    print("\n\n\n\n\n\n\n\n\n")
     print(f"Do not \033[33m{blank1.rstrip()}\033[0m to me before I have had my coffee! Before I get my first sip, I am \033[33m{blank2.rstrip()}\033[0m. If I do not get")
     print(f"to practice my morning routine, then the day is sure to be \033[33m{blank3.rstrip()}\033[0m. First I get \033[33m{blank4.rstrip} {blank5.rstrip()}\033[0m mug.")
     print(f"Then I brew some \033[33m{blank6.rstrip()}\033[0m coffee. Next, I mix in \033[33m{blank7.rstrip()}\033[0m. I enjoy drinking this coffee while reading \033[33m{blank8.rstrip()}\033[0m")
@@ -129,21 +124,22 @@ elif choose_madlib == 2:
     blank1_bot = countries[random.randint(0, len(countries)-1)]
     blank2 = input("Enter a type of vehicle (or transportation):  ")
     blank3_bot = places[random.randint(0, len(places)-1)]
-    blank4 = input("Type of flavor:  ")
+    blank4 = input("Type of flavor:  ").lower()
     blank5_bot = plural_nouns[random.randint(0, len(plural_nouns)-1)]
     blank6 = input("A number:  ")
     blank7_bot = verbs[random.randint(0, len(verbs)-1)]
     blank8 = input("Something can hold things inside of it:  ")
     blank9_bot = adjectives[random.randint(0, len(adjectives)-1)]
-    blank10 = input("Enter an adjective:  ")
+    blank10 = input("Enter an adjective:  ").lower()
 
     print("Standby...")
     time.sleep(5)
-
-    print(f"\n\n\n\n\n\n\n\n\n\n\n\nMy family and I love to vacation in \033[33m{blank1_bot.rstrip()}\033[0m. We take the \033[33m{blank2.rstrip()}\033[0m to the \033[33m{blank3_bot.rstrip()}\033[0m,")
+    print("\n\n\n\n\n")
+    print(f"My family and I love to vacation in \033[33m{blank1_bot.rstrip()}\033[0m. We take the \033[33m{blank2.rstrip()}\033[0m to the \033[33m{blank3_bot.rstrip()}\033[0m,")
     print(f"and eat \033[33m{blank4.rstrip()}\033[0m-covered \033[33m{blank5_bot.rstrip()}\033[0m by the shore! Sometimes, we stay 10 to 11 days. Other times,")
     print(f"we stay on vacation for \033[33m{blank6.rstrip()}\033[0m days! I like to take photos with my family so I can \033[33m{blank7_bot}\033[0m")
     print(f"back on the memories! I even made a \033[33m{blank8.rstrip()}\033[0m to all my \033[33m{blank9_bot.rstrip()}\033[0m photos in! I love \033[33m{blank10.rstrip()}\033[0m family vacations!")
+    print("\n\n\n")
 
 # Third mad lib where every word is bot generated
 elif choose_madlib == 3:
@@ -155,14 +151,14 @@ elif choose_madlib == 3:
     blank6 = adjectives[random.randint(0, len(adjectives)-1)]
     blank7 = verb_ings[random.randint(0, len(verb_ings)-1)]
     blank8 = adjectives[random.randint(0, len(adjectives)-1)]
-    blank9 = nouns[random.randint(0, len(nouns)-1)]   
+    blank9 = nouns[random.randint(0, len(nouns)-1)]
     blank10 = fluids[random.randint(0, len(fluids)-1)]
 
     print("Standby...")
     time.sleep(5)
 
-    print(f"Magicians have been around for \033[33m{blank1.rstrip}\033[0m centuries. One famous magician was named \033[33m{blank2.rstrip()}\033[0m the \033[33m{blank3.rstrip()}\033[0m trickster!")
+    print(f"Magicians have been around for \033[33m{blank1.rstrip()}\033[0m centuries. One famous magician was named \033[33m{blank2.rstrip()}\033[0m the \033[33m{blank3.rstrip()}\033[0m trickster!")
     print(f"He had 21 invisibility \033[33m{blank4.rstrip()}\033[0m, twelve {blank5.rstrip()} doves, and one {blank6.rstrip()} talking lion. He roamed the earth searching")
     print(f"for an apprentice. However, all he found was a(n) {blank7.rstrip()}, annoying, {blank8.rstrip()}, smelly, troll. This was no ordinary troll, though! It was")
     print(f"a magical one, who quickly turned the magician into a {blank9.rstrip()}, and tossed him into {blank10.rstrip().title()} Volcano. Yikes!")
- 
+    print("\n\n\n")
