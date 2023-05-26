@@ -1,12 +1,13 @@
 import turtle
 
+
 def apply_rules(letter):
     if letter == "F":
-        return "F-F++F-F"
-
-    elif letter =="X":
+        return "FF"
+    
+    elif letter == "X":
         return "--FXF++FXF++FXF--"
-
+    
     else:
         return letter
 
@@ -32,13 +33,14 @@ def draw_l_system(some_turtle, instructions, angle, distance):
             some_turtle.left(angle)
 
 
-canvas = turtle.Screen()
-canvas.bgcolor("purple")
 
-king_bob = turtle.Turtle()
-king_bob.shape("turtle")
-king_bob.color("yellow")
-king_bob.pensize(2)
+window = turtle.Screen()
+ayman = turtle.Turtle()
+ayman.speed(0)
+ayman.penup()
+ayman.goto(-600, -400)
+ayman.pendown()
 
-instructions = create_l_system (6, "FXF--FF-FF")
-draw_l_system(king_bob, instructions, 60, 6)
+instructions = create_l_system(6, "FXF--FF--FF")
+draw_l_system(ayman, instructions, 60, 5)
+
