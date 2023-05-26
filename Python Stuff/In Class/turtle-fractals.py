@@ -34,6 +34,7 @@ def draw_l_system(some_turtle, instructions, angle, distance):
 
 canvas = turtle.Screen()
 canvas.bgcolor("purple")
+canvas.tracer(8)
 
 king_bob = turtle.Turtle()
 king_bob.shape("turtle")

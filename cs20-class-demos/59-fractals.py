@@ -4,10 +4,10 @@ import turtle
 def apply_rules(letter):
     if letter == "F":
         return "FF"
-    
+
     elif letter == "X":
         return "--FXF++FXF++FXF--"
-    
+
     else:
         return letter
 
