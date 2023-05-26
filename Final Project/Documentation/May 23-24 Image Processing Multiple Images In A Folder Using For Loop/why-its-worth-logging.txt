@@ -1,8 +1,13 @@
-A little research on how 3d models work and how you voxelize a 3d model, and how simplifying and complicated an image/3d model works
-(more pixels, less pixels, taking average color from an area of pixels, etc.)
+A little research on how 3d models work and how you voxelize a 3d model, and how simplifying and complicating a 2d/3d model works
+(more pixels, less pixels, taking average color from an area of pixels to decide the color of the single pixel that took the multiple pixels place, etc.)
+Did research on how voxelixation works, learned what scan conversion is and the simple basics of how it works, and learned about 3d models.
+
+
+
 
 Even got a hold of someone who created a website that can do that, taking any 3d model, and you can decrease or increase the amount of voxels in the 3d model (increasing 'resolution'),
-and they gave me some pointers and advice on how I can accomplish voxelization, and how it works.
+and they gave me some pointers and advice on how I can accomplish voxelization, and how it works. He told me about scan conversion.
+
 
 MAIN THING:
 I included this in the process logging because I was trying to first use the os module to open all files in a folder,
@@ -18,7 +23,9 @@ I used a website  https://drububu.com/miscellaneous/voxelizer/index.html?out=obj
 The website already had a demo donut shaped 3d model that was already voxelized (3d model turned into small blocks), and then I just
 turned up the quality of the voxelization (so more voxels were added to make the curve of the donut more detailed)
 
-That stuff is in the commented section of the code, but when it didn't run in minecraft right away (for two reasons, Minecraft timed out, and two... I'm getting to the second reason)
+That part is the commented lines in the code.
+
+My code ended up not running, which I found were for for two reasons, Minecraft timed out, and two... I'm getting to the second reason.
 
 So then I change my code into image processing code, and I saw the problem: The file name was found by the computer, yet it would say the file isn't found (which was funny)
 Turned out it's a common problem when the Pillow library is being used (and so in my case, c20-image library, since it uses Pillow)
@@ -45,5 +52,8 @@ Then I changed some stuff around, and it still wouldn't work. So I decided to tr
 
 I'm 80% sure that the problem was that the path would have double slashes instead of single slashes, because when I hard coded the file path in, all the images were processed.
 
-Was this progress for my project? I'm not sure. Was it a part of my progress that I would potentially have to use? It is, so that's why I included this in the documentation.
+I documented this because eventually, I will have to use os and for loops to use every image inside of a folder for my code, if I decide to (and figure out how to) turn a voxelized 3d model
+into an image layer sequence and then drawing those pixels in minecraft as blocks, image by image, layer by layer (like a 3d printer).
+
+Phew, that was too detailed.
 
