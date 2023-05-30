@@ -5,7 +5,7 @@ def apply_rules(letter):
         return "F-F++F-F"
 
     elif letter =="X":
-        return "--FXF++FXF++FXF--"
+        return "--F---XF++F++FF-XX-+XF++++-"
 
     else:
         return letter
@@ -41,5 +41,5 @@ king_bob.shape("turtle")
 king_bob.color("yellow")
 king_bob.pensize(2)
 
-instructions = create_l_system (6, "FXF--FF-FF")
+instructions = create_l_system (6, "FFFxX++F--FF-FF")
 draw_l_system(king_bob, instructions, 60, 6)
