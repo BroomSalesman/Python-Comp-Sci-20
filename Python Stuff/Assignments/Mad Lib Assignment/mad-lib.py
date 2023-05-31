@@ -10,6 +10,8 @@
 import random
 import time
 
+
+# The text files are read and then the words (or names) in the text file are made into a list using line.strip() for line in <file_name>
 with open("adjective.txt", "r", encoding = "utf-8") as file:
     adjectives = file.readlines()
 adjectives = [line.strip() for line in adjectives]
@@ -55,20 +57,28 @@ with open ("fluids.txt", "r", encoding = "utf-8") as file:
 fluids = [line.strip() for line in fluids]
 
 
+######################  This is where the driver code begins ####################
+
  # For loop used to create a loading effect
 for dot in range(4):
-    print("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nInitializing.")
-    time.sleep(0.3)
-    print("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nInitalizing..")
-    time.sleep(0.3)
-    print("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nInitalizing...")
-    time.sleep(0.3)
+    print("\n\n\n\n\n" * 3 + "Initializing.") # 15 new lines for all three "Initalizing" strings in the loop
+    time.sleep(0.2)
+    print("\n\n\n\n\n" * 3 + "Initalizing..")
+    time.sleep(0.2)
+    print("\n\n\n\n\n" * 3 + "Initalizing...")
+    time.sleep(0.2)
 
-print("\n\n\n\n\n\n\n\n\n\n\n\n\nIn case you don't know what a madlib is, press N and ENTER.\nIf you do know what a mad lib is, only press ENTER")
-time.sleep(0.5)
+
+time.sleep(2.5)
+
+# Explains what a madlib is to user if they don't
+print("\n" * 10) # 10 newlines
+print("Do you know what a madlib is?, press Y and ENTER.\n")
+time.sleep(0.2)
+print("If you don't, press N and ENTER. Otherwise, just press ENTER.")
 continue1 = input("")
 
-if continue1 == "N":
+if continue1 == "N" or "N":
     print("\n\nA madib is a game/interactive-story that takes words from the player/reader to fill in little gaps in the story.")
     print("The blanks usually have a little word below them, to determine what the word should be. The basic specifications are nouns, adjectives, verbs, adverbs, names, etc.,")
     print("but there are also more specific blanks, such as 'a type of food', 'something that flies', 'a country', etc.")
@@ -81,25 +91,39 @@ print("\nYou have 3 different types of madlibs to choose from:\n")
 possible_selections = [1, 2, 3]
 time.sleep(4)
 
+
+# Presents the possible madlib modes the user can choose
+print("1. A madlib in which you choose all the words.")
+time.sleep(1)
+print("2. A madlib in which you choose half of the words and the rest are randomly generated.")
+time.sleep(1)
+print("3. A madlib in which all the words are computer generated.\n")
+time.sleep(1)
+
+# Uses a try and except statement inside of a while True loop to make user try again and again until they enter an allowed input.
+# Once they choose a valid input, the value
 while True:
     try:
         print("1. A madlib in which you choose all the words.")
-        time.sleep(1)
+        time.sleep(0.35)
         print("2. A madlib in which you choose half of the words and the rest are randomly generated.")
-        time.sleep(1)
+        time.sleep(0.35)
         print("3. A madlib in which all the words are computer generated.\n")
-        choose_madlib = int(input("To select one, press 1, 2, or 3, then press enter (see above):\n"))
+        time.sleep(0.35)
+
+        choose_madlib = int(input("To select one, press 1, 2, or 3, then press enter (see above for details):\n"))
         if choose_madlib not in possible_selections:
             raise ValueError
+
         break
     except ValueError:
-        print("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n")
+        print("\n\n\n\n\n" * 8) # 40 newlines
         print("Invalid input. Try again.")
         time.sleep(0.5)
         continue
 
 
-print("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n")
+print("\n\n\n\n\n" * 7) # 35 newlines
 if choose_madlib == 1:
     blank1 = input("Enter a verb:  ")
     blank2 = input("Type of feeling:  ")
@@ -120,6 +144,9 @@ if choose_madlib == 1:
     print(f"Then I brew some \033[33m{blank6.rstrip()}\033[0m coffee. Next, I mix in \033[33m{blank7.rstrip()}\033[0m. I enjoy drinking this coffee while reading \033[33m{blank8.rstrip()}\033[0m")
     print(f"my java break, I turn into a \033[33m{blank9.rstrip()} {blank10.rstrip()}\033[0m.")
 
+
+
+
 elif choose_madlib == 2:
     blank1_bot = countries[random.randint(0, len(countries)-1)]
     blank2 = input("Enter a type of vehicle (or transportation):  ")
@@ -139,7 +166,9 @@ elif choose_madlib == 2:
     print(f"and eat \033[33m{blank4.rstrip()}\033[0m-covered \033[33m{blank5_bot.rstrip()}\033[0m by the shore! Sometimes, we stay 10 to 11 days. Other times,")
     print(f"we stay on vacation for \033[33m{blank6.rstrip()}\033[0m days! I like to take photos with my family so I can \033[33m{blank7_bot}\033[0m")
     print(f"back on the memories! I even made a \033[33m{blank8.rstrip()}\033[0m to all my \033[33m{blank9_bot.rstrip()}\033[0m photos in! I love \033[33m{blank10.rstrip()}\033[0m family vacations!")
-    print("\n\n\n")
+    print("\n\n\n\n\n" * 8) # 40 new lines
+
+
 
 # Third mad lib where every word is bot generated
 elif choose_madlib == 3:
@@ -161,4 +190,4 @@ elif choose_madlib == 3:
     print(f"He had 21 invisibility \033[33m{blank4.rstrip()}\033[0m, twelve {blank5.rstrip()} doves, and one {blank6.rstrip()} talking lion. He roamed the earth searching")
     print(f"for an apprentice. However, all he found was a(n) {blank7.rstrip()}, annoying, {blank8.rstrip()}, smelly, troll. This was no ordinary troll, though! It was")
     print(f"a magical one, who quickly turned the magician into a {blank9.rstrip()}, and tossed him into {blank10.rstrip().title()} Volcano. Yikes!")
-    print("\n\n\n")
+    print("\n\n\n\n\n" * 8) # 40 newlines
