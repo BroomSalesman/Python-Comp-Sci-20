@@ -101,7 +101,7 @@ print("3. A madlib in which all the words are computer generated.\n")
 time.sleep(1)
 
 # Uses a try and except statement inside of a while True loop to make user try again and again until they enter an allowed input.
-# Once they choose a valid input, the value
+# Once they choose a valid input, the loop will be broken.
 while True:
     try:
         print("1. A madlib in which you choose all the words.")
@@ -122,7 +122,7 @@ while True:
         time.sleep(0.5)
         continue
 
-
+# First madlib mode where every word is chosen by user
 print("\n\n\n\n\n" * 7) # 35 newlines
 if choose_madlib == 1:
     blank1 = input("Enter a verb:  ")
@@ -146,7 +146,7 @@ if choose_madlib == 1:
 
 
 
-
+# Second madlib mode where half words are user generated, and other half is computer generated
 elif choose_madlib == 2:
     blank1_bot = countries[random.randint(0, len(countries)-1)]
     blank2 = input("Enter a type of vehicle (or transportation):  ")
@@ -170,7 +170,7 @@ elif choose_madlib == 2:
 
 
 
-# Third mad lib where every word is bot generated
+# Third madlib mode where every word is computer generated
 elif choose_madlib == 3:
     blank1 = random.randint(0, 10)
     blank2 = names[random.randint(0, len(names)-1)]
