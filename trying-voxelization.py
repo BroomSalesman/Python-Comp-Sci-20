@@ -26,10 +26,10 @@ def build_voxels(vis):
         cube.translate(voxel_center, relative=False)
         # add the box primitive to the voxel mesh
         params.vox_mesh+=cube
-        
+
         # on the first loop create the geometry and on subsequent iterations update the geometry
         if params.counter==0:
-            vis.add_geometry(params.vox_mesh)
+            vis.add_geometry(params.vox_mesh)q
         else:
             vis.update_geometry(params.vox_mesh)
 
@@ -37,9 +37,9 @@ def build_voxels(vis):
         vis.update_renderer()
         # tick up the counter
         params.counter+=1
-        
-        
-        
+
+
+
 mesh_path = os.path.join('taxi', 'taxi.obj')
 mesh = o3d.io.read_triangle_mesh(mesh_path, True)
 
@@ -52,8 +52,9 @@ print(np.asarray(mesh.triangles))
 mesh_faces = mesh.triangles
 mesh_uvs = mesh.triangle_uvs
 texture = mesh.textures
-
-
+voxel_grid = o3d.geometry.VoxelGrid.create_from_triangle_mesh(mesh, 0.05)
+vis = o3d.visualization.Visualizer()
 vis.create_window(window_name='Something Visualize', width = 800, height = 600)
+o3d.visualization.draw_geometries([voxel_grid])
 
 vis.add_geometry(mesh)

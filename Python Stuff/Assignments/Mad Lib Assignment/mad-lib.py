@@ -10,6 +10,8 @@
 import random
 import time
 
+
+# Reads every file and creates a list of words by using line.strip() for every line in the text file. Same for every other text file
 with open("adjective.txt", "r", encoding = "utf-8") as file:
     adjectives = file.readlines()
 adjectives = [line.strip() for line in adjectives]
@@ -55,14 +57,20 @@ with open ("fluids.txt", "r", encoding = "utf-8") as file:
 fluids = [line.strip() for line in fluids]
 
 
+############################################################################################
+#        START OF PRESENTATION FOR USER                  #
+
+
  # For loop used to create a loading effect
 for dot in range(4):
     print("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nInitializing.")
-    time.sleep(0.3)
+    time.sleep(0.2)
     print("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nInitalizing..")
-    time.sleep(0.3)
+    time.sleep(0.2)
     print("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nInitalizing...")
-    time.sleep(0.3)
+    time.sleep(0.2)
+
+time.sleep(2.5)
 
 print("\n\n\n\n\n\n\n\n\n\n\n\n\nIn case you don't know what a madlib is, press N and ENTER.\nIf you do know what a mad lib is, only press ENTER")
 time.sleep(0.5)
