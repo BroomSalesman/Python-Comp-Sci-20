@@ -57,6 +57,10 @@ with open ("fluids.txt", "r", encoding = "utf-8") as file:
 fluids = [line.strip() for line in fluids]
 
 
+############################################################################################
+#        START OF PRESENTATION FOR USER                  #
+
+
 ######################  This is where the driver code begins ####################
 
  # For loop used to create a loading effect
@@ -138,7 +142,7 @@ if choose_madlib == 1:
     blank9 = input("Adjective:  ")
     blank10 = input("Type of monster:  ")
 
-    # Uses f strings to add the words into the madlib. ANSI escape code used to make the words yellow when printed in terminal 
+    # Uses f strings to add the words into the madlib. ANSI escape code used to make the words yellow when printed in terminal
     print("Standby...")
     time.sleep(5)
     print("\n" * 5) # 5 newlines
@@ -165,7 +169,7 @@ elif choose_madlib == 2:
 
     print("Standby...")
     time.sleep(5)
-    
+
     print("\n" * 5) # 5 newlines
     print(f"My family and I love to vacation in \033[33m{blank1_bot.rstrip()}\033[0m. We take the \033[33m{blank2.rstrip()}\033[0m to the \033[33m{blank3_bot.rstrip()}\033[0m,")
     print(f"and eat \033[33m{blank4.rstrip()}\033[0m-covered \033[33m{blank5_bot.rstrip()}\033[0m by the shore! Sometimes, we stay 10 to 11 days. Other times,")
@@ -189,7 +193,7 @@ elif choose_madlib == 3:
 
     print("Standby...")
     time.sleep(5)
-    
+
     ("\n" * 5) # 5 newlines
     print(f"Magicians have been around for \033[33m{blank1.rstrip()}\033[0m centuries. One famous magician was named \033[33m{blank2.rstrip()}\033[0m the \033[33m{blank3.rstrip()}\033[0m trickster!")
     print(f"He had 21 invisibility \033[33m{blank4.rstrip()}\033[0m, twelve {blank5.rstrip()} doves, and one {blank6.rstrip()} talking lion. He roamed the earth searching")
