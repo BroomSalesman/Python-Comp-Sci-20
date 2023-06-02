@@ -27,6 +27,7 @@ def build_voxels(vis):
         # add the box primitive to the voxel mesh
         params.vox_mesh+=cube
 
+
         # on the first loop create the geometry and on subsequent iterations update the geometry
         if params.counter==0:
             vis.add_geometry(params.vox_mesh)q
@@ -37,6 +38,9 @@ def build_voxels(vis):
         vis.update_renderer()
         # tick up the counter
         params.counter+=1
+
+
+
 
 
 
