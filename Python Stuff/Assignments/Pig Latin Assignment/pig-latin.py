@@ -27,18 +27,17 @@ def separate_punctuation(string_list):
 
 def translate_string(string):
     
-    capital_check == string[0] == string[0].upper()
+    capital_check = string[0] == string[0].upper()
     
     for char in string:
         if char in VOWELS:
+            prefix = string[string.index(char):]
+            middle = string[:string.index(char)]
+            
             if string[0] in VOWELS:
-                prefix = string[string.index(i):]
-                middle = string[:string.index(i)]
-                
-                if string[0] in VOWELS:
-                    suffix = "yay"
-                else:
-                    suffix = "ay"
+                suffix = "yay"
+            else:
+                suffix = "ay"
             break
         
         translated_word = (prefix + middle + suffix).lower()
@@ -51,12 +50,26 @@ def translate_string(string):
 
 def translate_sublist_strings(string_list):
     for item in string_list:
-        if type(item) = "list":
+        if type(item) == "list":
              for string in item:
                  if string in PUNCTUATION:
                      continue
-                 elif:
-                     if 
+                 elif True:
+                     translate_string()
+
+def process_strings(string_list):
+    # Initatialize empty list
+    translated_strings = []
+    
+    for item in string_list:
+        
+        if item.isnumeric() == True:
+            translated_strings.append(string_list.pop(string_list.index(item)))
+            continue
+        
+        elif type(item) == "list":
+            string_list[string_list.index(item)] == translate_sublist_strings(item)
+            string_list = 
                  
 
 the_string = "The green! monkey ran over the tree or something like that"
