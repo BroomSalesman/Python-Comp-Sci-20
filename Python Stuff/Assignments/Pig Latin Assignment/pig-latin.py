@@ -7,13 +7,10 @@
 # If the word starts with a vowel, end = yay
 # Else: end = ay
 VOWELS = "AaEeIiOoUuYy"
-
-
+PUNCTUATION = ".,!?"
 
 def piece_string(string):
     return string.split(" ")
-
-
 
 
 
@@ -26,24 +23,37 @@ def separate_punctuation(string_list):
         if "♠" in word:
             string_list[string_list.index(word)] = word.split("♠")
 
+
+
 def translate_string(string):
-    if string[0] in "AEIOUYaeiouy":
-        suffix = "yay"
-    else:
-        suffix = "ay"
     
     capital_check == string[0] == string[0].upper()
     
     for char in string:
-        if char in "AEIOUYaeiouy"
-            
-
+        if char in VOWELS:
+            if string[0] in VOWELS:
+                prefix = string[string.index(i):]
+                middle = string[:string.index(i)]
+                
+                if string[0] in VOWELS:
+                    suffix = "yay"
+                else:
+                    suffix = "ay"
+            break
+        
+        translated_word = (prefix + middle + suffix).lower()
+    
+    if capital_check == True:
+        return translated_word.title()
+    else:
+        return translated_word
+                    
 
 def translate_sublist_strings(string_list):
     for item in string_list:
         if type(item) = "list":
              for string in item:
-                 if string in ".,!?":
+                 if string in PUNCTUATION:
                      continue
                  elif:
                      if 
