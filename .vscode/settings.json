@@ -1,3 +1,42 @@
 {
-    "python.analysis.typeCheckingMode": "basic"
+    "python.analysis.typeCheckingMode": "basic",
+    "editor.fontFamily": "Comic Sans MS",
+
+    "keybindings": [
+        {"key": "ctrl + =", "command": "editor.action.fontZoomIn"},
+        {"key": "ctrl + -", "command": "editor.action.fontZoomOut"}
+    ],
+
+    "emmet.includeLanguages": {
+        "html": "html",
+        "vue-html": "html",
+        "razor": "html",
+        "plaintext": "jade"
+    },
+
+    "python.linting.pylintArgs": [
+        "--extension-pkg-whitelist=pygame"
+    ],
+    "editor.suggest.filterGraceful": false,
+    "powermode.enabled": true,
+    "powermode.presets": "particles",
+    "powermode.combo.counterEnabled": "default",
+    "powermode.shake.intensity": 0.5,
+    "powermode.explosions.frequency": 2,
+    "powermode.explosions.offset": 0.2,
+    "powermode.explosions.size": 5,
+    "powermode.shake.enabled": false,
+    "tailwindCSS.experimental.configFile": null,
+    "tailwindCSS.emmetCompletions": true,
+    "editor.hover.delay": 750,
+    "wolf.disableHotModeWarning": true,
+    "editor.acceptSuggestionOnEnter": "smart",
+    "pieces.autocomplete": true,
+    "pieces.autocompleteKey": "Tab",
+    "editor.smoothScrolling": true,
+    "editor.suggest.snippetsPreventQuickSuggestions": false,
+    "editor.inlineSuggest.suppressSuggestions": true,
+
+
+
 }
