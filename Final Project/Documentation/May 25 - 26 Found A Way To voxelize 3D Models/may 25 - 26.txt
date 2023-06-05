@@ -1,0 +1,19 @@
+Written on May 26th
+
+May 25:
+More research on voxelization using 3d scan conversion.
+
+Found a source that teaches how to voxelize 3d models using Python.
+https://towardsdatascience.com/how-to-voxelize-meshes-and-point-clouds-in-python-ca94d403f81d
+
+Got it to work once, I think it has something to do with just being patient so the 3d model can render, becuase code didn't return any error,
+but when I changed the code to something else and clicked run, I think it opened the previous code, because it finished rendering after.
+
+Perhaps it was a coincidence?
+
+May 26:
+Lunch:
+I am convinced that the code just takes a lot of time to render the 3d models. I looked in Task Manager, and Python spiked all the way up to 11.5 gigabytes
+of memory.
+
+Update: It worked! I just have to show patience. But

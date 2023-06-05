@@ -1,0 +1,72 @@
+h1 {
+    text-align: center;
+    background-color: #6cc9ff8a;
+    color: #023047;
+    border-style: dashed;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    margin-left: 200px;
+    margin-right: 200px;
+    margin-top: 75px;
+}
+html body {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-image: url("monkey wallpaper.png");
+    background-color: transparent;
+}
+
+.mainpage-first-texts {
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+    color: hsl(64, 100%, 50%);
+}
+
+nav ul {
+    list-style-type: none;
+    background-color: #FFB703;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+nav ul li {
+    float: left;
+}
+
+nav ul li a {
+    display: block;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #FFB703;
+    color: #023047;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    background-color: #023047;
+    color: #FFB703;
+}
+
+
+#startCredits{
+    color: yellow;
+    background-color: navy;
+}
+
+#scrollCredits{
+    color: yellow;
+    background-color: navy;
+}
+
+#credits{
+    color: palegreen;
+    margin: 50px;
+    padding: 25px;
+}
