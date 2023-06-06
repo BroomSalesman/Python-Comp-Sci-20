@@ -36,6 +36,7 @@
     "editor.smoothScrolling": true,
     "editor.suggest.snippetsPreventQuickSuggestions": false,
     "editor.inlineSuggest.suppressSuggestions": true,
+    "docwriter.style": "XML",
 
 
 
