@@ -94,7 +94,7 @@ def process_strings(string: str):
 
 
 
-
+"""
 def remove_empty_strings (list_of_strings: list):
     # sourcery skip: convert-to-enumerate
     index = 0
@@ -103,7 +103,7 @@ def remove_empty_strings (list_of_strings: list):
             del list_of_strings[index]
         index += 1
     return list_of_strings
-
+"""
 
 #----------------------------------------------------------------------------------------------------------------------
 def format_lines(the_string: str, line_length: int):
@@ -112,14 +112,10 @@ def format_lines(the_string: str, line_length: int):
     words_in_string = the_string.split(" ")
     formatted_lines = []
 
-    for _ in range(len(words_in_string)):
-        try:
-            formatted_lines.append(" ".join(words_in_string[words_per_line: line_length * 2 ])) # Same as line_length + 25
-            words_per_line += line_length
-        except:
-            formatted_lines.append(" ".join(words_in_string[words_per_line: len(words_in_string)]))
-            return "\n".join(formatted_lines)
-            break
+    for _ in range((len(words_in_string)//line_length) + 1):
+
+        formatted_lines.append(" ".join(words_in_string[:line_length]))
+        del words_in_string[:line_length]
 
     return "\n".join(formatted_lines)
 
@@ -128,19 +124,17 @@ def format_lines(the_string: str, line_length: int):
 
 def record_results(original_string: str, pig_latin_string: str):
     translation_record = open("translation-record.txt", "a")
-    formatted_original_string = remove_empty_strings(format_lines(original_string, 20))
-    formatted_pig_latin_string = remove_empty_strings(format_lines(original_string, 20))
+    formatted_original_string = (format_lines(original_string, 20))
+    formatted_pig_latin = (format_lines(original_string, 20))
     translation_record.write(f"{time.ctime()}:\n")
     translation_record.write("Original:\n")
     translation_record.write(formatted_original_string + "\n\n")
-
-
-    words_per_line = 0
-    pig_latinized_words = pig_latin_string.split(" ")
+    translation_record.write("Pig Latin:\n")
+    translation_record.write(formatted_pig_latin + "\n\n")
 
 
 
-the_string = "The green! monkey ran over the tree or something like that, and the rabbits were chasing after him because he had stolen their most valuable possession, the golden carrot which was actually just a normal carrot spray painted gold that was miraculously not rotting. The monkey ran and ran and ran and ran, and he ran for a while. He was running with a cheeky smile on his face, which was usual for that trouble-maker."
+the_string = "Input your text here (keep in mind that if you press enter, the program will consider start translating):\n"
 pig_latinized_string = process_strings(the_string)
 
 print("\n\n\n\n\n")
