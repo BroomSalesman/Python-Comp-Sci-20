@@ -134,7 +134,7 @@ def record_results(original_string: str, pig_latin_string: str):
 
 
 
-the_string = "Input your text here (keep in mind that if you press enter, the program will consider start translating):\n"
+user_string = str(input("Type in your text, and press enter when you are done:\n      "))
 pig_latinized_string = process_strings(the_string)
 
 print("\n\n\n\n\n")
