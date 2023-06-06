@@ -93,57 +93,40 @@ def process_strings(string: str):
     return " ".join(translated_strings)
 
 
-
-
-def format_lines(line_length: int, the_string: str):
+def format_lines(the_string: str, line_length: int):
     words_per_line = 0
 
     words_in_string = the_string.split(" ")
     formatted_lines = []
 
-    for _ in range(len(words_in_string)//25):
-        if len(words_in_string) < line_length:
-            formatted_lines.append(" ".join(words_in_string))
-            break
-        else:
-            formatted_lines.append(" ".join(words_in_string[line_length: line_length * 2 ])) # Same as line_length + 25
+    for _ in range(len(words_in_string)):
+        try:
+            formatted_lines.append(" ".join(words_in_string[words_per_line: line_length * 2 ])) # Same as line_length + 25
             words_per_line += line_length
+        except:
+            formatted_lines.append(" ".join(words_in_string[words_per_line: len(words_in_string)]))
+            return "\n".join(formatted_lines)
 
+    return "\n".join(formatted_lines)
 
-def remove_empty_strings_from_list(list_of_strings: list):
+#-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------#
+
+def remove_empty_strings (list_of_strings: list):
     # sourcery skip: convert-to-enumerate
     index = 0
     for item in list_of_strings:
         if list_of_strings[index] == {" ", "\n", ""}:
             del list_of_strings[index]
         index += 1
+    return list_of_strings
 
 def record_results(original_string: str, pig_latin_string: str):
-    words_per_line = 0
     translation_record = open("translation-record.txt", "a")
-
-    original_words = original_string.split(" ")
-
-    formatted_lines = []
-    for _ in range(len(original_words)//25):
-        if len(original_words) < 25:
-            formatted_lines.append(original_words)
-            break
-        else:
-            formatted_lines.append(" ".join(original_words[words_per_line: words_per_line + 25]))
-            words_per_line += 25
-
-    index = 0
-    for line in formatted_lines:
-        if formatted_lines[index] == {" ", "\n"} or len(formatted_lines[index]) == 0:
-            del formatted_lines[index]
-        index += 1
-
-    formatted_original_text = "\n".join(formatted_lines)
-
+    formatted_original_string = remove_empty_strings(format_lines(original_string, 25))
+    formatted_pig_latin_string = remove_empty_strings(format_lines(original_string, 25))
     translation_record.write(f"{time.ctime()}:\n")
     translation_record.write("Original:\n")
-    translation_record.write(formatted_original_text + "\n\n")
+    translation_record.write(formatted_original_string + "\n\n")
 
 
     words_per_line = 0
