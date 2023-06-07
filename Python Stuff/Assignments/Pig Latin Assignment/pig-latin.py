@@ -92,23 +92,8 @@ def process_strings(string: str):
 
     return " ".join(translated_strings)
 
-
-
-"""
-def remove_empty_strings (list_of_strings: list):
-    # sourcery skip: convert-to-enumerate
-    index = 0
-    for item in list_of_strings:
-        if list_of_strings[index] == {" ", "\n", ""}:
-            del list_of_strings[index]
-        index += 1
-    return list_of_strings
-"""
-
-#----------------------------------------------------------------------------------------------------------------------
+#----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------#
 def format_lines(the_string: str, line_length: int):
-    words_per_line = 0
-
     words_in_string = the_string.split(" ")
     formatted_lines = []
 
@@ -125,20 +110,19 @@ def format_lines(the_string: str, line_length: int):
 def record_results(original_string: str, pig_latin_string: str):
     translation_record = open("translation-record.txt", "a")
     formatted_original_string = (format_lines(original_string, 20))
-    formatted_pig_latin = (format_lines(original_string, 20))
+    formatted_pig_latin = (format_lines(pig_latin_string, 20))
     translation_record.write(f"{time.ctime()}:\n")
     translation_record.write("Original:\n")
     translation_record.write(formatted_original_string + "\n\n")
     translation_record.write("Pig Latin:\n")
     translation_record.write(formatted_pig_latin + "\n\n")
 
-
-
-user_string = str(input("Type in your text, and press enter when you are done:\n      "))
-pig_latinized_string = process_strings(the_string)
+print("\n\n")
+user_string = str(input("Type in your text, and press enter when you are done:\n"))
+pig_latinized_string = process_strings(user_string)
 
 print("\n\n\n\n\n")
-print(process_strings(the_string))
+print(process_strings(user_string))
 print("\n\n\n")
 
-record_results(the_string, pig_latinized_string)
+record_results(user_string, pig_latinized_string)
