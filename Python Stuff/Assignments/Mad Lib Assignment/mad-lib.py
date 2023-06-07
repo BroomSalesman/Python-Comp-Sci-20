@@ -195,7 +195,7 @@ elif choose_madlib == 3:
     time.sleep(5)
 
     ("\n" * 5) # 5 newlines
-    print(f"Magicians have been around for \033[33m{blank1.rstrip()}\033[0m centuries. One famous magician was named \033[33m{blank2.rstrip()}\033[0m the \033[33m{blank3.rstrip()}\033[0m trickster!")
+    print(f"Magicians have been around for \033[33m{blank1}\033[0m centuries. One famous magician was named \033[33m{blank2.rstrip()}\033[0m the \033[33m{blank3.rstrip()}\033[0m trickster!")
     print(f"He had 21 invisibility \033[33m{blank4.rstrip()}\033[0m, twelve {blank5.rstrip()} doves, and one {blank6.rstrip()} talking lion. He roamed the earth searching")
     print(f"for an apprentice. However, all he found was a(n) {blank7.rstrip()}, annoying, {blank8.rstrip()}, smelly, troll. This was no ordinary troll, though! It was")
     print(f"a magical one, who quickly turned the magician into a {blank9.rstrip()}, and tossed him into {blank10.rstrip().title()} Volcano. Yikes!\n")
