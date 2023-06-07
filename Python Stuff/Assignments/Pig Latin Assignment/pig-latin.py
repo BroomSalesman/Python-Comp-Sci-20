@@ -106,6 +106,7 @@ def format_lines(the_string: str, line_length: int):
 
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------#
 
+# The code below records the results
 
 def record_results(original_string: str, pig_latin_string: str):
     translation_record = open("translation-record.txt", "a")
