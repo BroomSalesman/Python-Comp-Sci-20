@@ -1,6 +1,12 @@
-# Have to make two text files, one with entire translated string with non translated string above it, with time it was done. Maybe at the end add number of words translated
-# Other is a list of translated words
-# Have to figure out how to add everytime to it
+#################################################################
+# Labeeb Farooqi
+# Computer Science 20
+# April 11, 2023
+#
+# Pig Latin Converter Program
+# Purpose: To create a mad lib through user input and random selection
+################################################################
+
 import time
 
 VOWELS = "AaEeIiOoUuYy"
@@ -8,6 +14,14 @@ PUNCTUATIONS = ".,!?"
 
 
 def piece_string(string: str):
+    """Splits a string into words in a list, and splits
+
+    Args:
+        string (str): _description_
+
+    Returns:
+        _type_: _description_
+    """
     pieced_string = string.split(" ")
 
     # To create sublists for strings with punctuation at end or hyphen in between to ensure proper pig latin conversion
@@ -37,7 +51,17 @@ def piece_string(string: str):
     return pieced_string
 
 
-def pig_latinize(string: str):
+def pig_latin_rules(string: str):
+    """Turns a string (one word) into pig latin, but treats one whole string as one word. "Hi Mr. Schellenberg" will return "Ihay Mray. Ellenbergschay".
+    To translate whole sentence, the pig_latin_process_strings() must be used.
+
+    Args:
+        string (str): _description_
+
+    Returns:
+        str: _description_
+    """
+
     capital_check = string[0] == string[0].upper()
 
     for char in string:
@@ -59,21 +83,31 @@ def pig_latinize(string: str):
 
 
 
-def translate_and_join_sublist(sublist_strings: list):
+def pig_latinize_and_join_list(list_strings: list, glue: str):
+    """Translates the strings in a list and joins them together using the parameter glue as the joiner.
+
+    Args:
+        list_strings (list): sublist with strings inside
+        glue (str): the string (usually " ") that will join the list together with the glue in between each item from the sublist
+
+    Returns:
+        "".join(list_strings): One joined string
+    """
     index = 0
-    for item in sublist_strings:
+    for item in list_strings:
         if not item in PUNCTUATIONS + "-":
-            sublist_strings[index] = pig_latinize(item)
+            list_strings[index] = pig_latin_rules(item)
 
 
         index += 1
 
-    return "".join(sublist_strings)
+    return "".join(list_strings)
 
 
 
 
-def process_strings(string: str):
+def pig_latin_process_strings(string: str):
+
     string_list = piece_string(string)
 
     translated_strings = []
@@ -82,18 +116,27 @@ def process_strings(string: str):
     for item in string_list:
 
         if isinstance(item, list):
-            translated_strings.append(translate_and_join_sublist(item))
+            translated_strings.append(pig_latinize_and_join_list(item, ""))
 
         elif item.isnumeric():
             translated_strings.append(index)
 
         else:
-            translated_strings.append(pig_latinize(item))
+            translated_strings.append(pig_latin_rules(item))
 
     return " ".join(translated_strings)
 
 #----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------#
 def format_lines(the_string: str, line_length: int):
+    """Takes a string and formats it by word length, so if the line_length is 10, the formatted string will have 10 words per line
+
+    Args:
+        the_string (str): the string to be formatted
+        line_length (int): number of words per line
+
+    Returns:
+        string: _description_
+    """
     words_in_string = the_string.split(" ")
     formatted_lines = []
 
@@ -106,7 +149,6 @@ def format_lines(the_string: str, line_length: int):
 
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------#
 
-# The code below records the results
 
 def record_results(original_string: str, pig_latin_string: str):
     translation_record = open("translation-record.txt", "a")
@@ -120,10 +162,10 @@ def record_results(original_string: str, pig_latin_string: str):
 
 print("\n\n")
 user_string = str(input("Type in your text, and press enter when you are done:\n"))
-pig_latinized_string = process_strings(user_string)
+pig_latinized_string = pig_latin_process_strings(user_string)
 
 print("\n\n\n\n\n")
-print(process_strings(user_string))
+print(pig_latin_process_strings(user_string))
 print("\n\n\n")
 
 record_results(user_string, pig_latinized_string)

@@ -36,7 +36,11 @@
     "editor.smoothScrolling": true,
     "editor.suggest.snippetsPreventQuickSuggestions": false,
     "editor.inlineSuggest.suppressSuggestions": true,
-    "docwriter.style": "XML",
+    "docwriter.style": "GoDoc",
+    "docwriter.progress.trackFunctions": true,
+    "docwriter.progress.trackMethods": true,
+    "docwriter.progress.trackClasses": true,
+    "docwriter.progress.trackTypes": true,
 
 
 
