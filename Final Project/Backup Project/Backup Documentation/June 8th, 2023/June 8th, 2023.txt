@@ -1,0 +1,3 @@
+Checking out Python string padding, Mr. Schellenberg suggested to check it out.
+
+Going to use rjust to help with formatting the output of my arithmetic-formatter math problems.
