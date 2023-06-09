@@ -14,3 +14,27 @@ Every new print statement will make the math problems appear vertically, but the
 "   282      94      9030"
 "+ 2901    + 20    -    9"
 "------    ----    ------"
+
+
+
+
+
+Determining space between operator and operand update:
+
+I will be creating a 2 lists, one to determine the empty spaces in the top part of the math problem, by appending len(longest_operand) + 2.
+I will be adding 2 because the top part of the math problem doesnt have an operator. I'll visualize what I  mean in an example I'll provide.
+
+The second list will be len(longest_operand) + 1, since the bottom operand is accompanied by an operator (either + or -), which will take up
+one space.
+
+These numbers will be used to determine the padding of the top and bottom part of the math problem
+
+Example, the bottom operand, 928, being longest_operand:
+
+top_padding = 2 + len(longest_operand)
+bottom_padding = 1 + len(longest_operand)
+
+Visualized:
+|  928|  The distgnce between the first line and the second is the same as 2 spaces plus 3 characters ("928")
+|+  20|      if you look at the distance between the first line and the second, it is equal to len("928") + 2, which is 3 + 5, which is 5.
+
