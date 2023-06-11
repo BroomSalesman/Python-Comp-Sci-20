@@ -213,10 +213,10 @@
     justify-self: center;
     margin: 0 auto;
     height: 90vh;
-    background-color: #141414;
+    background-color: #ceb266;
     z-index: 1;
     width: 100%;
-    max-width: 1300px;
+    max-width: auto;
     padding: 0 50px;
 }
 
@@ -234,6 +234,7 @@
     font-size: 4rem;
     background-color: #fef177;
     background-image: linear-gradient(to top, #21b9ff 0%,  #f55ac6 100%);
+    background-size: 100%;
     -webkit-background-clip: text;
     -moz-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -244,11 +245,12 @@
     margin-top: 0.5rem;
     font-size: 1.7rem;
     font-weight: 700;
+    color: #bdfdff;
 }
 
 .main__btn {
     font-size: 1rem;
-    background-image: link("images/kung-fu-panda.jpg");
+    background-image: linear-gradient(to top, #7dff7d 0%, #007c1f );
     background-position: top;
     padding: 14px 32px;
     border: none;
@@ -264,7 +266,7 @@
 .main__btn a {
     position: relative;
     z-index: 2;
-    color: fff;
+    color: #d0bbff;
     text-decoration: none;
 }
 
@@ -275,7 +277,7 @@
     left: 0;
     width: 0;
     height: 100%;
-    background: #65e2df;
+    background: #29ef98;
     transition: all 0.35s;
     border-radius: 4px;
 }
@@ -290,11 +292,70 @@
 
 .main__img--container {
     text-align: center;
+    transform: scalex(-1);
+    margin-left: 30;
+    position: relative;
 }
 
 #main__img {
-    height: 80%;
-    width: 80%
+    height: 210%;
+    width: 210%;
 }
 
-.flip
+/* Mobile Responsive (whole point I've been following along a tutorial this whole time) */
+
+@media screen and (max-width: 768) {
+    .main_container {
+        display: grid;
+        grid-template-columns: auto;
+        align-items: center;
+        justify-self: center;
+        width: 100%;
+        margin: 0 auto;
+        height: 90vh;
+    }
+
+    .main__content {
+        text-align: center;
+        margin-bottom: 4rem;
+    }
+
+    .main__content h1 {
+        font-size: 2.5rem;
+        margin-top: 2rem;
+    }
+
+    .main__content h2{
+        font-size: 3rem;
+    }
+
+    .main__content p {
+        margin-top: 1rem;
+        font-size: 1.5 rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .main_content h1 {
+        font-size: 2rem;
+        margin-top: 3rem;
+    }
+
+    .main__content h2 {
+        font-size: 2rem;
+    }
+
+    main__content p {
+        margin-top: 2rem;
+        font-size: 1.5rem;
+    }
+
+    .main__btn {
+        padding: 12px 36px;
+        margin: 2.5rem 0;
+    }
+}
+
+/* This is the point where I just stopped following the tutorial and did my own thing.
+I gave credit to the video but still, I didn't want to make the exact same thing from the
+tutorial, so I stopped here where this is lots of room left for me to just try and do my own things*/
