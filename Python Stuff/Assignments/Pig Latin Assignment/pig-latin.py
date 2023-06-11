@@ -1,10 +1,10 @@
 #################################################################
 # Labeeb Farooqi
 # Computer Science 20
-# April 11, 2023
+# June 1 2023
 #
 # Pig Latin Converter Program
-# Purpose: To create a mad lib through user input and random selection
+# Purpose: To translate user input into Pig Latin
 ################################################################
 
 import time
@@ -13,39 +13,39 @@ VOWELS = "AaEeIiOoUuYy"
 PUNCTUATIONS = ".,!?"
 
 
-def piece_string(string: str):
+def piece_string(user_string: str):
     """Splits a string into words in a list, and splits
 
     Args:
-        string (str): _description_
+        user_string (str): string to be split into words and sublists containing word and punctuation after it
 
     Returns:
-        _type_: _description_
+        pieced_string (list): a list of words, and may include sublists with words, punctuations, and hyphens in them, if words had a punctuation attached to it, or had a hyphens in the word.
     """
-    pieced_string = string.split(" ")
+    pieced_string = user_string.split(" ")
 
     # To create sublists for strings with punctuation at end or hyphen in between to ensure proper pig latin conversion
-    for word in pieced_string:
-        index = pieced_string.index(word)
+    for item in range(len(pieced_string)):
+        word = pieced_string[item]
 
         # Adds a ♠ in between the punctuation and letter before punctuation so ♠ can be used as a separating marker
         if word[-1] in PUNCTUATIONS:
-            pieced_string[index] = word.replace(word[-1], f"♠{word[-1]}")
+            word = word.replace(word[-1], f"♠{word[-1]}")
             # Example: Hello! is turned into Hello♠! , because word[-1]  ("!") was replaced by ♠ + word[-1]. which was "!" from  our example, "Hello!" .
             # Concise example: "Hello" + "!" --> "Hello" + "♠!"
 
     # Adds a ♠ before and after a hyphen to be used as a seperating marker
-    for word in pieced_string:
-        index = pieced_string.index(word)
+    for item in range(len(pieced_string)):
+        word = pieced_string[item]
         if "-" in word:
-            pieced_string[index] = word.replace("-", "♠-♠")
+            word = word.replace("-", "♠-♠")
 
     # Seperates every string in the list pieced_string into sublists with strings inside, using ♠ as marker for splitting in it strings into lists.
     # Example: "Spider♠-♠Man♠!" -->  ["Spider", "-", "Man", "!"]
-    for word in pieced_string:
-        index = pieced_string.index(word)
+    for item in range(len(pieced_string)):
+        word = pieced_string[item]
         if "♠" in word:
-            pieced_string[index] = word.split("♠")
+            word = word.split("♠")
 
 
     return pieced_string
@@ -56,14 +56,17 @@ def pig_latin_rules(string: str):
     To translate whole sentence, the pig_latin_process_strings() must be used.
 
     Args:
-        string (str): _description_
+        string (str): the string to be converted into pig-latin
 
     Returns:
-        str: _description_
+        pig_latin_word (str): a string
     """
 
     capital_check = string[0] == string[0].upper()
 
+    # The for loop finds the first instance of a vowel.
+    # If it reaches the end of the loop and no vowels are found,
+    # then it make the entire string the prefix
     for char in string:
         if char in VOWELS:
             prefix = string[string.index(char):]
@@ -72,6 +75,12 @@ def pig_latin_rules(string: str):
             suffix = "yay" if string[0] in VOWELS else "ay"
 
             break
+
+        else:
+            prefix = string
+            middle = ""
+            suffix = "yay" if string[0] in VOWELS else "ay"
+
 
     pig_latin_word = (prefix + middle + suffix).lower()
 
@@ -84,47 +93,60 @@ def pig_latin_rules(string: str):
 
 
 def pig_latinize_and_join_list(list_strings: list, glue: str):
-    """Translates the strings in a list and joins them together using the parameter glue as the joiner.
+    """Translates the strings in a list into Pig Latin and joins them together using the argument glue as the joiner.
 
     Args:
         list_strings (list): sublist with strings inside
-        glue (str): the string (usually " ") that will join the list together with the glue in between each item from the sublist
+        glue (str): the string (usually " ") that will join the list together with whatever value glue is in between each item from the sublist
 
     Returns:
-        "".join(list_strings): One joined string
+        "".join(list_strings): the joined string with Pig
     """
-    index = 0
-    for item in list_strings:
+    for i in range(len(list_strings)):
+        item = list_strings[i]
         if not item in PUNCTUATIONS + "-":
-            list_strings[index] = pig_latin_rules(item)
+            item = pig_latin_rules(item)
 
 
-        index += 1
-
-    return "".join(list_strings)
+    return glue.join(list_strings)
 
 
 
 
 def pig_latin_process_strings(string: str):
+    """Iterates through each string in a list and determines if the string should be translated to Pig Latin or left as it is, and then appended into a new list, then joined together into one entire string.
+        Makes use of other functions too, see doc strings for seperatre functions.
 
+    Args:
+        string (str):
+
+    Returns:
+        pig_latin_string (str): All the words translated and joined together to form one string
+
+    """
     string_list = piece_string(string)
 
-    translated_strings = []
+    translated_list = []
 
     index = 0
     for item in string_list:
 
         if isinstance(item, list):
-            translated_strings.append(pig_latinize_and_join_list(item, ""))
+            translated_list.append(pig_latinize_and_join_list(item, ""))
 
         elif item.isnumeric():
-            translated_strings.append(index)
+            translated_list.append(index)
 
         else:
-            translated_strings.append(pig_latin_rules(item))
+            translated_list.append(pig_latin_rules(item))
 
-    return " ".join(translated_strings)
+    pig_latin_string = " ".join(translated_list)
+
+    return "".join(pig_latin_string)
+
+
+
+
 
 #----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------#
 def format_lines(the_string: str, line_length: int):
@@ -135,22 +157,30 @@ def format_lines(the_string: str, line_length: int):
         line_length (int): number of words per line
 
     Returns:
-        string: _description_
+        formatted_lines: returns a string with newlines to
     """
     words_in_string = the_string.split(" ")
-    formatted_lines = []
+    list_of_lines = []
 
     for _ in range((len(words_in_string)//line_length) + 1):
 
-        formatted_lines.append(" ".join(words_in_string[:line_length]))
+        list_of_lines.append(" ".join(words_in_string[:line_length]))
         del words_in_string[:line_length]
 
-    return "\n".join(formatted_lines)
+    formatted_lines = "\n".join(list_of_lines)
+
+    return formatted_lines
 
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------#
 
 
 def record_results(original_string: str, pig_latin_string: str):
+    """Records the user input and the Pig Latin translation of the user input into a text file. Includes time and date of translation.
+
+    Args:
+        original_string (str): original string that the user inputted
+        pig_latin_string (str): Pig Latin translation
+    """
     translation_record = open("translation-record.txt", "a")
     formatted_original_string = (format_lines(original_string, 20))
     formatted_pig_latin = (format_lines(pig_latin_string, 20))
