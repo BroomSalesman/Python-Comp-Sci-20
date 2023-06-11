@@ -227,6 +227,8 @@ body {
     }
 }
 
+
 .cargame {
-    align-content: center;
+    display: flex;
+    justify-content: center;
 }
