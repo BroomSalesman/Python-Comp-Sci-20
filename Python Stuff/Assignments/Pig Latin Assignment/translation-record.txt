@@ -19,3 +19,47 @@ The frog jumped over the log.
 Pig Latin:
 Ethay ogfray umpedjay overyay ethay oglay.
 
+Sun Jun 11 11:16:48 2023:
+Original:
+How goes your day
+
+Pig Latin:
+O w h a y   o e s g a y   y o u r y
+a y   a y d a y
+
+Sun Jun 11 11:18:05 2023:
+Original:
+How goes your day
+
+Pig Latin:
+O w h a y   o e s g a y   y o u r y
+a y   a y d a y
+
+Sun Jun 11 11:18:31 2023:
+Original:
+How goes your day? Perhaps-with-hyphens>?
+
+Pig Latin:
+Owhay oesgay youryay ay?day Erhaps-With-Hyphens>?Pay
+
+Sun Jun 11 11:18:45 2023:
+Original:
+spider-kman
+
+Pig Latin:
+ider-kmanspay
+
+Sun Jun 11 11:19:06 2023:
+Original:
+hellow-How_is?
+
+Pig Latin:
+ellow-how_is?hay
+
+Sun Jun 11 11:19:28 2023:
+Original:
+Why-Won't-This-Work
+
+Pig Latin:
+Y-Won'T-This-Workwhay
+
