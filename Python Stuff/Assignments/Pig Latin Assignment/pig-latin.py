@@ -36,14 +36,12 @@ def piece_string(user_string: str):
 
     # Adds a ♠ before and after a hyphen to be used as a seperating marker
     for item in range(len(pieced_string)):
-        word = pieced_string[item]
-        if "-" in word:
-            word = word.replace("-", "♠-♠")
+        if "-" in pieced_string[item]:
+            pieced_string[item] = pieced_string[item].replace("-", "♠-♠")
 
     # Seperates every string in the list pieced_string into sublists with strings inside, using ♠ as marker for splitting in it strings into lists.
     # Example: "Spider♠-♠Man♠!" -->  ["Spider", "-", "Man", "!"]
-    for item in range(len(pieced_string)):
-        word = pieced_string[item]
+    for word in pieced_string:
         if "♠" in word:
             word = word.split("♠")
 
@@ -191,7 +189,8 @@ def record_results(original_string: str, pig_latin_string: str):
     translation_record.write(formatted_pig_latin + "\n\n")
 
 print("\n\n")
-user_string = str(input("Type in your text, and press enter when you are done:\n"))
+user_string = "hello-Hypen-hyphen!!!-hypen!!!????"
+#user_string = str(input("Type in your text, and press enter when you are done:\n"))
 pig_latinized_string = pig_latin_process_strings(user_string)
 
 print("\n\n\n\n\n")
