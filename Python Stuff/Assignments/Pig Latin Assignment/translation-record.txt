@@ -63,3 +63,116 @@ Why-Won't-This-Work
 Pig Latin:
 Y-Won'T-This-Workwhay
 
+Tue Jun 13 13:32:52 2023:
+Original:
+hello-Hypen-hyphen!!!-hypen!!!????
+
+Pig Latin:
+Tue Jun 13 13:33:29 2023:
+Original:
+hello-Hypen-hyphen!!!-hypen!!!????
+
+Pig Latin:
+Tue Jun 13 13:33:29 2023:
+Original:
+hello-Hypen-hyphen!!!-hypen!!!????
+
+Pig Latin:
+Tue Jun 13 13:38:44 2023:
+Original:
+hello!!!
+
+Pig Latin:
+ello!!!hay
+
+Tue Jun 13 14:01:11 2023:
+Original:
+hello!!!
+
+Pig Latin:
+Tue Jun 13 14:01:46 2023:
+Original:
+hello!!!
+
+Pig Latin:
+Tue Jun 13 14:02:05 2023:
+Original:
+hello!!!
+
+Pig Latin:
+Tue Jun 13 14:03:05 2023:
+Original:
+hello!!!
+
+Pig Latin:
+ello!!!hay
+
+Tue Jun 13 14:03:07 2023:
+Original:
+hello!!!
+
+Pig Latin:
+ello!!!hay
+
+Tue Jun 13 14:03:08 2023:
+Original:
+hello!!!
+
+Pig Latin:
+ello!!!hay
+
+Tue Jun 13 14:03:33 2023:
+Original:
+hello!!!
+
+Pig Latin:
+ello!!!hay
+
+Tue Jun 13 14:04:02 2023:
+Original:
+hello!!!
+
+Pig Latin:
+ello!!!hay
+
+Tue Jun 13 14:04:30 2023:
+Original:
+hello!!!
+
+Pig Latin:
+ello!!!hay
+
+Tue Jun 13 14:04:31 2023:
+Original:
+hello!!!
+
+Pig Latin:
+ello!!!hay
+
+Tue Jun 13 14:08:42 2023:
+Original:
+hello!!!
+
+Pig Latin:
+Tue Jun 13 14:08:43 2023:
+Original:
+hello!!!
+
+Pig Latin:
+Tue Jun 13 14:10:44 2023:
+Original:
+hello!!!
+
+Pig Latin:
+Tue Jun 13 14:10:45 2023:
+Original:
+hello!!!
+
+Pig Latin:
+Tue Jun 13 14:12:11 2023:
+Original:
+hello!!!
+
+Pig Latin:
+!
+
