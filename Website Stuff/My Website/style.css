@@ -16,22 +16,24 @@ h1 {
     margin-right: 200px;
     margin-top: 15px;
 }
-html body {
-    scroll-behavior: smooth;
-}
+
 
 body {
+    scroll-behavior: smooth;
     background-image: url("monkey wallpaper.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     background-size: auto;
-    background-color: transparent;
+    backdrop-filter: blur(3px);
 }
 
 .mainpage-first-texts {
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    text-align: center;
-    color: hsl(64, 100%, 50%);
 }
 
+
+
+
+/* CSS Rules for responsive site navigation bar */
 .navbar {
     background: #181818;
     height: 80px;
@@ -228,7 +230,4 @@ body {
 }
 
 
-.cargame {
-    display: flex;
-    justify-content: center;
-}
+
