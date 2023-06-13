@@ -152,5 +152,4 @@ Here is the output of the tests:
    FAILED test_module.py::test_template[test_five_problems_arrangement] - AssertionError: Expected different output when calling "arithmetic_arranger()" with ["1...
    =============================== 4 failed, 6 passed in 0.18s ================================
 
-Moving onto the next one:
-
+Moving onto the next one.

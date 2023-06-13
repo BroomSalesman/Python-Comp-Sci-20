@@ -1,0 +1,32 @@
+Figured out what was the cause of arithmetic problems not passing the tests for not showing the solution.
+Here is what was happening:
+	seperators_line = (" " * 4).join(seperators) + "\n"
+
+I didn't catch this before, but when I was trying my program for math problems where the solution is shown, there would be an empty line
+where the answer should be shown, and the answer itself was below the empty line.
+							   32
+							+ 698
+							-----
+							  730 
+							     
+
+							^^^^^ (these arrows were not a part of output)
+
+So I just removed the "\n" between seperators_line and solutions_line. See below:
+
+    if show_solution:                                                                                     
+        all_formatted = top_operands_line + "\n" + operators_with_operands_line + "\n" + seperators_line + solutions_line
+    else:											 	 ^
+        all_formatted = top_operands_line + "\n" + operators_with_operands_line + "\n" + seperators_line
+
+Removing that fixed the problem. But when the solution was not shown, it was not easy to tell that there was an extra line where there should
+not have been, since there was nothing below the seperator lines. See example below.
+
+							   32
+							+ 698
+							-----
+
+							^^^^^ (these arrows were not a part of output)
+
+The line of code I showed at the start of this documentation was causing a newline to appear below the seperator lines.
+That is why all the tests where the solution is not supposed to be shown

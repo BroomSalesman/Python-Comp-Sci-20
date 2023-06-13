@@ -81,4 +81,3 @@ def arithmetic_arranger(problems, show_solution=False):
         all_formatted = top_operands_line + "\n" + operators_with_operands_line + "\n" + seperators_line
 
     return all_formatted
-print(arithmetic_arranger(['3801 - 2', '123 + 49'], True))
