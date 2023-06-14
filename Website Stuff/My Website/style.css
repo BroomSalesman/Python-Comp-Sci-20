@@ -23,8 +23,10 @@ body {
     background-image: url("monkey wallpaper.png");
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-size: auto;
+    background-size: cover;
+    background-position: center;
     backdrop-filter: blur(3px);
+
 }
 
 .mainpage-first-texts {
