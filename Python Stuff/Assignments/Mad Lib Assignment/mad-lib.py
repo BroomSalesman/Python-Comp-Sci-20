@@ -92,110 +92,127 @@ if continue1 == "N" or continue1 == "n":
           "but there are also more specific blanks, such as 'a type of food', 'something that flies', 'a country', etc.")
     print("\nYou will not get to see the story structure of the madlibs before you choose the words.\n")
 
-    input("Press enter once you have finished reading.")
+    input("Press ENTER once you have finished reading.")
+
+
+for i in range(3):
+    # Presents madlib modes that the user can choose from
+    print("\nYou have 3 different types of madlibs to choose from:\n")
+
+    # Defines possible numbers that user will be allowed to input when choosing madlib mode
+    possible_selections = [1, 2, 3]
+
+    time.sleep(3)
 
 
 
-# Presents madlib modes that the user can choose from
-print("\nYou have 3 different types of madlibs to choose from:\n")
-
-# Defines possible numbers that user will be allowed to input when choosing madlib mode
-possible_selections = [1, 2, 3]
-
-time.sleep(3)
-
-
-# Uses a try and except statement inside of a while True loop to make user try again and again until they enter an allowed input.
-# Once they choose a valid input, the loop will be broken.
-while True:
-    try:
-        print("1. A madlib in which you choose all the words.")
-        time.sleep(0.75)
-        print("2. A madlib in which you choose half of the words and the rest are randomly generated.")
-        time.sleep(0.75)
-        print("3. A madlib in which all the words are computer generated.\n")
-        time.sleep(2)
+    # Uses a try and except statement inside of a while True loop to make user try again and again until they enter an allowed input.
+    # Once they choose a valid input, the loop will be broken.
+    while True:
+        try:
+            print("1. A madlib in which you choose all the words.")
+            time.sleep(0.75)
+            print("2. A madlib in which you choose half of the words and the rest are randomly generated.")
+            time.sleep(0.75)
+            print("3. A madlib in which all the words are computer generated.\n")
+            time.sleep(2)
 
 
-        choose_madlib = int(input("To select one, press 1, 2, or 3, then press enter (see above for details):\n"))
-        if choose_madlib not in possible_selections:
-            raise ValueError
+            choose_madlib = int(input("To select one, press 1, 2, or 3, then press enter (see above for details):\n"))
+            if choose_madlib not in possible_selections:
+                raise ValueError
 
-        break
-    except ValueError:
-        print("\n\n\n\n\n" * 8) # 40 newlines
-        print("Invalid input. Try again.")
-        time.sleep(0.5)
-        continue
+            break
+        except ValueError:
+            print("\n\n\n\n\n" * 8) # 40 newlines
+            print("Invalid input. Try again.")
+            time.sleep(0.5)
+            continue
 
-# First madlib mode where every word is chosen by user
-print("\n\n\n\n\n" * 7) # 35 newlines
-if choose_madlib == 1:
-    blank1 = input("Enter a verb:  ")
-    blank2 = input("Type of feeling:  ")
-    blank3 = input("Adjective:  ")
-    blank4 = input("Adjective:  ")
-    blank5 = input("Noun:  ")
-    blank6 = input("Flavor:  ")
-    blank7 = input("Type of food:  ")
-    blank8 = input("Something you (or other people) read:  ")
-    blank9 = input("Adjective:  ")
-    blank10 = input("Type of monster:  ")
 
-    # Uses f strings to add the words into the madlib. ANSI escape code used to make the words yellow when printed in terminal
-    print("Standby...")
-    time.sleep(5)
-    print("\n" * 5) # 5 newlines
-    print(f"Do not \033[33m{blank1.rstrip()}\033[0m to me before I have had my coffee! Before I get my first sip, I am \033[33m{blank2.rstrip()}\033[0m. If I do not get")
-    print(f"to practice my morning routine, then the day is sure to be \033[33m{blank3.rstrip()}\033[0m. First I get \033[33m{blank4.rstrip} {blank5.rstrip()}\033[0m mug.")
-    print(f"Then I brew some \033[33m{blank6.rstrip()}\033[0m coffee. Next, I mix in \033[33m{blank7.rstrip()}\033[0m. I enjoy drinking this coffee while reading \033[33m{blank8.rstrip()}\033[0m")
-    print(f"my java break, I turn into a \033[33m{blank9.rstrip()} {blank10.rstrip()}\033[0m.\n")
+        # MAD LIBS  #
+
+    # First madlib mode where every word is chosen by user
+    print("\n\n\n\n\n" * 7) # 35 newlines
+    if choose_madlib == 1:
+        blank1 = input("Enter a verb:  ")
+        blank2 = input("Type of feeling:  ")
+        blank3 = input("Adjective:  ")
+        blank4 = input("Adjective:  ")
+        blank5 = input("Noun:  ")
+        blank6 = input("Flavor:  ")
+        blank7 = input("Type of food:  ")
+        blank8 = input("Something you (or other people) read:  ")
+        blank9 = input("Adjective:  ")
+        blank10 = input("Type of monster:  ")
+
+        # Uses f strings to add the words into the madlib. ANSI escape code used to make the words yellow when printed in terminal
+        print("\n\nStandby...")
+        time.sleep(5)
+        print("\n" * 5) # 5 newlines
+
+        print(f"Do not \033[33m{blank1.rstrip()}\033[0m to me before I have had my coffee! Before I get my first sip, I am \033[33m{blank2.rstrip()}\033[0m. If I do not get")
+        print(f"to practice my morning routine, then the day is sure to be \033[33m{blank3.rstrip()}\033[0m. First I get \033[33m{blank4.rstrip} {blank5.rstrip()}\033[0m mug.")
+        print(f"Then I brew some \033[33m{blank6.rstrip()}\033[0m coffee. Next, I mix in \033[33m{blank7.rstrip()}\033[0m. I enjoy drinking this coffee while reading \033[33m{blank8.rstrip()}\033[0m")
+        print(f"my java break, I turn into a \033[33m{blank9.rstrip()} {blank10.rstrip()}\033[0m.\n")
 
 
 
-# Second madlib mode where half of the words are chosen by the user, and the other half are computer generated
-# Uses the random module to choose a random value index between 0 (first word in list) and the last index (whatever len(list) is)
-elif choose_madlib == 2:
-    blank1_bot = countries[random.randint(0, len(countries)-1)]
-    blank2 = input("Enter a type of vehicle (or transportation):  ")
-    blank3_bot = places[random.randint(0, len(places)-1)]
-    blank4 = input("Type of flavor:  ").lower()
-    blank5_bot = plural_nouns[random.randint(0, len(plural_nouns)-1)]
-    blank6 = input("A number:  ")
-    blank7_bot = verbs[random.randint(0, len(verbs)-1)]
-    blank8 = input("Something can hold things inside of it:  ")
-    blank9_bot = adjectives[random.randint(0, len(adjectives)-1)]
-    blank10 = input("Enter an adjective:  ").lower()
+    # Second madlib mode where half of the words are chosen by the user, and the other half are computer generated
+    # Uses the random module to choose a random value index between 0 (first word in list) and the last index (whatever len(list) is)
+    elif choose_madlib == 2:
+        blank1_bot = countries[random.randint(0, len(countries)-1)]
+        blank2 = input("Enter a type of vehicle (or transportation):  ")
+        blank3_bot = places[random.randint(0, len(places)-1)]
+        blank4 = input("Type of flavor:  ").lower()
+        blank5_bot = plural_nouns[random.randint(0, len(plural_nouns)-1)]
+        blank6 = input("A number:  ")
+        blank7_bot = verbs[random.randint(0, len(verbs)-1)]
+        blank8 = input("Something can hold things inside of it:  ")
+        blank9_bot = adjectives[random.randint(0, len(adjectives)-1)]
+        blank10 = input("Enter an adjective:  ").lower()
 
-    print("Standby...")
-    time.sleep(5)
+        print("\n\nStandby...")
+        time.sleep(5)
 
-    print("\n" * 5) # 5 newlines
-    print(f"My family and I love to vacation in \033[33m{blank1_bot.rstrip()}\033[0m. We take the \033[33m{blank2.rstrip()}\033[0m to the \033[33m{blank3_bot.rstrip()}\033[0m,")
-    print(f"and eat \033[33m{blank4.rstrip()}\033[0m-covered \033[33m{blank5_bot.rstrip()}\033[0m by the shore! Sometimes, we stay 10 to 11 days. Other times,")
-    print(f"we stay on vacation for \033[33m{blank6.rstrip()}\033[0m days! I like to take photos with my family so I can \033[33m{blank7_bot}\033[0m")
-    print(f"back on the memories! I even made a \033[33m{blank8.rstrip()}\033[0m to all my \033[33m{blank9_bot.rstrip()}\033[0m photos in! I love \033[33m{blank10.rstrip()}\033[0m family vacations!\n")
+        print("\n" * 5) # 5 newlines
+        print(f"My family and I love to vacation in \033[33m{blank1_bot.rstrip()}\033[0m. We take the \033[33m{blank2.rstrip()}\033[0m to the \033[33m{blank3_bot.rstrip()}\033[0m,")
+        print(f"and eat \033[33m{blank4.rstrip()}\033[0m-covered \033[33m{blank5_bot.rstrip()}\033[0m by the shore! Sometimes, we stay 10 to 11 days. Other times,")
+        print(f"we stay on vacation for \033[33m{blank6.rstrip()}\033[0m days! I like to take photos with my family so I can \033[33m{blank7_bot}\033[0m")
+        print(f"back on the memories! I even made a \033[33m{blank8.rstrip()}\033[0m to all my \033[33m{blank9_bot.rstrip()}\033[0m photos in! I love \033[33m{blank10.rstrip()}\033[0m family vacations!\n")
 
 
 
-# Third madlib mode where every word is computer generated
-elif choose_madlib == 3:
-    blank1 = random.randint(0, 10)
-    blank2 = names[random.randint(0, len(names)-1)]
-    blank3 = verb_ings[random.randint(0, len(verb_ings)-1)]
-    blank4 = clothings_accessories[random.randint(0, len(clothings_accessories)-1)]
-    blank5 = verb_ings[random.randint(0, len(verb_ings)-1)]
-    blank6 = adjectives[random.randint(0, len(adjectives)-1)]
-    blank7 = verb_ings[random.randint(0, len(verb_ings)-1)]
-    blank8 = adjectives[random.randint(0, len(adjectives)-1)]
-    blank9 = nouns[random.randint(0, len(nouns)-1)]
-    blank10 = fluids[random.randint(0, len(fluids)-1)]
+    # Third madlib mode where every word is computer generated
+    elif choose_madlib == 3:
+        blank1 = random.randint(0, 10)
+        blank2 = names[random.randint(0, len(names)-1)]
+        blank3 = verb_ings[random.randint(0, len(verb_ings)-1)]
+        blank4 = clothings_accessories[random.randint(0, len(clothings_accessories)-1)]
+        blank5 = verb_ings[random.randint(0, len(verb_ings)-1)]
+        blank6 = adjectives[random.randint(0, len(adjectives)-1)]
+        blank7 = verb_ings[random.randint(0, len(verb_ings)-1)]
+        blank8 = adjectives[random.randint(0, len(adjectives)-1)]
+        blank9 = nouns[random.randint(0, len(nouns)-1)]
+        blank10 = fluids[random.randint(0, len(fluids)-1)]
 
-    print("Standby...")
-    time.sleep(5)
+        print("\n\nStandby...")
 
-    ("\n" * 5) # 5 newlines
-    print(f"Magicians have been around for \033[33m{blank1}\033[0m centuries. One famous magician was named \033[33m{blank2.rstrip()}\033[0m the \033[33m{blank3.rstrip()}\033[0m trickster!")
-    print(f"He had 21 invisibility \033[33m{blank4.rstrip()}\033[0m, twelve {blank5.rstrip()} doves, and one {blank6.rstrip()} talking lion. He roamed the earth searching")
-    print(f"for an apprentice. However, all he found was a(n) {blank7.rstrip()}, annoying, {blank8.rstrip()}, smelly, troll. This was no ordinary troll, though! It was")
-    print(f"a magical one, who quickly turned the magician into a {blank9.rstrip()}, and tossed him into {blank10.rstrip().title()} Volcano. Yikes!\n")
+        time.sleep(5)
+
+        print("\n" * 5) # 5 newlines
+        print(f"Magicians have been around for \033[33m{blank1}\033[0m centuries. One famous magician was named \033[33m{blank2.rstrip()}\033[0m the \033[33m{blank3.rstrip()}\033[0m trickster!")
+        print(f"He had 21 invisibility \033[33m{blank4.rstrip()}\033[0m, twelve {blank5.rstrip()} doves, and one {blank6.rstrip()} talking lion. He roamed the earth searching")
+        print(f"for an apprentice. However, all he found was a(n) {blank7.rstrip()}, annoying, {blank8.rstrip()}, smelly, troll. This was no ordinary troll, though! It was")
+        print(f"a magical one, who quickly turned the magician into a {blank9.rstrip()}, and tossed him into {blank10.rstrip().title()} Volcano. Yikes!\n")
+
+    time.sleep(7)
+
+    # input used to repeat everything in this loop only when user wants to
+    print("\n\n")
+    input(" " * 10 + "Press ENTER to try again.")
+
+print("\n\n\n\n\n" * 9) # 45 newlines
+print("Your playtime is over. If you want to play again, insert one credit. Goodbye.")
+print("\nDeveloped by: Labeeb")
+

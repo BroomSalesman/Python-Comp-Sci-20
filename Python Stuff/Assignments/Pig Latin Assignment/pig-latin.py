@@ -26,23 +26,29 @@ def piece_string(user_string: str):
 
     # To create sublists for strings with punctuation at end or hyphen in between to ensure proper pig latin conversion
     for item in range(len(pieced_string)):
-        word = pieced_string[item]
 
         # Adds a ♠ in between the punctuation and letter before punctuation so ♠ can be used as a separating marker
-        if word[-1] in PUNCTUATIONS:
-            word = word.replace(word[-1], f"♠{word[-1]}")
-            # Example: Hello! is turned into Hello♠! , because word[-1]  ("!") was replaced by ♠ + word[-1]. which was "!" from  our example, "Hello!" .
-            # Concise example: "Hello" + "!" --> "Hello" + "♠!"
+        # Example: Hello! is turned into Hello♠! , because word[-1]  ("!") was replaced by ♠ + word[-1]. which was "!" from  our example, "Hello!" .
+        # Concise example: "Hello" + "!" --> "Hello" + "♠!"
+        for sub_item in range(len(pieced_string[item])):
+            if pieced_string[item][sub_item] in PUNCTUATIONS:
+                pieced_string[item] = pieced_string[item][sub_item].replace(pieced_string[item][sub_item], f"♠{pieced_string[item][sub_item]}")
+                break
+        # Adds a ♠ in between the first punctuation marl and letter before punctuation so ♠ can be used as a separating marker
+        # Example: Hello! is turned into Hello♠!! , because the first "!" was replaced by "♠!".
+        # Concise example: "Hello" + "!" --> "Hello" + "♠!"
+
 
     # Adds a ♠ before and after a hyphen to be used as a seperating marker
     for item in range(len(pieced_string)):
         if "-" in pieced_string[item]:
             pieced_string[item] = pieced_string[item].replace("-", "♠-♠")
 
+
     # Seperates every string in the list pieced_string into sublists with strings inside, using ♠ as marker for splitting in it strings into lists.
     # Example: "Spider♠-♠Man♠!" -->  ["Spider", "-", "Man", "!"]
-    for word in pieced_string:
-        if "♠" in word:
+    for indice in range(len(pieced_string)):
+        if "♠" in pieced_string[]:
             word = word.split("♠")
 
 
@@ -63,8 +69,7 @@ def pig_latin_rules(string: str):
     capital_check = string[0] == string[0].upper()
 
     # The for loop finds the first instance of a vowel.
-    # If it reaches the end of the loop and no vowels are found,
-    # then it make the entire string the prefix
+    # If it reaches the end of the loop and no vowels are found, then it make the entire string the prefix
     for char in string:
         if char in VOWELS:
             prefix = string[string.index(char):]
@@ -189,7 +194,7 @@ def record_results(original_string: str, pig_latin_string: str):
     translation_record.write(formatted_pig_latin + "\n\n")
 
 print("\n\n")
-user_string = "hello-Hypen-hyphen!!!-hypen!!!????"
+user_string = "hello!!!"
 #user_string = str(input("Type in your text, and press enter when you are done:\n"))
 pig_latinized_string = pig_latin_process_strings(user_string)
 
