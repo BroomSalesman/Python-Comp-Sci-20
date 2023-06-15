@@ -193,11 +193,11 @@ def record_results(original_string: str, pig_latin_string: str):
     formatted_original_string = (format_lines(original_string, 20))
     formatted_pig_latin = (format_lines(pig_latin_string, 20))
 
-    translation_record.write(f"{(datetime.now()).strftime('%Y-%m-%d %H:%M:%S')}:\n")
+    translation_record.write(f"\n{(datetime.now()).strftime('%Y-%m-%d %H:%M:%S')}\n")
     translation_record.write("Original:\n")
     translation_record.write(formatted_original_string + "\n\n")
     translation_record.write("Pig Latin:\n")
-    translation_record.write(formatted_pig_latin + "\n\n\n")
+    translation_record.write(formatted_pig_latin + "\n\n")
     translation_record.write("-" * 100)
 
 print("\n\n")

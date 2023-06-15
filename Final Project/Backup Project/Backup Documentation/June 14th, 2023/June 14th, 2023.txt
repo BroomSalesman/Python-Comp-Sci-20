@@ -1,0 +1,5 @@
+Today I was able to convert the times as strings, and make the rules to convert the 24 hour clock time back to 12 hour clock time.
+Not a lot today, it was pretty simple.
+
+Last two days forgot to copy and paste my code into a "code-for-the-day" python file for documentation, so the code so far will be shown 
+in tomorrow's documentation folder with tomorrow's changes as well.
