@@ -32,24 +32,20 @@ def piece_string(user_string: str):
         # Concise example: "Hello" + "!" --> "Hello" + "♠!"
         for sub_item in range(len(pieced_string[item])):
             if pieced_string[item][sub_item] in PUNCTUATIONS:
-                pieced_string[item] = pieced_string[item][sub_item].replace(pieced_string[item][sub_item], f"♠{pieced_string[item][sub_item]}")
+                pieced_string[item] = pieced_string[item].replace(pieced_string[item][sub_item], f"♠{pieced_string[item][sub_item]}", 1)
                 break
-        # Adds a ♠ in between the first punctuation marl and letter before punctuation so ♠ can be used as a separating marker
-        # Example: Hello! is turned into Hello♠!! , because the first "!" was replaced by "♠!".
-        # Concise example: "Hello" + "!" --> "Hello" + "♠!"
-
 
     # Adds a ♠ before and after a hyphen to be used as a seperating marker
-    for item in range(len(pieced_string)):
-        if "-" in pieced_string[item]:
-            pieced_string[item] = pieced_string[item].replace("-", "♠-♠")
+    for indice in range(len(pieced_string)):
+        if "-" in pieced_string[indice]:
+            pieced_string[indice] = pieced_string[indice].replace("-", "♠-♠")
 
 
     # Seperates every string in the list pieced_string into sublists with strings inside, using ♠ as marker for splitting in it strings into lists.
     # Example: "Spider♠-♠Man♠!" -->  ["Spider", "-", "Man", "!"]
     for indice in range(len(pieced_string)):
-        if "♠" in pieced_string[]:
-            word = word.split("♠")
+        if "♠" in pieced_string[indice]:
+            pieced_string[indice] = pieced_string[indice].split("♠")
 
 
     return pieced_string
@@ -95,7 +91,7 @@ def pig_latin_rules(string: str):
 
 
 
-def pig_latinize_and_join_list(list_strings: list, glue: str):
+def pig_latinize_and_glue_list(list_strings: list, glue: str):
     """Translates the strings in a list into Pig Latin and joins them together using the argument glue as the joiner.
 
     Args:
@@ -135,7 +131,7 @@ def pig_latin_process_strings(string: str):
     for item in string_list:
 
         if isinstance(item, list):
-            translated_list.append(pig_latinize_and_join_list(item, ""))
+            translated_list.append(pig_latinize_and_glue_list(item, ""))
 
         elif item.isnumeric():
             translated_list.append(index)
