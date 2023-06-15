@@ -7,7 +7,7 @@
 # Purpose: To translate user input into Pig Latin
 ################################################################
 
-import time
+from datetime import datetime
 
 VOWELS = "AaEeIiOoUuYy"
 PUNCTUATIONS = ".,!?"
@@ -101,10 +101,14 @@ def pig_latinize_and_glue_list(list_strings: list, glue: str):
     Returns:
         "".join(list_strings): the joined string with Pig
     """
-    for i in range(len(list_strings)):
-        item = list_strings[i]
-        if not item in PUNCTUATIONS + "-":
-            item = pig_latin_rules(item)
+    for indice in range(len(list_strings)):
+        item = list_strings[indice]
+
+        if len(item) == 0:
+            continue
+
+        elif item[-1] not in f"{PUNCTUATIONS}-":
+            list_strings[indice] =pig_latin_rules(list_strings[indice])
 
 
     return glue.join(list_strings)
@@ -135,6 +139,10 @@ def pig_latin_process_strings(string: str):
 
         elif item.isnumeric():
             translated_list.append(index)
+
+        elif len(item) == 0:
+            pass
+
 
         else:
             translated_list.append(pig_latin_rules(item))
@@ -181,17 +189,19 @@ def record_results(original_string: str, pig_latin_string: str):
         pig_latin_string (str): Pig Latin translation
     """
     translation_record = open("translation-record.txt", "a")
+
     formatted_original_string = (format_lines(original_string, 20))
     formatted_pig_latin = (format_lines(pig_latin_string, 20))
-    translation_record.write(f"{time.ctime()}:\n")
+
+    translation_record.write(f"{(datetime.now()).strftime('%Y-%m-%d %H:%M:%S')}:\n")
     translation_record.write("Original:\n")
     translation_record.write(formatted_original_string + "\n\n")
     translation_record.write("Pig Latin:\n")
-    translation_record.write(formatted_pig_latin + "\n\n")
+    translation_record.write(formatted_pig_latin + "\n\n\n")
+    translation_record.write("-" * 100)
 
 print("\n\n")
-user_string = "hello!!!"
-#user_string = str(input("Type in your text, and press enter when you are done:\n"))
+user_string = str(input("Type in your text, and press enter when you are done (you can also use dashes/hyphens between words):\n"))
 pig_latinized_string = pig_latin_process_strings(user_string)
 
 print("\n\n\n\n\n")
