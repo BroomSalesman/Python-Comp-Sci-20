@@ -1,6 +1,8 @@
 #game settings
 RES = WIDTH, HEIGHT = 1600, 900
-FPS = 60
+
+# No FPS cap, since framerate does not affect player speed.
+FPS = 0
 
 # Player settings
 PLAYER_POS = 1.5, 5 #mini map
