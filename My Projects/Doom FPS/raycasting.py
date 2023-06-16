@@ -36,7 +36,7 @@ class RayCasting:
             dx = delta_depth * cos_a
 
             for i in range(MAX_DEPTH):
-                tile_horizontal = int(x_horizontal, int,y_horizontal)
+                tile_horizontal = int(x_horizontal), int(y_horizontal)
                 if tile_horizontal in self.game.map.world_map:
                     break
                 x_horizontal += dx
