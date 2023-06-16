@@ -16,6 +16,9 @@ If the result will be the next day, it should show (next day) after the time. If
 If the function is given the optional starting day of the week parameter, then the output should display the day of the week of the result. The day of the week in the output should appear after the time and before the number of days later."
 
 
+
+
+
 What I finished off with for the day:
 I got up to the determining what the time is if you add time to it. I used for loops and if statements to make sure that if the minute
 reaches 60, the hour increases by 1 and the minute goes back to 0. Same goes for the hour. If the hour reaches 24, the days_passed
