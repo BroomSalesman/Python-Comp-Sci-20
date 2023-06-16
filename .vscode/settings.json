@@ -18,6 +18,8 @@
         "--extension-pkg-whitelist=pygame"
     ],
     "editor.suggest.filterGraceful": false,
+
+    /* Power Mode Extension */
     "powermode.enabled": true,
     "powermode.presets": "particles",
     "powermode.combo.counterEnabled": "default",
@@ -26,16 +28,26 @@
     "powermode.explosions.offset": 0.2,
     "powermode.explosions.size": 5,
     "powermode.shake.enabled": false,
+
+    /* tailwind settings */
     "tailwindCSS.experimental.configFile": null,
     "tailwindCSS.emmetCompletions": true,
+
+
     "editor.hover.delay": 750,
     "wolf.disableHotModeWarning": true,
     "editor.acceptSuggestionOnEnter": "smart",
+
+    /* Pieces Extension */
     "pieces.autocomplete": true,
     "pieces.autocompleteKey": "Tab",
+
+
     "editor.smoothScrolling": true,
     "editor.suggest.snippetsPreventQuickSuggestions": false,
     "editor.inlineSuggest.suppressSuggestions": true,
+
+    /* Docwriter Extension */
     "docwriter.style": "GoDoc",
     "docwriter.progress.trackFunctions": true,
     "docwriter.progress.trackMethods": true,
@@ -43,4 +55,29 @@
     "docwriter.progress.trackTypes": true,
     "C_Cpp.errorSquiggles": "disabled",
 
+    /* auto closing html tags*/
+    "html.autoClosingTags": true,
+    "javascript.autoClosingTags": true,
+    "typescript.autoClosingTags": true,
+
+    "telemetry.enableTelemetry": false,
+
+    "search.exclude": {
+        "**/node_modules": true,
+        "**/bower_components": true,
+        "**/env": true,
+        "**/venv": true
+    },
+
+    "files.exclude": {
+        "**/.git": true,
+        "**/.DS_Store": true,
+        "**/.vscode": true,
+        "**/__pycache__": true,
+        "**/.pytest_cache": true,
+        "**/node_modules": true,
+        "venv": true,
+        "*.sublime-*": true,
+        "env*": true
+      }
 }
