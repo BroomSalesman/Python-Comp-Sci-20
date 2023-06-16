@@ -29,4 +29,6 @@ not have been, since there was nothing below the seperator lines. See example be
 							^^^^^ (these arrows were not a part of output)
 
 The line of code I showed at the start of this documentation was causing a newline to appear below the seperator lines.
-That is why all the tests where the solution is not supposed to be shown
+That is why all the tests where the solution is not supposed to be shown.
+
+Whatever the case, certification project 1 of 5 of the freeCodeCamp Scientific Computing With Python course is done.

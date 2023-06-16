@@ -1,0 +1,2 @@
+Today I was able to convert the times as strings, and make the rules to convert the 24 hour clock time back to 12 hour clock time.
+Not a lot done today, and nothing significant was written. It was pretty simple work.
