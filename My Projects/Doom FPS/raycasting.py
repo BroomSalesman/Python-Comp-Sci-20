@@ -4,11 +4,21 @@ from settings import *
 
 
 class RayCasting:
-    def__init__(self, game):
+    def __init__(self, game):
         self.game = game
 
     def ray_cast(self):
-        pass
+        ox, oy = self.game.player.pos
+        x_map, y_map = self.game.player.map_pos
+
+        ray_angle = self.game.player.angle - HALF_FOV + 0.0001
+
+        for ray in range(NUM_RAYS):
+            sin_a = math.sin(ray_angles)
+            cos_a = math.cos(ray_angles)
+
+            ray_angle += DELTA_ANGLE
+
 
     def  update(self):
         pass
