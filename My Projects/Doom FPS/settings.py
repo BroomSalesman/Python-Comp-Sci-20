@@ -4,3 +4,6 @@ FPS = 60
 
 # Player settings
 PLAYER_POS = 1.5, 5 #mini map
+PLAYER_ANGLE  = 0
+PLAYER_SPEED = 0.004
+PLAYER_ROTATION_SPEED = 0.002

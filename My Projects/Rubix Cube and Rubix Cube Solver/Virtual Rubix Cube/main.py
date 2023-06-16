@@ -1,7 +1,7 @@
 from ursina import *
 
 
-class Game(Ursina):
+class Game():
     def __init__(self):
         super().__init__()
         window.fullscreen = True
@@ -21,8 +21,6 @@ class Game(Ursina):
         super().input(key)
 
 
-def create_cube_positions():
-
 
 
 game = Ursina()
@@ -36,5 +34,10 @@ xyz_arrows = Entity(model = "models/xyz", texture = "textures/xyz", scale = 0.8)
 EditorCamera()
 camera.world_position(0, 0, -15)
 
-app.run()
+
+
+
+if __name__ == '__main__':
+    game = Game()
+    game.run()
 
