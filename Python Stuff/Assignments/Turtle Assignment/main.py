@@ -22,7 +22,7 @@ easygui.msgbox(
 
 skip_start = easygui.buttonbox(msg = "If you want to skip the introduction and how-to's of this program, press skip.\n"
                                "It is advised you don't skip if this is your first time using this program.",
-                               title = "Choose Wisely", choices = ("Skip", "Continue"))
+                               title = "Choose Wisely", choices = ("Continue", "Skip"))
 
 
 
@@ -37,18 +37,20 @@ if skip_start == "Continue":
                           title = "Heads Up", image = microbit_pic_img_path, ok_button = "Click on me or ^^^^^")
 
 
-    # easygui message box
+    # Easygui message box
     easygui.msgbox(msg = "In this program, you will have two options to choose from, a clock and a thermometer", title = "What To Expect", ok_button = "I see")
 
-    # easygui message box explaining the thermometer
+
+    # Easygui message box explaining the thermometer program
     easygui.msgbox(msg = "If you choose thermometer, and have a microbit, your microbit can detect the temperature.\n"
                    "Then, it will draw out a thermometer with the temperature.\n"
                    "If you do not have a microbit, just select 'No Microbit'. This way, you can just enter the temperature.\n"
-                   "The thermometer range will be from -5 to 30 degrees celsius (because this is Canada, eh).\n"
-                   "There is a range so users dont think of trying to reach -40 with their microbits.",
+                   "The thermometer range will be from -5 to 30 degrees celsius\n"
+                   "There is a range so users dont think of trying to reach -40 by pouring liquid nitrogen over their microbits",
                    title = "Thermometer Explanation", ok_button = "Sounds good")
 
-    # easygui message box explaining the clock
+
+    # Easygui message box explaining the clock program
     easygui.msgbox(msg = "The clock will not depend on the microbit except for using a button, and it will take your local time and then display it on a clock.\n"
                    "It will not change automatically as the time changes, but it will update if you press R on your keyboard, or a button on your microbit\n"
                    "You can also input the time you want, but you can only input it once, otherwise you'll have to re-run the program.\n"
@@ -71,18 +73,20 @@ else:
 
 # If user chooses to use microbit, they go through the steps to connect it and confirm connection
 if input_method == "microbit":
-    easygui.msgbox(msg = "Now you will be given instructions in the terminal.\n"
+    easygui.msgbox(msg = "If you already have your microbit connected, ignore the what's below.\n"
+                   "Now you will be given instructions to connect your microbit in the terminal.\n"
                    "Follow the instructions in the terminal to successfully connect your microbit.\n"
                    "After you connect, and you see TESTING scroll on your microbit, then press 'connected' on the pop up box.",
                    title = "Connect Microbit", ok_button = "Wait no not the terminal nooooooooo!!!!")
 
-    # Imports microbit and instructions in terminal are shown to connect microbit
+    # Imports microbit and instructions in terminal are shown to connect microbit to machine
     import microbit
 
 
     # If connection successful, and microbit functional, it displays TESTING on the LED matrix, changing letter each 200 miliseconds.
-    for i in "TESTING" * 3:
-            microbit.display.show(i)
+    easygui.msgbox(msg= " Look down on your microbit. It should display letters that spell out 'TESTING')", title = "Check For Connection", ok_button = "uh okay")
+    for char in "TESTING" * 3:
+            microbit.display.show(char)
             time.sleep(0.2)
 
 
@@ -105,7 +109,7 @@ if input_method == "microbit":
 
 
 ######################### User Turtle Drawing Selection #################################
-easygui.buttonbox(msg = "Choose the turtle drawing you want to see:", title = "Selection", choices = ("Thermometer", "Clock"))
+easygui.buttonbox(msg = "Choose the turtle drawing you want to try:", title = "Selection", choices = ("Thermometer", "Clock"))
 
 
 
