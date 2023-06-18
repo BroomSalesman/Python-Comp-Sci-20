@@ -55,7 +55,7 @@ if skip_start == "Continue":
     # Easygui message box explaining the clock program
     easygui.msgbox(msg = "The clock will not depend on the microbit, but you can use the button on your microbit and it will take your local time and then display it on a clock.\n"
                    "The clock will not change automatically as the time changes, but it will update if you press R on your keyboard, or a button on your microbit\n"
-                   "You can also manually input the time you want You can still press R or a button to reload the time if you set a fake time"
+                   "You can also manually input the time you want You can still press R or a button to reload the time if you set a fake time",
                    title = "Clock Explanation", ok_button =  "JUST GET TO IT!!!")
 
 
@@ -114,10 +114,20 @@ user_selection = easygui.buttonbox(msg = "Choose the turtle drawing you want to 
 # Calls the function from the turtle_thermometer.py file
 if user_selection == "Thermometer":
     easygui.msgbox(msg = "Press E while in the turtle program to manually enter a temperature.\n"
-                   "Press R to refresh the screen to match the temperature reading on your microbit if you are using one\n"
+                   "Press any microbit button to refresh the turtle drawing to match temperature reading on your microbit (if you are using one)\n"
                    "Press Q to exit the program. Keep in mind you will have to run the python file again after you exit the program.",
                    title = "Controls", ok_button = "Got it")
 
+    #canvas = turtle.Screen()
+    #canvas.bgcolor("gray40")
+    #canvas.register_shape("Schellenturtle.gif")
+
+    #bob = turtle.Turtle()
+    #bob.color("black")
+    #bob.pensize(7)
+    #bob.shape("Schellenturtle.gif")
+
+    #turtle_thermometer(bob, canvas)
 
 
 
