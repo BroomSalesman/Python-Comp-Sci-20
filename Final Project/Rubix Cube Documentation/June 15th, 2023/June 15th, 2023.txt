@@ -27,7 +27,9 @@ class Game(Ursina):
     def input(self, key):
         super().input(key)
 
-The tutorial I followed a while back to give 3d game making a go:
+
+
+The tutorial I followed a month or two ago to try my hand at game making:
 Sky()
 player = FirstPersonController(y=2, origin_y=-.5)
 ground = Entity(model='plane', scale=(100, 1, 500), color=color.lime, texture="white_cube",
