@@ -23,7 +23,6 @@ def turtle_thermometer(input_method):
     bob.right(90)
 
     print(f"{bob.pos()}")
-    canvas.tracer(3)
     bob.pendown()
 
     # The turtle keeps its color, but fills anything inside the outline red. So the outline is black, fill is red.
@@ -36,8 +35,6 @@ def turtle_thermometer(input_method):
     bob.color("black")
     bob.circle(radius = 40)
     print(f"{bob.pos()}")
-
-    canvas.tracer(1)
 
     print(f"{bob.pos()}")
 
@@ -61,13 +58,11 @@ def turtle_thermometer(input_method):
         bob.forward(20)
         bob.right(90)
         print(f"{bob.pos()} here")
-        bob.forward(50) # distance from -26 to 26 (on x-axis), subtract 2 to make sides even
+        bob.forward(50) # distance from -26 to 26 (on x-axis) because 52 made sides noticeably
         bob.right(90)
 
     bob.end_fill()
 
-   # reference_distance1 = bob.distance()
-    #bob.goto()
 
     # Creates left side of thermometer
     bob.color("black")
@@ -92,11 +87,15 @@ def turtle_thermometer(input_method):
         bob.pensize(6)
         bob.right(90)
         bob.forward(13)
-        bob
-        bob.backward(13)
-       bob.left(90)
+        bob.pendown()
+        bob.forward(26)
+        bob.penup()
+        bob.backward(39)
+        bob.left(90)
+
        for i in range(5):
            bob.penup()
+
 
     #for i in range()
 
