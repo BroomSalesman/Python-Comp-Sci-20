@@ -1,0 +1,8 @@
+I figured out why my raycasting wasn't working, I found several small little mistakes, but the only one that mattered was that I forgot to replace
+pass with self.ray_cast() in the update(self) function in the RayCasting class.
+
+Now I have to figure out a new error, which is why my ray cast is breaking up a little the further it gets  (it has rips in it).
+Never mind, it's okay for it to have some "rips".
+
+Moving onto 3d projection (drawing out the actual game surroundings using the super important 'minimap')
+Uses more trigonometric formulas, grid logic, and cartesian system logic.
