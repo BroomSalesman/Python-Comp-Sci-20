@@ -124,8 +124,6 @@ def turtle_thermometer(the_turtle, the_window, input_method):
     the_turtle.goto(90, 270)
     the_turtle.write("Press Q to exit the program. Press out of window then press Q if turtle window isn't responding.")
 
-    writer_turtle = turtle.Turtle()
-    writer_turtle.color("yellow")
 
     def draw_temperature(any_turtle, any_window, mercury_level):
         any_window.tracer(10)
@@ -147,25 +145,6 @@ def turtle_thermometer(the_turtle, the_window, input_method):
 
         any_turtle.penup()
         thermometer_ticks(any_turtle)
-
-
-
-
-    def write_temperature(any_turtle, any_window, temperature):
-        any_window.tracer(10)
-        any_turtle.speed(0)
-
-        any_turtle.color("yellow")
-        the_turtle.penup()
-        the_turtle.goto(40, -310)
-        the_turtle.write(f"Temperature: {temperature}")
-        the_turtle.goto(40, -317)
-
-        if temperature < 5:
-            the_turtle.write("Temperature too low for thermometer")
-
-        elif temperature > 30:
-            the_turtle.write("Temperature too high for thermometer")
 
 
     def clear_thermometer(any_turtle, any_window, bg_color):
@@ -192,24 +171,9 @@ def turtle_thermometer(the_turtle, the_window, input_method):
 
         thermometer_ticks(any_turtle)
 
-        # To clear text near bottom of canvas
-        any_turtle.goto(49, -305)
-        any_turtle.setheading(0)
-
-        any_turtle.fillcolor(bg_color)
-        any_turtle.begin_fill()
-        for half in range(2):
-            any_turtle.forward(200)
-            any_turtle.right(90)
-            any_turtle.forward(15)
-            any_turtle.right(90)
-        any_turtle.end_fill()
-
 
 
     while True:
-
-
         if keyboard.is_pressed("e"):
             time.sleep(1)
 
@@ -223,7 +187,7 @@ def turtle_thermometer(the_turtle, the_window, input_method):
 
             clear_thermometer(the_turtle, the_window, background_color)
             draw_temperature(the_turtle, the_window, mercury_height)
-            write_temperature(the_turtle, the_window, temperature)
+            write_temperature(writer_turtle, the_window, temperature)
 
         if keyboard.is_pressed("q"):
             sys.exit()
@@ -243,11 +207,12 @@ def turtle_thermometer(the_turtle, the_window, input_method):
                 elif temperature > 30:
                     clear_thermometer(the_turtle, the_window, background_color)
                     draw_temperature(the_turtle, the_window, 30)
-                    write_temperature(the_turtle, the_window, temperature)
+                    easygui.msgbox(msg = f"Temperature too high for thermometer ({temperature} °C).", title = "Temperature Too High", ok_button = "Aw man")
+
 
                 elif temperature < 5:
                     clear_thermometer(the_turtle, the_window, background_color)
-                    write_temperature(the_turtle, the_window, temperature)
+                    easygui.msgbox(msg = f"Temperature too low for thermometer. ({temperature} °C)", title = "Temperature Too Low", ok_button = "brrrrr")
 
 
 

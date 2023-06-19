@@ -118,17 +118,18 @@ if user_selection == "Thermometer":
                    "Press Q twice to exit the program. Keep in mind you will have to run the python file again after you exit the program.",
                    title = "Controls", ok_button = "Got it")
 
-    #canvas = turtle.Screen()
-    #canvas.bgcolor("gray40")
-    #canvas.register_shape("Schellenturtle.gif")
+    canvas = turtle.Screen()
+    canvas.bgcolor("gray40")
+    canvas.register_shape("Schellenturtle.gif")
 
-    #bob = turtle.Turtle()
-    #bob.color("black")
-    #bob.pensize(7)
-    #bob.shape("Schellenturtle.gif")
+    bob = turtle.Turtle()
+    bob.color("black")
+    bob.pensize(7)
+    bob.shape("Schellenturtle.gif")
 
-    #turtle_thermometer(bob, canvas)
+    turtle_thermometer(bob, canvas)
 
+    turtle_thermometer(bob, canvas, "microbit")
 
 
 
