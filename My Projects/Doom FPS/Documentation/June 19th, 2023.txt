@@ -1,0 +1,4 @@
+I nested a function inside the __init__(self, game), which was the cause of the ObjectRenderer class not being called because of the load_wall_textures() not working.
+
+See June 18th, 2023 documentation to see the problem I was having in more detail (at the end of June 19th, 2023.txt).
+
