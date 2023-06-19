@@ -30,7 +30,7 @@ def build_voxels(vis):
 
         # on the first loop create the geometry and on subsequent iterations update the geometry
         if params.counter==0:
-            vis.add_geometry(params.vox_mesh)q
+            vis.add_geometry(params.vox_mesh)
         else:
             vis.update_geometry(params.vox_mesh)
 
