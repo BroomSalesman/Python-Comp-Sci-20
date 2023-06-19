@@ -6,3 +6,10 @@ Never mind, it's okay for it to have some "rips".
 
 Moving onto 3d projection (drawing out the actual game surroundings using the super important 'minimap')
 Uses more trigonometric formulas, grid logic, and cartesian system logic.
+
+Update:
+I found out that the minimap will not be shown in a seperate pygame window or anything, it will simply not be drawn. The minimap is still very important though.
+Again, it's not really a minimap, it's just a 2d visualization of the game logic (that is not drawn, so it's not really visualized, but you probably
+get what I mean)
+
+

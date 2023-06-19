@@ -72,12 +72,11 @@ class RayCasting:
             #pg.draw.line(self.game.screen, 'hotpink', (100 * ox, 100 * oy), (100 * ox + 100 * depth * cos_a, 100 * oy + 100 *depth * sin_a), 2)
 
             #projection
-            projection_height = SCREEN_DIST / (depth + 0.0001)
+            projection_height = SCREEN_DISTANCE / (depth + 0.0001)
 
             # draw walls
-            pg.draw.rect(self.game.screen, 'white', (ray * SCALE, HALF_HEIGHT, HALF_HEIGHT - projection_height // 2, SCALE , projection_height))
+            pg.draw.rect(self.game.screen, 'white', (ray * SCALE, HALF_HEIGHT - projection_height // 2, SCALE , projection_height))
             ray_angle += DELTA_ANGLE
-
 
 
     def  update(self):
