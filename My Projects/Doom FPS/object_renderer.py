@@ -13,7 +13,7 @@ class ObjectRenderer:
                 2: self.get_texture('textures/2.png'),
                 3: self.get_texture('textures/3.png'),
                 4: self.get_texture('textures/4.png'),
-                5: self.get_texture('textures/5.png')s
+                5: self.get_texture('textures/5.png')
             }
 
         # learn what this is later
