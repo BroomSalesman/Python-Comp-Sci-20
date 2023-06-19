@@ -44,12 +44,12 @@ if skip_start == "Continue":
 
 
     # Easygui message box explaining the thermometer program
-    easygui.msgbox(msg = "If you choose to try the thermometer, you can use your microbit can detect the temperature.\n"
+    easygui.buttonbox(msg = "If you choose to try the thermometer, you can use your microbit can detect the temperature.\n"
                    "Then the temperature will be drawn out as a mercury thermometer (the glass ones with the red liquid inside).\n"
                    "If you do not have a microbit,  you can simply choose the temperature.\n"
-                   "The thermometer range will be from 0 to 30 degrees celsius\n"
+                   "The thermometer range will be from 5 to 35 degrees celsius (and no, there won't be fahrenheit. Stupid America...)\n"
                    "There is a range so users dont think of trying to reach -40 by pouring liquid nitrogen over their microbits or trying to microwave it.",
-                   title = "Thermometer Explanation", ok_button = "Sounds good")
+                   title = "Thermometer Explanation", choices = ("Sounds good", "Who you calling stupid!"))
 
 
     # Easygui message box explaining the clock program
@@ -113,9 +113,9 @@ user_selection = easygui.buttonbox(msg = "Choose the turtle drawing you want to 
 
 # Calls the function from the turtle_thermometer.py file
 if user_selection == "Thermometer":
-    easygui.msgbox(msg = "Press E while in the turtle program to manually enter a temperature.\n"
+    easygui.msgbox(msg = "Press E twice while in the turtle program to manually enter a temperature.\n"
                    "Press any microbit button to refresh the turtle drawing to match temperature reading on your microbit (if you are using one)\n"
-                   "Press Q to exit the program. Keep in mind you will have to run the python file again after you exit the program.",
+                   "Press Q twice to exit the program. Keep in mind you will have to run the python file again after you exit the program.",
                    title = "Controls", ok_button = "Got it")
 
     #canvas = turtle.Screen()

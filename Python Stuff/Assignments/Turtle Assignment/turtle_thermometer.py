@@ -1,27 +1,36 @@
 import turtle
 import time
-import microbit
+import keyboard
+import easygui
+import sys
 # maybe add auto screen res canvas setup later
 # also add a little turtle that loop writing (press q to exit the program)
 # and above that "press R to refresh"
 # and "press e to manually choose a temperature"
 
-def turtle_thermometer(the_turtle, the_window):
+def turtle_thermometer(the_turtle, the_window, input_method):
+    #Over riding turtle settings if Turtle object properties defined outside of function (that sounded fancy)
+    background_color = "grey40"
+    the_window.bgcolor(background_color)
+
+    the_turtle.color("black")
+    the_turtle.pensize(7)
     the_turtle.penup()
 
+
+    # Moves downward to draw rounded bottom part of thermometer
     the_turtle.right(90)
     the_turtle.forward(280) # Current location 0, -280
     the_turtle.right(90)
 
     print(f"{the_turtle.pos()}")
-    the_turtle.pendown()
 
-    # The turtle keeps its color, but fills anything inside the outline red. So the outline is black, fill is red.
+    # The turtle keeps its color, but fills anything inside the outline red. In this case, the outline is black and fill is red.
+    the_turtle.pendown()
     the_turtle.fillcolor("red")
     the_turtle.begin_fill()
     the_turtle.circle(radius = 40)
     the_turtle.end_fill()
-
 
     print(f"{the_turtle.pos()}")
 
@@ -68,66 +77,189 @@ def turtle_thermometer(the_turtle, the_window):
     # Draws every sub-division tick and division tick in thermometer
     # Every sub-division tick is 20 pixels apart from each other
     # Every major division tick is 100 pixels away.
-    the_turtle.penup()
-    the_turtle.goto(-26, -290)
-    the_turtle.left(180)
 
-    the_turtle.begin_poly()
+    def thermometer_ticks(any_turtle):
+        any_turtle.penup()
+        any_turtle.color("black")
+        any_turtle.goto(-26, -290)
+        any_turtle.setheading(90)
 
-    for big_tick in range(6):
-        the_turtle.pensize(6)
-        the_turtle.forward(20)
-        the_turtle.right(90)
-        the_turtle.forward(13)
-        the_turtle.pendown()
-        the_turtle.forward(26)
+        for big_tick in range(6):
+            any_turtle.pensize(6)
+            any_turtle.forward(20)
+            any_turtle.right(90)
+            any_turtle.forward(13)
+            any_turtle.pendown()
+            any_turtle.forward(26)
+            any_turtle.penup()
+            any_turtle.backward(39)
+            any_turtle.left(90)
+            any_turtle.pensize(4)
+
+            for sub_tick in range(4):
+                any_turtle.forward(20)
+                any_turtle.right(90)
+                any_turtle.pendown()
+                any_turtle.forward(13)
+                any_turtle.penup()
+                any_turtle.backward(13)
+                any_turtle.left(90)
+
+        any_turtle.pensize(6)
+        any_turtle.forward(20)
+        any_turtle.right(90)
+        any_turtle.forward(13)
+        any_turtle.pendown()
+        any_turtle.forward(26)
+        any_turtle.penup()
+
+    the_window.tracer(7)
+    thermometer_ticks(the_turtle)
+    the_window.tracer(1)
+
+    the_turtle.goto(90, 290)
+    the_turtle.write("Press E twice to enter a value for the thermometer")
+    the_turtle.goto(90, 280)
+    the_turtle.write("MICROBIT: Press any button on your microbit to detect temperature and refresh thermometer reading.")
+    the_turtle.goto(90, 270)
+    the_turtle.write("Press Q to exit the program. Press out of window then press Q if turtle window isn't responding.")
+
+    writer_turtle = turtle.Turtle()
+    writer_turtle.color("yellow")
+
+    def draw_temperature(any_turtle, any_window, mercury_level):
+        any_window.tracer(10)
+        any_turtle.goto(-22, -270)
+        any_turtle.pensize(1)
+        any_turtle.pendown()
+        any_turtle.color("red")
+        any_turtle.fillcolor("red")
+
+        any_turtle.setheading(90)
+
+        any_turtle.begin_fill()
+        for half in range(2):
+            any_turtle.forward(mercury_level * 20)
+            any_turtle.right(90)
+            any_turtle.forward(44)
+            any_turtle.right(90)
+        any_turtle.end_fill() # Position: -22, -270
+
+        any_turtle.penup()
+        thermometer_ticks(any_turtle)
+
+
+
+
+    def write_temperature(any_turtle, any_window, temperature):
+        any_window.tracer(10)
+        any_turtle.speed(0)
+
+        any_turtle.color("yellow")
         the_turtle.penup()
-        the_turtle.backward(39)
-        the_turtle.left(90)
-        the_turtle.pensize(4)
+        the_turtle.goto(40, -310)
+        the_turtle.write(f"Temperature: {temperature}")
+        the_turtle.goto(40, -317)
 
-        for sub_tick in range(4):
-            the_turtle.forward(20)
-            the_turtle.right(90)
-            the_turtle.pendown()
-            the_turtle.forward(13)
-            the_turtle.penup()
-            the_turtle.backward(13)
-            the_turtle.left(90)
+        if temperature < 5:
+            the_turtle.write("Temperature too low for thermometer")
 
-    the_turtle.forward(20)
-    the_turtle.right(90)
-    the_turtle.forward(13)
-    the_turtle.pendown()
-    the_turtle.forward(26)
-    the_turtle.penup()
+        elif temperature > 30:
+            the_turtle.write("Temperature too high for thermometer")
 
-    the_turtle.end_poly()
 
-    the_turtle.goto(100, 290)
-    the_turtle.write("Press E to enter a value for the thermometer.")
-    the_turtle.goto(100, 280)
-    the_turtle.write("FOR MICROBIT USERS: Press any button on your microbit to detect temperature and refresh readings.")
-    the_turtle.goto(100, 270)
-    the_turtle.write("Press Q to exit the program.")
+    def clear_thermometer(any_turtle, any_window, bg_color):
+        any_window.tracer(10)
+        any_turtle.speed(0)
 
-    # Thermometer drawn now.
+        any_turtle.pensize(1)
+        any_turtle.color(bg_color)
+        any_turtle.penup()
 
-def thermometer_update(input_method):
+        # To clear thermometer using an under-the-rug method (drawing over it)
+        any_turtle.goto(-22, -270)
+        any_turtle.fillcolor(bg_color)
+        any_turtle.setheading(90)
+        any_turtle.pendown()
+
+        any_turtle.begin_fill()
+        for half in range(2):
+            any_turtle.forward(600)
+            any_turtle.right(90)
+            any_turtle.forward(44)
+            any_turtle.right(90)
+        any_turtle.end_fill()
+
+        thermometer_ticks(any_turtle)
+
+        # To clear text near bottom of canvas
+        any_turtle.goto(49, -305)
+        any_turtle.setheading(0)
+
+        any_turtle.fillcolor(bg_color)
+        any_turtle.begin_fill()
+        for half in range(2):
+            any_turtle.forward(200)
+            any_turtle.right(90)
+            any_turtle.forward(15)
+            any_turtle.right(90)
+        any_turtle.end_fill()
+
+
+
     while True:
-        if microbit.button_a.was_pressed() or microbit.button_b.was_pressed():
-            bob.
+
+
+        if keyboard.is_pressed("e"):
+            time.sleep(1)
+
+            try:
+                temperature = int(easygui.choicebox(msg ="Choose a temperature", title = "Temperature", choices = [i + 5 for i in range(30)]))
+                mercury_height = temperature - 5
+
+            except:
+                temperature = 5
+                mercury_height = 15 -5
+
+            clear_thermometer(the_turtle, the_window, background_color)
+            draw_temperature(the_turtle, the_window, mercury_height)
+            write_temperature(the_turtle, the_window, temperature)
+
+        if keyboard.is_pressed("q"):
+            sys.exit()
+
+        if input_method == "microbit":
+            import microbit
+
+            if microbit.button_a.was_pressed() or microbit.button_b.was_pressed():
+                temperature = microbit.temperature()
+                clear_thermometer(the_turtle, the_window, background_color)
+
+                if 5 <= temperature < 30:
+                    mercury_height = temperature - 5
+                    clear_thermometer(the_turtle, the_window, background_color)
+                    draw_temperature(the_turtle, the_window, mercury_height)
+
+                elif temperature > 30:
+                    clear_thermometer(the_turtle, the_window, background_color)
+                    draw_temperature(the_turtle, the_window, 30)
+                    write_temperature(the_turtle, the_window, temperature)
+
+                elif temperature < 5:
+                    clear_thermometer(the_turtle, the_window, background_color)
+                    write_temperature(the_turtle, the_window, temperature)
+
 
 
 
 canvas = turtle.Screen()
 canvas.bgcolor("grey40")
+canvas.register_shape("Schellenturtle.gif")
 
 bob = turtle.Turtle()
 bob.color("black")
 bob.pensize(7)
-#bob.shape("Schellenturtle.gif")
+bob.shape("Schellenturtle.gif")
 
-turtle_thermometer(bob, canvas)
+turtle_thermometer(bob, canvas, "microbit")
 
-turtle.done()
