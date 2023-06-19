@@ -41,7 +41,8 @@ class RayCasting:
                     break
                 x_horizontal += dx
                 y_horizontal += dy
-                depth_horizontal = delta_depth
+                depth_horizontal += delta_depth
+
 
             # verticals
             x_vertical, dx = (x_map + 1, 1) if cos_a > 0 else (x_map - 1e-6, -1)
@@ -53,12 +54,12 @@ class RayCasting:
             dy = delta_depth * sin_a    # sin_a = dy / delta_depth
 
             for i in range(MAX_DEPTH):
-                tile_vert = int(x_vertical), int(y_vertical)
-                if tile_vert in self.game.map.world.map:
+                tile_vertical = int(x_vertical), int(y_vertical)
+                if tile_vertical in self.game.map.world_map:
                     break
                 x_vertical = dx
                 y_vertical = dy
-                depth_vertical = delta_depth
+                depth_vertical += delta_depth
 
 
             # depth
@@ -67,8 +68,9 @@ class RayCasting:
             else:
                 depth  = depth_horizontal
 
-            # draw for debug
-            pg.draw.line(self.game.screen, 'pink', (100 * ox, 100 * oy), (100 * ox + 100 * depth * cos_a * oy + 100 *depth * sin_a), 2)
+
+            # draw for debug  LEARN WHAT THE MATH HERE IS FOR LATER
+            pg.draw.line(self.game.screen, 'yellow', (100 * ox, 100 * oy), (100 * ox + 100 * depth * cos_a, 100 * oy + 100 *depth * sin_a), 2)
 
 
 

@@ -1,0 +1,17 @@
+I am using a  video tutorial to create a DOOM like game. DOOM is a very old and very famous first person shooter, considered to be one of the first videogames
+in the First Person Shooter (FPS) genre (it is not. It's prequel, Wolfenstein, which came one year before DOOM did, is also not the first FPS game, although it might be the first
+one to become very popular).
+
+I will be learning raycasting, trigonometry applications in video games and 3d rendering, using sprites in games, and overall just making games in Python using pygame.
+
+Here is the tutorial
+youtube.com/watch?v=ECqUrT7IdqQ&t=766s
+
+
+
+I started making a DOOM game, and it uses trigonemetric functions and math formulas to determine the depth of field, and casts rays using a minimap
+type of view. Soon, I will start creating the object renderer, which will then determine what to draw everything as, and what sizes, and etc, since DOOM and Wolfenstein were not actually
+3D games, they used 2d images and (what was very complex programming back when it was created) to make the character look like it is 3d.
+
+THIS IS NOT MY ORIGINAL IDEA OR MY ORIGINAL CODING, IT IS A FOLLOWED TUTORIAL. My goal was to recreate the code by following the tutorial and learning how the code
+works. Like an internship (kinda). You go along with what's happening, and you learn. That is what I'm doing.
