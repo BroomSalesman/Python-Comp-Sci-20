@@ -1,5 +1,5 @@
-#COME BACK TO UNDERSTAND ALL OF THIS LATER
 
+#COME BACK TO UNDERSTAND ALL OF THIS LATER
 
 import pygame as pg
 import math
@@ -57,8 +57,8 @@ class RayCasting:
                 tile_vertical = int(x_vertical), int(y_vertical)
                 if tile_vertical in self.game.map.world_map:
                     break
-                x_vertical = dx
-                y_vertical = dy
+                x_vertical += dx
+                y_vertical += dy
                 depth_vertical += delta_depth
 
 
@@ -68,15 +68,16 @@ class RayCasting:
             else:
                 depth  = depth_horizontal
 
-
             # draw for debug  LEARN WHAT THE MATH HERE IS FOR LATER
-            pg.draw.line(self.game.screen, 'yellow', (100 * ox, 100 * oy), (100 * ox + 100 * depth * cos_a, 100 * oy + 100 *depth * sin_a), 2)
+            #pg.draw.line(self.game.screen, 'hotpink', (100 * ox, 100 * oy), (100 * ox + 100 * depth * cos_a, 100 * oy + 100 *depth * sin_a), 2)
 
+            #projection
+            projection_height = SCREEN_DISTANCE / (depth + 0.0001)
 
-
+            # draw walls
+            pg.draw.rect(self.game.screen, 'white', (ray * SCALE, HALF_HEIGHT - projection_height // 2, SCALE , projection_height))
             ray_angle += DELTA_ANGLE
 
 
-
     def  update(self):
-        pass
+        self.ray_cast()
