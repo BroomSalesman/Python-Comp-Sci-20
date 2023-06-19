@@ -17,3 +17,19 @@ get what I mean)
 9:41 PM Update:
 Done 3d projection, it was much, much simpler logic than I expected. This is probably because the raytracing part of the video did all the heavy work,
 so I'll make sure to rewatch that as many times as it takes to understand the math being used and why it is being used.
+Now I am moving onto texturing, and the texturing work will be done in the object_renderer.py file. I will learn how texturing works in games.
+
+Update:
+For some werid reason, I defined load_wall_textures(self) correctly, and there is no error (not that I've seen) in the function itself, but when I use:
+
+        class ObjectRenderer:
+            def __init__(self, game):
+                self.game = game
+                self.screen = game.screen
+                self.wall_texture = self.load_wall_textures()
+
+I get this error: AttributeError: 'ObjectRenderer' object has no attribute 'load_wall_textures'
+
+This is really annoying, I'm going to check out the other files to see if anything is wrong there that is clashing here.
+If there is, then it probably is the settings file.
+This is super annoying.
