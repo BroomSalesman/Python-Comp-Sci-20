@@ -147,7 +147,7 @@ def turtle_thermometer(the_turtle, the_window, input_method):
         thermometer_ticks(any_turtle)
 
 
-    def clear_thermometer(any_turtle, text_turtle, any_window, bg_color):
+    def clear_thermometer(any_turtle, any_window, bg_color):
         any_window.tracer(10)
         any_turtle.speed(0)
 
