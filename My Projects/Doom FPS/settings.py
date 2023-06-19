@@ -26,3 +26,6 @@ SCREEN_DISTANCE = HALF_WIDTH / math.tan(HALF_FOV)
 
 # Since the number of rays is less than the screen resolution in width, scaling is used to maintain better performance
 SCALE =  WIDTH // NUM_RAYS
+
+TEXTURE_SIZE = 256
+HALF_TEXTURE_SIZE = TEXTURE_SIZE // 2

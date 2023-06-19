@@ -74,8 +74,9 @@ class RayCasting:
             #projection
             projection_height = SCREEN_DISTANCE / (depth + 0.0001)
 
-            # draw walls
-            pg.draw.rect(self.game.screen, 'white', (ray * SCALE, HALF_HEIGHT - projection_height // 2, SCALE , projection_height))
+            # Draws walls
+            color = [255 / (1 + depth ** 5 * 0.00002)] * 3 # Creates depth.
+            pg.draw.rect(self.game.screen, color, (ray * SCALE, HALF_HEIGHT - projection_height // 2, SCALE , projection_height))
             ray_angle += DELTA_ANGLE
 
 
