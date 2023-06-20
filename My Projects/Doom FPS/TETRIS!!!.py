@@ -17,6 +17,8 @@ clock = pygame.time.Clock()
 
 grid = [pygame.Rect(x * TILE, y * TILE, TILE, TILE) for x in range(WIDTH) for y in range(HEIGHT)]
 
+
+# Tetris pieces variables
 pieces_positions = [[(-1, 0), (-2, 0), (0, 0), (1, 0)],
                             [(0, -1), (-1, -1), (-1, 0), (0, 0)],
                             [(-1, 0), (-1, 1), (0, 0), (0, -1)],
@@ -25,31 +27,38 @@ pieces_positions = [[(-1, 0), (-2, 0), (0, 0), (1, 0)],
                             [(0, 0), (0, -1), (0, 1), (1, -1)],
                             [(0, 0), (0, -1), (0, -1), (-1, 0)]]
 
+
 # List of the pieces (what they should look like)
 pieces = [[pygame.Rect(x + WIDTH // 2, y + 1, 1, 1) for x, y in piece_position] for piece_position in pieces_positions]
 piece_rect = pygame.Rect(0, 0, TILE - 2, TILE - 2)
 
 field = [[0 for i in range(WIDTH)] for j in range(HEIGHT)]
 
-animation_counter, animation_speed, animation_limit = 0, 60, 2000
-piece = deepcopy(choice(pieces))
 
-# Background visuals
+# Animation Variables
+animation_counter, animation_speed, animation_limit = 0, 60, 2000
+
+# Background Visuals
 background = pygame.image.load("resources/bg.jpg").convert()
 game_background = pygame.image.load("resources/bg2.jpg").convert()
 
-# Tetris piece color logic
-get_color = lambda: (randrange(30, 256), randrange(30, 256), randrange(30, 256))
-color = get_color()
 
-# Game text
-main_font = pygame.font.Font('resources/font.ttf', 65)
-font = pygame.font.Font('resources/font.ttf', 45)
+# Game Text Variables
+main_font = pygame.font.Font('resources/font.ttf', 60)
+font = pygame.font.Font('resources/font.ttf', 40)
 
 title_tetris = main_font.render('TETRIS', True, pygame.Color('gold'))
+next_piece_title = font.render('NEXT PIECE', True, pygame.Color('orange'))
+
+# Tetris Piece Color Variables
+get_color = lambda: (randrange(30, 256), randrange(30, 256), randrange(30, 256))
+
+piece = deepcopy(choice(pieces)), deepcopy(choice(figures))
+
+colo, next_colorr = get_color(), get_color()
 
 
-# CHECKS FOR BORDERS
+# Border Rule Function
 def check_borders():
     if piece[i].x < 0 or piece[i].x > WIDTH - 1:
         return False
@@ -159,7 +168,8 @@ while True:
                 pygame.draw.rect(game_screen, col, piece_rect)
 
     # DRAW TITLES
-    screen.blit
+    screen.blit(title_tetris, (450, 10))
+    screen.blit(next_piece_title, (450, 30))
 
     pygame.display.flip()
     clock.tick(FPS)

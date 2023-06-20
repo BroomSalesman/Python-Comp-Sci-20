@@ -2,7 +2,7 @@ I nested a function inside the __init__(self, game), which was the cause of the 
 
 See June 18th, 2023 documentation to see the problem I was having in more detail (at the end of June 18th, 2023.txt).
 
-6:00 PM Update:
+6:00 Update:
 Now I am writing the code that determines the offset of the textures when viewing from different angles.
 This uses trig functions (what's new?) and the code is in the raycasting file and the object_renderer files.
 
@@ -84,10 +84,16 @@ finally fixed the error, I was supposed to write piece[i].x and piece[i].y, I ju
 After I fixed that I added the rules for making blocks disappear after a row has been filled with blocks.
 The code was surprisingly simple and easy to understand.
 
-Now I am adding background colors and made the original screen a small part of a main screen.
+Now I am adding background images and made the original screen a small part of a main screen.
 So the grid appears as its own object inside of the pygame window, rather than being the whole pygame window.
 
+Update:
+- Tetris piece colors added
+- Adding text into the game
 
+Update:
+- Added main title
+- Adding a system that shows player what tetris piece is next
 
 
 
