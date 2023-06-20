@@ -5,10 +5,12 @@ from map import *
 from player import *
 from raycasting import *
 from object_renderer import *
+from sprite_object import *
 
 class Game:
     def __init__(self):
         pg.init()
+        pg.mouse.set_visible(False)
         self.screen = pg.display.set_mode(RES)
         self.clock = pg.time.Clock()
         self.delta_time = 1
@@ -19,17 +21,19 @@ class Game:
         self.player = Player(self)
         self.object_renderer = ObjectRenderer(self)
         self.raycasting = RayCasting(self)
+        self.static_sprite = SpriteObject(self)
 
     def update(self):
         self.player.update()
         self.raycasting.update()
+        self.static_sprite.update()
         pg.display.flip()
-        # To make player speed independant to the fps.
-        self.delta_time = self.clock.tick(FPS)
+        self.delta_time = self.clock.tick(FPS)  # To make player speed independe nt to the fps.
         pg.display.set_caption(f"{self.clock.get_fps() :.1f}") #reserach what this does
 
     def draw(self):
-        self.screen.fill("black")
+        #self.screen.fill("black")
+        self.object_renderer.draw()
         #self.map.draw()
         #self.player.draw()
 

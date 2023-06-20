@@ -1,0 +1,85 @@
+I nested a function inside the __init__(self, game), which was the cause of the ObjectRenderer class not being called because of the load_wall_textures() not working.
+
+See June 18th, 2023 documentation to see the problem I was having in more detail (at the end of June 18th, 2023.txt).
+
+6:00 PM Update:
+Now I am writing the code that determines the offset of the textures when viewing from different angles.
+This uses trig functions (what's new?) and the code is in the raycasting file and the object_renderer files.
+
+6:50 Update:
+wall textures are now drawn
+
+7:00 Update:
+Code wasn't working, I spoke too soon.
+I just forgot to add brackets before a function call.
+
+Now I will create the code that controls the vertical scaling of the wall texture
+The closer you get, the more the wall scales vertically.
+ I glitched out of the walls or something like that due to this, because the immense size of the walls drops performance and makes the
+ game VERY laggy and glitchy.
+
+Update:
+Now the wall is super pixely when I get close up to it, but that is because the player has no size since it is just a dot on a cartesian plane.
+This makes the player get really close to the wall, until the player is close to the wall as possible (as if it were as skinny as a noodle)
+Now I will create a sacling factor for the size of the player.
+This will be in the player.py file.
+
+Update:
+Now the walls just disappear if I get too close.
+
+Update:
+Now I am adding mouse controls.
+
+Update:
+- Sky textures
+
+Update:
+- Sprite loading
+
+
+if I can't debug it... then it's not mine to call... then its... my own to call code... code to call my own?
+
+Then it's not code to call my own... SOOOOOOO ARE YOU READY!?!?!?!?!?!?
+    |       |       |       |       |       |       |       |       |       |       |       |       |       |
+    |       |       |       |       |       |       |       |       |       |       |       |       |       |
+    |       |       |       |       |       |       |       |       |       |       |       |       |       |
+    |       |       |       |       |       |       |       |       |       |       |       |       |       |
+    |       |       |       |       |       |       |       |       |       |       |       |       |       |
+    |       |       |       |       |       |       |       |       |       |       |       |       |       |
+    |       |       |       |       |       |       |       |       |       |       |       |       |       |
+    |       |       |       |       |       |       |       |       |       |       |       |       |       |
+    |       |       |       |       |       |       |       |       |       |       |       |       |       |
+    |       |       |       |       |       |       |       |       |       |      |       |       |       |
+    ↓      ↓       ↓       ↓      ↓       ↓      ↓       ↓       ↓      ↓      ↓       ↓       ↓       ↓
+
+MAJOR UPDATE:
+LETS MAKE TETRIS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+https://www.youtube.com/watch?v=7kGNs5R-AM8&list=PLi77irUVkDatlbulEY4Kz8O107HO8RGH8&index=3
+
+Never thought I'd say this, but I wish I could just do this on scratch. Wouldn't have the guilt of using a tutorial either, but whatever. I learn what I can.
+
+and abandon what I can't...
+
+Update:
+I just realized stating the domain in math is like stating collision rules. Haha.
+
+Oh yeah I can display the tetris pieces on the screen now. I understand the code that is being used, and can easily debug it if needed (so far)
+
+Update:
+Been a while, forgot to update, I have finished making fast drop movie in tetris (where if you press the down arrow the piece drops really fast)
+Of course, if I've done that, I've also added the gravity, and I am now writing the code to make the pieces stop at the bottom.
+
+Just fixing up some errors in the code then it should work.
+
+Update:
+Stacking works, moving onto rotating.
+Getting an error here from a line of code that wasn't returning an error before.
+
+Oh AttributeError, where would I be without you?
+
+
+
+
+
+

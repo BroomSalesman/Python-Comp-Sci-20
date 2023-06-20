@@ -1,8 +1,8 @@
 import turtle
-import time
 import keyboard
 import easygui
 import sys
+import time
 # maybe add auto screen res canvas setup later
 # also add a little turtle that loop writing (press q to exit the program)
 # and above that "press R to refresh"
@@ -11,6 +11,7 @@ import sys
 def turtle_thermometer(the_turtle, the_window, input_method):
     #Over riding turtle settings if Turtle object properties defined outside of function (that sounded fancy)
     background_color = "grey40"
+    the_window.setup(1000, 750)
     the_window.bgcolor(background_color)
 
     the_turtle.color("black")
@@ -42,7 +43,6 @@ def turtle_thermometer(the_turtle, the_window, input_method):
 
 
     #Drawing and filling in bottom part of thermometer, above the round part of it.
-    the_window.tracer(5)
     the_turtle.pendown()
     the_turtle.right(90)
 
@@ -113,10 +113,10 @@ def turtle_thermometer(the_turtle, the_window, input_method):
         any_turtle.forward(26)
         any_turtle.penup()
 
-    the_window.tracer(7)
+    the_window.tracer(3)
     thermometer_ticks(the_turtle)
-    the_window.tracer(1)
 
+    the_window.tracer(1)
     the_turtle.goto(90, 290)
     the_turtle.write("Press E twice to enter a value for the thermometer")
     the_turtle.goto(90, 280)
@@ -175,19 +175,18 @@ def turtle_thermometer(the_turtle, the_window, input_method):
 
     while True:
         if keyboard.is_pressed("e"):
-            time.sleep(1)
+            time.sleep(0.66)
 
             try:
                 temperature = int(easygui.choicebox(msg ="Choose a temperature", title = "Temperature", choices = [i + 5 for i in range(30)]))
                 mercury_height = temperature - 5
 
-            except:
+            except Exception:
                 temperature = 5
                 mercury_height = 15 -5
 
             clear_thermometer(the_turtle, the_window, background_color)
             draw_temperature(the_turtle, the_window, mercury_height)
-            write_temperature(writer_turtle, the_window, temperature)
 
         if keyboard.is_pressed("q"):
             sys.exit()
@@ -226,5 +225,4 @@ bob.color("black")
 bob.pensize(7)
 bob.shape("Schellenturtle.gif")
 
-turtle_thermometer(bob, canvas, "microbit")
-
+turtle_thermometer(bob, canvas, "keyboard")
