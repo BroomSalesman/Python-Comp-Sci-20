@@ -2,6 +2,7 @@ import turtle
 import keyboard
 import easygui
 import sys
+import time
 # maybe add auto screen res canvas setup later
 # also add a little turtle that loop writing (press q to exit the program)
 # and above that "press R to refresh"
@@ -174,13 +175,13 @@ def turtle_thermometer(the_turtle, the_window, input_method):
 
     while True:
         if keyboard.is_pressed("e"):
-            time.sleep(1)
+            time.sleep(0.66)
 
             try:
                 temperature = int(easygui.choicebox(msg ="Choose a temperature", title = "Temperature", choices = [i + 5 for i in range(30)]))
                 mercury_height = temperature - 5
 
-            except:
+            except Exception:
                 temperature = 5
                 mercury_height = 15 -5
 

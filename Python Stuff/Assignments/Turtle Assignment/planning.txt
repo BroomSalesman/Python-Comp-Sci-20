@@ -3,6 +3,8 @@ cs20-microbitio
 turtle
 easygui
 keyboard
+time
+datetime
 
 
 I did pip install to download these modules, you can use whatever you use to install python libraries and packages.
