@@ -3,13 +3,16 @@ from copy import deepcopy
 from random import choice, randrange
 
 
-WIDTH, HEIGHT = 10 , 20
-TILE = 45
+WIDTH, HEIGHT = 10 , 19
+TILE = 40
 GAME_RESOLUTION = WIDTH * TILE, HEIGHT * TILE
+RES = 700, 800
 FPS = 60
 
 pygame.init()
-game_screen = pygame.display.set_mode(GAME_RESOLUTION)
+
+screen = pygame.display.set_mode(RES)
+game_screen = pygame.Surface(GAME_RESOLUTION)
 clock = pygame.time.Clock()
 
 grid = [pygame.Rect(x * TILE, y * TILE, TILE, TILE) for x in range(WIDTH) for y in range(HEIGHT)]
@@ -31,8 +34,22 @@ field = [[0 for i in range(WIDTH)] for j in range(HEIGHT)]
 animation_counter, animation_speed, animation_limit = 0, 60, 2000
 piece = deepcopy(choice(pieces))
 
+# Background visuals
+background = pygame.image.load("resources/bg.jpg").convert()
+game_background = pygame.image.load("resources/bg2.jpg").convert()
 
-# Checking for border (super simple collision rules)
+# Tetris piece color logic
+get_color = lambda: (randrange(30, 256), randrange(30, 256), randrange(30, 256))
+color = get_color()
+
+# Game text
+main_font = pygame.font.Font('resources/font.ttf', 65)
+font = pygame.font.Font('resources/font.ttf', 45)
+
+title_tetris = main_font.render('TETRIS', True, pygame.Color('gold'))
+
+
+# CHECKS FOR BORDERS
 def check_borders():
     if piece[i].x < 0 or piece[i].x > WIDTH - 1:
         return False
@@ -45,14 +62,15 @@ def check_borders():
 # Driver code
 while True:
     dx, rotate = 0, False
+    screen.blit(background, (0, 0))
+    screen.blit(game_screen, (20, 20))
+    game_screen.blit(game_background, (0, 0))
 
-    game_screen.fill(pygame.Color('black'))
-
+    #Controls
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             exit()
-
-        # Keyboard input
+        # Piece controls
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_LEFT:
                 dx = -1
@@ -86,25 +104,43 @@ while True:
             # This code draws the piece at the bottom, but it is not the piece itself. Like stamps from the turtle library.
             if not check_borders():
                 for i in range(4):
-                    field[piece_old[i].y][piece_old[i].x] = pygame.Color('white')
+                    field[piece_old[i].y][piece_old[i].x] = color
+                color = get_color()
+
                 piece = deepcopy(choice(pieces))
                 animation_limit = 2000
                 break
 
 
     # ROTATE TETRIS PIECE
+    #I  don't fully understand this, but I think I know what's going on.
+    # It is changing the x and y values to turn into...
+    # Actually, I think it is using graphing inverse functions logic, or something like that.
+    # I only tried inverse functions on Khan Academy once, so I'm not sure if it is exactly like graphing inverse functions.
     center = piece[0]
     piece_old = deepcopy(piece)
     if rotate:
         for i in range(4):
             x = piece[i].y - center.y
             y = piece[i].x -center.x
-            piece[i] = center.x - x
-            piece[i] = center.y + y
+            piece[i].x = center.x - x
+            piece[i].y = center.y + y
 
             if not check_borders():
                 piece = deepcopy(piece_old)
                 break
+
+    # CHECK FOR FILLED LINES
+    line = HEIGHT - 1
+    for row in range(HEIGHT -1, -1, -1):
+        counter = 0
+        for i in range(WIDTH):
+            if field[row][i]:
+                counter += 1
+            field[line][i] = field[row][i]
+        if counter < WIDTH:
+            line -= 1
+
 
     # DRAW TETRIS GRID
     [pygame.draw.rect(game_screen, (40, 40, 40), square, 1) for square in grid]
@@ -113,16 +149,17 @@ while True:
     for i in range(4):
         piece_rect.x = piece[i].x * TILE
         piece_rect.y = piece[i].y * TILE
-        pygame.draw.rect(game_screen, pygame.Color('white'), piece_rect)
+        pygame.draw.rect(game_screen, color, piece_rect)
 
-    # DRAW FIELD
+    # DRAW FIELD (piecees that have stopped on a surface)
     for y, raw in enumerate(field):
-        for x, color in enumerate(raw):
-            if color:
+        for x, col in enumerate(raw):
+            if col:
                 piece_rect.x, piece_rect.y = x *TILE, y * TILE
-                pygame.draw.rect(game_screen, color, piece_rect)
+                pygame.draw.rect(game_screen, col, piece_rect)
 
-
+    # DRAW TITLES
+    screen.blit
 
     pygame.display.flip()
     clock.tick(FPS)

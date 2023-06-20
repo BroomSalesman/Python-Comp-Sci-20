@@ -78,6 +78,16 @@ Getting an error here from a line of code that wasn't returning an error before.
 
 Oh AttributeError, where would I be without you?
 
+Update:
+finally fixed the error, I was supposed to write piece[i].x and piece[i].y, I just wrote piece[i] for each one and didn't catch that while looking for what's wrong.
+
+After I fixed that I added the rules for making blocks disappear after a row has been filled with blocks.
+The code was surprisingly simple and easy to understand.
+
+Now I am adding background colors and made the original screen a small part of a main screen.
+So the grid appears as its own object inside of the pygame window, rather than being the whole pygame window.
+
+
 
 
 
