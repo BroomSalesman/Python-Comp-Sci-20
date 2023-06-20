@@ -25,6 +25,7 @@ pieces_positions = [[(-1, 0), (-2, 0), (0, 0), (1, 0)],
 # List of the pieces (what they should look like)
 pieces = [[pygame.Rect(x + WIDTH // 2, y + 1, 1, 1) for x, y in piece_position] for piece_position in pieces_positions]
 piece_rect = pygame.Rect(0, 0, TILE - 2, TILE - 2)
+
 field = [[0 for i in range(WIDTH)] for j in range(HEIGHT)]
 
 animation_counter, animation_speed, animation_limit = 0, 60, 2000
