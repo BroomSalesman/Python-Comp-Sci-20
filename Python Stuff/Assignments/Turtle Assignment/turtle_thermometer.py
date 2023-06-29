@@ -24,7 +24,6 @@ def turtle_thermometer(the_turtle, the_window, input_method):
     the_turtle.forward(280) # Current location 0, -280
     the_turtle.right(90)
 
-    print(f"{the_turtle.pos()}")
 
     # The turtle keeps its color, but fills anything inside the outline red. In this case, the outline is black and fill is red.
     the_turtle.pendown()
@@ -32,8 +31,6 @@ def turtle_thermometer(the_turtle, the_window, input_method):
     the_turtle.begin_fill()
     the_turtle.circle(radius = 40)
     the_turtle.end_fill()
-
-    print(f"{the_turtle.pos()}")
 
     the_turtle.color("red")
     the_turtle.pensize(7)
@@ -52,7 +49,6 @@ def turtle_thermometer(the_turtle, the_window, input_method):
     for half in range(2):
         the_turtle.forward(20)
         the_turtle.right(90)
-        print(f"{the_turtle.pos()} here")
         the_turtle.forward(50) # distance from -26 to 26 (on x-axis) because 52 made sides noticeably
         the_turtle.right(90)
 
@@ -62,17 +58,13 @@ def turtle_thermometer(the_turtle, the_window, input_method):
     # Creates left side of thermometer
     the_turtle.color("black")
     the_turtle.goto(-26, 330)
-    print()
 
     # Draws a semicircle to create the top of thermometer.
     the_turtle.circle(radius = -26, extent = 180)  # post-execution position: 26, 270
-    print(f"{the_turtle.pos()}")
 
 
     # Creates right side of thermometer
-    the_window.tracer(1)
     the_turtle.goto(26, -290)
-    print(f"{the_turtle.pos()}")
 
     # Draws every sub-division tick and division tick in thermometer
     # Every sub-division tick is 20 pixels apart from each other
@@ -113,16 +105,19 @@ def turtle_thermometer(the_turtle, the_window, input_method):
         any_turtle.forward(26)
         any_turtle.penup()
 
-    the_window.tracer(3)
+    the_turtle.speed(10)
     thermometer_ticks(the_turtle)
 
-    the_window.tracer(1)
-    the_turtle.goto(90, 290)
+    # Writes controls
+    the_turtle.goto(85, 295)
     the_turtle.write("Press E twice to enter a value for the thermometer")
-    the_turtle.goto(90, 280)
-    the_turtle.write("MICROBIT: Press any button on your microbit to detect temperature and refresh thermometer reading.")
-    the_turtle.goto(90, 270)
-    the_turtle.write("Press Q to exit the program. Press out of window then press Q if turtle window isn't responding.")
+    the_turtle.goto(85, 280)
+    the_turtle.write("MICROBIT: Press any button on your microbit to detect temperature and")
+    the_turtle.goto(85, 267)
+    the_turtle.write("          refresh thermometer reading.")
+    the_turtle.goto(85, 255)
+    the_turtle.write("Press Q to exit the program. Press out of window then press Q if it isn't responding.")
+
 
 
     def draw_temperature(any_turtle, any_window, mercury_level):
@@ -214,15 +209,3 @@ def turtle_thermometer(the_turtle, the_window, input_method):
                     easygui.msgbox(msg = f"Temperature too low for thermometer. ({temperature} °C)", title = "Temperature Too Low", ok_button = "brrrrr")
 
 
-
-
-canvas = turtle.Screen()
-canvas.bgcolor("grey40")
-canvas.register_shape("Schellenturtle.gif")
-
-bob = turtle.Turtle()
-bob.color("black")
-bob.pensize(7)
-bob.shape("Schellenturtle.gif")
-
-turtle_thermometer(bob, canvas, "keyboard")

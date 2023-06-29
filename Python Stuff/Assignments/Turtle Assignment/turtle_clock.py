@@ -17,6 +17,7 @@ def turtle_clock(the_turtle, the_window, input_method):
         any_turtle.goto(0, 250)
         #any_turtle.setheading()
 
+        # Drawing clock frame add dot in centre later
         any_turtle.pensize(20)
         any_turtle.pencolor("gold")
 
@@ -25,6 +26,8 @@ def turtle_clock(the_turtle, the_window, input_method):
         any_turtle.begin_fill()
         any_turtle.circle(radius = 250)
         any_turtle.end_fill()
+
+        # Drawing ticks and numbers
 
 
     draw_clock(the_turtle, the_window)
@@ -37,6 +40,7 @@ canvas = turtle.Screen()
 canvas.register_shape("Schellenturtle.gif")
 
 bob = turtle.Turtle()
-bob.shape("Schellenturtle.gif")
+#bob.shape("Schellenturtle.gif")
+bob.shape()
 
 turtle_clock(bob, canvas, "pass")

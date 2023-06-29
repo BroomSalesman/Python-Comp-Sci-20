@@ -16,6 +16,27 @@ h1 {
     margin-right: 200px;
     margin-top: 15px;
 }
+ div {
+    text-align: center;
+  }
+
+#start_page_text {
+    margin: 25px;
+    padding: 25px;
+    padding-bottom: 10;
+    margin-bottom: 10;
+    font-size: 4rem;
+    color:hsl(214, 100%, 50%);
+}
+
+.Text {
+    margin: 50px;
+    padding: 25px;
+    font-size: 1.6rem;
+    color:hsl(59, 100%, 80%);
+    background-color: #0041468e;
+}
+
 
 
 body {
@@ -34,7 +55,11 @@ body {
 }
 
 
-
+.image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
 
 /* CSS Rules for responsive site navigation bar */
 .navbar {

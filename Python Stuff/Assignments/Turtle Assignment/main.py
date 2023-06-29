@@ -49,13 +49,12 @@ if skip_start == "Continue":
                    "If you do not have a microbit,  you can simply choose the temperature.\n"
                    "The thermometer range will be from 5 to 35 degrees celsius (and no, there won't be fahrenheit. Stupid America...)\n"
                    "There is a range so users dont think of trying to reach -40 by pouring liquid nitrogen over their microbits or trying to microwave it.",
-                   title = "Thermometer Explanation", choices = ("Sounds good", "Who you calling stupid!"))
+                   title = "Thermometer Explanation", choices = ("Sounds good", "Who you calling stupid!?ee"))
 
 
     # Easygui message box explaining the clock program
-    easygui.msgbox(msg = "The clock will not depend on the microbit, but you can use the button on your microbit and it will take your local time and then display it on a clock.\n"
-                   "The clock will not change automatically as the time changes, but it will update if you press R on your keyboard, or a button on your microbit\n"
-                   "You can also manually input the time you want You can still press R or a button to reload the time if you set a fake time",
+    easygui.msgbox(msg = "The clock will not have any microbit exclusive features like the thermometer temperature reading.\n"
+                   "The clock will not change automatically every second the time changes, but it will update if you press R on your keyboard, or a button on your microbit\n",
                    title = "Clock Explanation", ok_button =  "JUST GET TO IT!!!")
 
 
@@ -107,6 +106,7 @@ if input_method == "microbit":
 
 
 ######################### User Turtle Drawing Selection #################################
+user_selection = None
 user_selection = easygui.buttonbox(msg = "Choose the turtle drawing you want to try:", title = "Selection", choices = ("Thermometer", "Clock"))
 
 
@@ -123,23 +123,13 @@ if user_selection == "Thermometer":
     canvas.register_shape("Schellenturtle.gif")
 
     bob = turtle.Turtle()
-    bob.color("black")
-    bob.pensize(7)
     bob.shape("Schellenturtle.gif")
 
-    turtle_thermometer(bob, canvas)
+    turtle_thermometer(bob, canvas, "keyboard")
 
-    turtle_thermometer(bob, canvas, "microbit")
-
-
-
-
-print("\n\n\n\n\n\n\n\n")
+elif user_selection == "Clock":
+    easygui.msgbox(msg = "", title = "No Longer Supported", image = "flash-player-no-longer-supported.jpg")
 
 
-
-
-
-
-
+print("\n\n\n\n")
 
