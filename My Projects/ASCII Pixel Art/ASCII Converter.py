@@ -3,7 +3,7 @@ import numpy as np
 import cv2
 
 class ArtConverter:
-    def __init__(self, path = 'img/dragon-warrior.jpg', font_size = 12, color_lvl = 8):
+    def __init__(self, path = 'img/po.jpg', font_size = 12, color_lvl = 8):
         pg.init()
         self.path = path
         self.COLOR_LVL = color_lvl
@@ -21,8 +21,7 @@ class ArtConverter:
         self.CHAR_STEP = int(font_size * 0.6)
         self.PALETTE, self.COLOR_COEFF = self.create_palette()
 
-
-    def draw_converted_images(self):  # sourcery skip: use-named-expression
+    def draw_converted_images(self):
         char_indices = self.gray_image // self.ASCII_COEFF
         color_indices = self.image // self.COLOR_COEFF
         for x in range(0 , self.WIDTH , self.CHAR_STEP):
@@ -36,11 +35,11 @@ class ArtConverter:
     def create_palette(self):
         colors, color_coeff = np.linspace(0, 255, num = self.COLOR_LVL, dtype = int, retstep = True)
         color_palette = [np.array([r, g, b]) for r in colors for g in colors for b in colors]
-        palette = dict.fromkeys(self.ASCII_CHARS, None)]]]]
+        palette = dict.fromkeys(self.ASCII_CHARS, None)
         color_coeff = int(color_coeff)
         for char in palette:
             char_palette = {}
-            for color in color_palette:[-]
+            for color in color_palette:
                 color_key = tuple(color // color_coeff)
                 char_palette[color_key] = self.font.render(char, False, tuple(color))
             palette[char] = char_palette
@@ -50,7 +49,7 @@ class ArtConverter:
     def get_image(self):  # sourcery skip: inline-immediately-returned-variable
         self.cv2_image = cv2.imread(self.path)
         transposed_image = cv2.transpose(self.cv2_image)
-        image = cv2.cvtColor(transposed_image, cv2.COLOR_BRG2RGB)
+        image = cv2.cvtColor(transposed_image, cv2.COLOR_BGR2RGB)
         gray_image = cv2.cvtColor(transposed_image, cv2.COLOR_BGR2GRAY)
         return gray_image
 
