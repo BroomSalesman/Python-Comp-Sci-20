@@ -1,0 +1,65 @@
+Started the first project I must complete to get the freeCodeCamp "Scientific Computing with Python" certficate
+
+
+
+First Project:
+Arithmetic Formatter - https://www.freecodecamp.org/learn/scientific-computing-with-python/scientific-computing-with-python-projects/arithmetic-formatter
+
+Used a link I found earlier that wasn't useful at the time, but useful now. Explains how to format strings using f-strings in the article
+
+Article:
+https://towardsdatascience.com/tips-and-tricks-to-work-with-text-files-in-python-89f14a755315
+
+The Logic:
+    Code:
+        for book in library:
+            print(f'{book[0]:{10}} {book[1]:{10}} {book[2]:>{7}}')
+
+    Output:
+    Author     Topic        Pages
+    Twain      Rafting        601
+    Feynman    Physics         95
+    Hamilton   Mythology      144
+
+The function will take in the arguments as (["2 + 1000", "78 - 32", "89 + 23"]), so I will have to split the strings into lists of the number, operator, and other number
+Then I will put every first number into one list, every operator into a list of numbers, and every second number into another list.
+
+Only 5 math problems can be supplied to the function. Any more should return:
+    "Error: Too many problems."
+
+Only + or - can be used, multiplying or dividing should return:
+    "Error: Numbers cannot be more than four digits."
+
+The numbers being added together cannot be more than 4 digits, that should return:
+    "Error: Numbers cannot be more than four digits."
+
+And of course, there can be only digits. That should also return an error.
+
+
+After that, I will determine what rule should be applied, subtraction or addition, by looking at the list of math operators.
+
+Then I will join the list of operators with the list of second numbers, and make a list of them together.
+Ex: ["+", "-", "-", "+"] and ["96", "3", "221", "6537"] will be joined to create:
+    ["+ 96",  " - 3", "- 221", "+ 6537"]
+
+However, the length of how far away the math operator is depends on the longest number in the addition/subtraction problem.
+If the top number is longer than the bottom, then the math operator has to be a one space distance between the longer number.
+
+Ex:
+8430 + 21 should return:
+    8430
+  +  389
+
+
+Then, there should be the ---- beneath the whole problem, with the same width of the whole thing (including the sum of the numbers at the bottom)
+Lastly, the number that is added.
+Example:
+  8430
++  389
+-------
+  8819
+
+
+  SCRATCH ALL OF THAT
+  I've decided that I'm just jumping into it and figuring it out as I go (thanks for that cliff-hanging "there's a much easier way than that" Mr. Schellenberg...)
+

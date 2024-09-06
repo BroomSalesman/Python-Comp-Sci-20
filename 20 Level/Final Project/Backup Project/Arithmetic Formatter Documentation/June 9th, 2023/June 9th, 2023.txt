@@ -1,0 +1,155 @@
+June 9th, 2023:
+
+Today I'll be creating the operand formatting rules (see "June 8th, 2023" documentation for the details).
+
+Realized that I will have to make every top operand in one string, and every operator with the bottom operand in one string, because
+they must be outputted like this:
+
+   282      94      9030
++ 2901    + 20    -    9
+------    ----    ------
+
+Every new print statement will make the math problems appear vertically, but they want to be shown together horizontally.
+
+"   282      94      9030"
+"+ 2901    + 20    -    9"
+"------    ----    ------"
+
+
+
+
+
+Determining space between operator and operand update:
+
+I will be creating a 2 lists, one to determine the empty spaces in the top part of the math problem, by appending len(longest_operand) + 2.
+I will be adding 2 because the top part of the math problem doesnt have an operator. I'll visualize what I  mean in an example I'll provide.
+
+The second list will be len(longest_operand) + 1, since the bottom operand is accompanied by an operator (either + or -), which will take up
+one space.
+
+These numbers will be used to determine the padding of the top and bottom part of the math problem
+
+Example, the bottom operand, 928, being longest_operand:
+
+top_padding = 2 + len(longest_operand)
+bottom_padding = 1 + len(longest_operand)
+
+Visualized:
+|  928|  The distgnce between the first line and the second is the same as 2 spaces plus 3 characters ("928")
+|+  20|      if you look at the distance between the first line and the second, it is equal to len("928") + 2, which is 3 + 5, which is 5.
+
+End of the day for arithmetic formatter program:
+9:50 PM:
+I am so close to passing all unit tests, I only need to figure out what's wrong with the output that won't pass the tests for the no solution shown formatting. It seems correct to me, but I'll deal with that another day.
+Here is the output of the tests:
+    python3 main.py
+      32      3801      45      123
+   + 698    -    2    + 43    +  49
+   -----    ------    ----    -----
+
+     3801      123
+   -    2    +  49
+   ------    -----
+
+   =================================== test session starts ====================================
+   platform linux -- Python 3.10.8, pytest-7.3.1, pluggy-1.0.0 -- /home/runner/boilerplate-arithmetic-formatter-1/venv/bin/python3
+   cachedir: .pytest_cache
+   rootdir: /home/runner/boilerplate-arithmetic-formatter-1
+   collected 10 items
+
+   test_module.py::test_template[test_two_problems_arrangement1] FAILED                 [ 10%]
+   test_module.py::test_template[test_two_problems_arrangement2] FAILED                 [ 20%]
+   test_module.py::test_template[test_four_problems_arrangement] FAILED                 [ 30%]
+   test_module.py::test_template[test_five_problems_arrangement] FAILED                 [ 40%]
+   test_module.py::test_template[test_too_many_problems] PASSED                         [ 50%]
+   test_module.py::test_template[test_incorrect_operator] PASSED                        [ 60%]
+   test_module.py::test_template[test_too_many_digits] PASSED                           [ 70%]
+   test_module.py::test_template[test_only_digits] PASSED                               [ 80%]
+   test_module.py::test_template[test_two_problems_with_solutions] PASSED               [ 90%]
+   test_module.py::test_template[test_five_problems_with_solutions] PASSED              [100%]
+
+   ========================================= FAILURES =========================================
+   ______________________ test_template[test_two_problems_arrangement1] _______________________
+
+   arguments = [['3801 - 2', '123 + 49']]
+   expected_output = '  3801      123\n-    2    +  49\n------    -----'
+   fail_message = 'Expected different output when calling "arithmetic_arranger()" with ["3801 - 2", "123 + 49"]'
+
+       @pytest.mark.parametrize('arguments,expected_output,fail_message', test_cases)
+       def test_template(arguments, expected_output, fail_message):
+           actual = arithmetic_arranger(*arguments)
+   >       assert actual == expected_output, fail_message
+   E       AssertionError: Expected different output when calling "arithmetic_arranger()" with ["3801 - 2", "123 + 49"]
+   E       assert '  3801      123\n-    2    +  49\n------    -----\n' == '  3801      123\n-    2    +  49\n------    -----'
+   E             3801      123
+   E           -    2    +  49
+   E         - ------    -----
+   E         + ------    -----
+   E         ?                +
+
+   test_module.py:77: AssertionError
+   ______________________ test_template[test_two_problems_arrangement2] _______________________
+
+   arguments = [['1 + 2', '1 - 9380']]
+   expected_output = '  1         1\n+ 2    - 9380\n---    ------'
+   fail_message = 'Expected different output when calling "arithmetic_arranger()" with ["1 + 2", "1 - 9380"]'
+
+       @pytest.mark.parametrize('arguments,expected_output,fail_message', test_cases)
+       def test_template(arguments, expected_output, fail_message):
+           actual = arithmetic_arranger(*arguments)
+   >       assert actual == expected_output, fail_message
+   E       AssertionError: Expected different output when calling "arithmetic_arranger()" with ["1 + 2", "1 - 9380"]
+   E       assert '  1         1\n+ 2    - 9380\n---    ------\n' == '  1         1\n+ 2    - 9380\n---    ------'
+   E             1         1
+   E           + 2    - 9380
+   E         - ---    ------
+   E         + ---    ------
+   E         ?              +
+
+   test_module.py:77: AssertionError
+   ______________________ test_template[test_four_problems_arrangement] _______________________
+
+   arguments = [['3 + 855', '3801 - 2', '45 + 43', '123 + 49']]
+   expected_output = '    3      3801      45      123\n+ 855    -    2    + 43    +  49\n-----    ------    ----    -----'
+   fail_message = 'Expected different output when calling "arithmetic_arranger()" with ["3 + 855", "3801 - 2", "45 + 43", "123 + 49"]'
+
+       @pytest.mark.parametrize('arguments,expected_output,fail_message', test_cases)
+       def test_template(arguments, expected_output, fail_message):
+           actual = arithmetic_arranger(*arguments)
+   >       assert actual == expected_output, fail_message
+   E       AssertionError: Expected different output when calling "arithmetic_arranger()" with ["3 + 855", "3801 - 2", "45 + 43", "123 + 49"]
+   E       assert '    3      3801      45      123\n+ 855    -    2    + 43    +  49\n-----    ------    ----    -----\n' == '    3      3801      45      123\n+ 855    -    2    + 43    +  49\n-----    ------    ----    -----'
+   E               3      3801      45      123
+   E           + 855    -    2    + 43    +  49
+   E         - -----    ------    ----    -----
+   E         + -----    ------    ----    -----
+   E         ?                                 +
+
+   test_module.py:77: AssertionError
+   ______________________ test_template[test_five_problems_arrangement] _______________________
+
+   arguments = [['11 + 4', '3801 - 2999', '1 + 2', '123 + 49', '1 - 9380']]
+   expected_output = '  11      3801      1      123         1\n+  4    - 2999    + 2    +  49    - 9380\n----    ------    ---    -----    ------'
+   fail_message = 'Expected different output when calling "arithmetic_arranger()" with ["11 + 4", "3801 - 2999", "1 + 2", "123 + 49", "1 - 9380"]'
+
+       @pytest.mark.parametrize('arguments,expected_output,fail_message', test_cases)
+       def test_template(arguments, expected_output, fail_message):
+           actual = arithmetic_arranger(*arguments)
+   >       assert actual == expected_output, fail_message
+   E       AssertionError: Expected different output when calling "arithmetic_arranger()" with ["11 + 4", "3801 - 2999", "1 + 2", "123 + 49", "1 - 9380"]
+   E       assert '  11      3801      1      123         1\n+  4    - 2999    + 2    +  49    - 9380\n----    ------    ---    -----    ------\n' == '  11      3801      1      123         1\n+  4    - 2999    + 2    +  49    - 9380\n----    ------    ---    -----    ------'
+   E             11      3801      1      123         1
+   E           +  4    - 2999    + 2    +  49    - 9380
+   E         - ----    ------    ---    -----    ------
+   E         + ----    ------    ---    -----    ------
+   E         ?                                         +
+
+   test_module.py:77: AssertionError
+   ================================= short test summary info ==================================
+   FAILED test_module.py::test_template[test_two_problems_arrangement1] - AssertionError: Expected different output when calling "arithmetic_arranger()" with ["3...
+   FAILED test_module.py::test_template[test_two_problems_arrangement2] - AssertionError: Expected different output when calling "arithmetic_arranger()" with ["1...
+   FAILED test_module.py::test_template[test_four_problems_arrangement] - AssertionError: Expected different output when calling "arithmetic_arranger()" with ["3...
+   FAILED test_module.py::test_template[test_five_problems_arrangement] - AssertionError: Expected different output when calling "arithmetic_arranger()" with ["1...
+   =============================== 4 failed, 6 passed in 0.18s ================================
+
+Moving onto the next one.

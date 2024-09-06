@@ -1,0 +1,6 @@
+Just got used to using Python to do stuff in Minecraft, on and off.
+
+Didn't do much for the actual project itself, but did get a feel for block-placing scripts for Minecraft.
+
+Oh, I did manage to break my scriptable server (I have only one server that I can use to script Minecraft, I got it from the github page listed in the book I used)
+Never ignite a huge floating mass of TNT blocks in Minecraft, or else your server will refuse to work every time you rejoin it.

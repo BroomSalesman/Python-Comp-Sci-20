@@ -1,0 +1,9 @@
+Today I have finished the converting the hour from 24-hour clock time to 12 hour clock time, and polished up converting the time values to strings part.
+
+I have started making the part of the code that determines what the day of the week it is using list indexing and the same for-loop logic that I used to determine the hour and minute when x amount of time
+passes. 
+
+
+Finish up for the day:
+Worked less on this than I expected, so I'm not fully done. Just need to write the part of the function that returns all the variables in
+one string  (like "12:43 PM, Wednesday (2 days later)")
