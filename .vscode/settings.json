@@ -79,5 +79,6 @@
         "venv": true,
         "*.sublime-*": true,
         "env*": true
-      }
+    },
+    "C_Cpp.intelliSenseEngineFallback": "enabled"
 }
