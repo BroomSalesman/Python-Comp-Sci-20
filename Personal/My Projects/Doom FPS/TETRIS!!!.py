@@ -53,7 +53,7 @@ next_piece_title = font.render('NEXT PIECE', True, pygame.Color('orange'))
 # Tetris Piece Color Variables
 get_color = lambda: (randrange(30, 256), randrange(30, 256), randrange(30, 256))
 
-piece = deepcopy(choice(pieces)), deepcopy(choice(figures))
+piece = deepcopy(choice(pieces)), deepcopy(choice([pieces]))
 
 colo, next_colorr = get_color(), get_color()
 
