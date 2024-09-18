@@ -1,4 +1,4 @@
-let pencolor = 'black';
+let pencolor ;
 let radius = 5;
 
 //pallete squares size
@@ -82,12 +82,20 @@ function createPallete() {
 }
 
 function coloringPen() {
+  circle(mouseX, mouseY, )
+}
+
+function drawPen() {
+  if mouseIsPressed() {
+    fill(pencolor);
+    stroke(0);
+    circle(mouseX, mouseY, 5)
+  }
 
 }
 
-
 function chooseSize() {
-   if
+
 }
 
 //when color from pallete is clicked on, color of pen changes
