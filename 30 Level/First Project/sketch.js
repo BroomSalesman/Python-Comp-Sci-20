@@ -1,5 +1,5 @@
 let pencolor ;
-let radius = 5;
+let pensize = 5;
 
 //pallete squares size
 let pltsize = 30;
@@ -12,8 +12,10 @@ function setup() {
 
 function draw() {
   background(255);
+  noCursor();
   createPallete();
   chooseColor();
+  coloringPen();
   circle(200, 200, 5);
 
 }
@@ -82,14 +84,14 @@ function createPallete() {
 }
 
 function coloringPen() {
-  circle(mouseX, mouseY, )
+  circle(mouseX, mouseY,  pensize);
 }
 
 function drawPen() {
-  if mouseIsPressed() {
+  if (mouseIsPressed()) {
     fill(pencolor);
     stroke(0);
-    circle(mouseX, mouseY, 5)
+    circle(mouseX, mouseY, pensize);
   }
 
 }
