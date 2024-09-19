@@ -1,10 +1,10 @@
 import {createPallete} from 'functions/colorPallete.js';
 
-let pencolor ;
+let pencolor;
 let pensize = 5;
 
 //pallete squares size
-
+pltsize = 30;
 
 
 function setup() {
