@@ -177,7 +177,7 @@ class Block(Object):
 
 #------------------------------------------------------------------------------------------------------#
 
-class Fire(Objects):
+class Fire(Object):
     ANIMATION_DELLAY = 3
 
     def __init__(self, x, y, width, height):
@@ -291,7 +291,7 @@ def main(window):
 
     player = Player(100, 100, 50, 50)
     fire = Fire(100, HEIGHT - block_size - 64, 16, 32)
-    fire.on()
+    #fire.on()
     floor = [Block(i * block_size, HEIGHT - block_size, block_size)
              for i in range(-WIDTH // block_size, WIDTH * 2 // block_size)]
     objects = [*floor, Block(0, HEIGHT - block_size * 2, block_size),

@@ -14,6 +14,9 @@
         "plaintext": "jade"
     },
 
+     // Enables parameter hints
+     "editor.parameterHints": false,
+
     "python.linting.pylintArgs": [
         "--extension-pkg-whitelist=pygame"
     ],
