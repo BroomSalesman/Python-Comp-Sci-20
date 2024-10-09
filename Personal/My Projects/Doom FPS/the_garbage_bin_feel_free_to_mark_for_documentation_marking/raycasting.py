@@ -50,9 +50,9 @@ class RayCasting:
         ox, oy = self.game.player.position  # Coordinate of player on map
         x_map, y_map = self.game.player.map_position  # Coordinate of the tile player is on
 
-        texture_horizontal = self.game.map.world_map[tile_horizontal]
+        texture_horizontal = 1
 
-        texture_vertical = self.game.map.world_map[tile_vertical]
+        texture_vertical = 1
 
         ray_angle = self.game.player.angle - HALF_FOV + 0.0001
 
