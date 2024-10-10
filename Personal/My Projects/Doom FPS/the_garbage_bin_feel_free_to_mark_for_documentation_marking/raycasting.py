@@ -92,7 +92,7 @@ class RayCasting:
             for i in range(MAX_DEPTH):
                 tile_vertical = int(x_vertical), int(y_vertical)
                 if tile_vertical in self.game.map.world_map:
-                    texture_vert = self.game.map.world_map[tile_vertical]
+                    texture_vertical = self.game.map.world_map[tile_vertical]
                     break
 
                 x_vertical += dx
@@ -113,7 +113,7 @@ class RayCasting:
 
 
             # draw for debug  LEARN WHAT THE MATH HERE IS FOR LATER
-            pg.draw.line(self.game.screen, 'hotpink', (100 * ox, 100 * oy), (100 * ox + 100 * depth * cos_a, 100 * oy + 100 *depth * sin_a), 2)
+            #pg.draw.line(self.game.screen, 'hotpink', (100 * ox, 100 * oy), (100 * ox + 100 * depth * cos_a, 100 * oy + 100 *depth * sin_a), 2)
 
 
             #Remove fishbowl effect

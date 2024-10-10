@@ -26,7 +26,7 @@ class ObjectRenderer:
     def render_game_objects(self):
         """get access to a list of objects for rendering, iterate over the list and draw the resulting texture columns on the rendering screen
         """
-        list_objects = sorted(self.game.raycasting.objects_to_render, key = lambda t:[0], reverse = True)
+        list_objects = sorted(self.game.raycasting.objects_to_render, key = lambda t: t[0], reverse = True)
         for depth, image, position in list_objects:
             self.screen.blit(image, position)
 
