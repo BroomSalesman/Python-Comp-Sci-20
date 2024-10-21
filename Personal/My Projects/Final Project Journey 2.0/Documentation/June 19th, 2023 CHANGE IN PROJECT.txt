@@ -95,6 +95,19 @@ Update:
 - Added main title
 - Adding a system that shows player what tetris piece is next
 
+Update:
+Robert helped me in the library and taught me some basic debugging techniques and helped me
+figure out what was wrong with my code and how to assess errors and narrow the search for what's causing the bug.
+
+It turned out I called the wrong function in the wrong place (but I checked so many times for what I did wrong before).
+
+Next piece indicator now done.
+Moving onto making the score system and then game over screen.
+Done.
+
+Update:
+- Score system done
+
 
 
 

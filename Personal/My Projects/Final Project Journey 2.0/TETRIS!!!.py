@@ -2,6 +2,7 @@ import pygame
 from copy import deepcopy
 from random import choice, randrange
 
+DEBUG = True
 
 WIDTH, HEIGHT = 10 , 19
 TILE = 40
@@ -44,18 +45,24 @@ game_background = pygame.image.load("resources/bg2.jpg").convert()
 
 
 # Game Text Variables
-main_font = pygame.font.Font('resources/font.ttf', 60)
-font = pygame.font.Font('resources/font.ttf', 40)
+main_font = pygame.font.Font('resources/font.ttf', 55)
+font = pygame.font.Font('resources/font.ttf', 35)
 
 title_tetris = main_font.render('TETRIS', True, pygame.Color('gold'))
 next_piece_title = font.render('NEXT PIECE', True, pygame.Color('orange'))
+title_score = font.render("SCORE:", True, pygame.Color('green'))
+title_record = font.render('RECORD:', True, pygame.Color('purple'))
 
 # Tetris Piece Color Variables
 get_color = lambda: (randrange(30, 256), randrange(30, 256), randrange(30, 256))
 
-piece = deepcopy(choice(pieces)), deepcopy(choice([pieces]))
+piece, next_piece = deepcopy(choice(pieces)), deepcopy(choice(pieces))
+color, next_color = get_color(), get_color()
 
-colo, next_colorr = get_color(), get_color()
+score, lines = 0, 0
+#Determines what score increment is if x number of lines cleared with one piece
+scores = {0: 0, 1: 100, 2: 300, 3: 700, 4: 1500}
+
 
 
 # Border Rule Function
@@ -66,14 +73,32 @@ def check_borders():
         return False
     return True
 
+# Keeping record score systems
+def get_record():
+    try:
+        with open('record') as f:
+            return f.readline()
+    except FileNotFoundError:
+        with open('record' 'w') as f:
+            f.write('0')
+
+def set_record(record, score):
+    rec = max(int(record), score)
+    with open('record', 'w') as f:
+        f.write(str(rec))
 
 
-# Driver code
+
+# DRIVER CODE
 while True:
+    record = get_record()
     dx, rotate = 0, False
     screen.blit(background, (0, 0))
     screen.blit(game_screen, (20, 20))
     game_screen.blit(game_background, (0, 0))
+    # delay
+    for i in range(lines):
+        pygame.time.wait(200)
 
     #Controls
     for event in pygame.event.get():
@@ -91,7 +116,7 @@ while True:
                 rotate = True
 
 
-    # HORIZONTAL MOVEMENT
+    # HORIZONTAL MOVEMENT (x-axis)
     piece_old = deepcopy(piece)
 
     for i in range(4):
@@ -101,7 +126,7 @@ while True:
             break
 
 
-    # DOWNWARD MOVEMENT
+    # DOWNWARD MOVEMENT (y-axis)
     animation_counter += animation_speed
     if animation_counter > animation_limit:
         animation_counter = 0
@@ -114,9 +139,9 @@ while True:
             if not check_borders():
                 for i in range(4):
                     field[piece_old[i].y][piece_old[i].x] = color
-                color = get_color()
+                piece, color = next_piece, next_color
+                next_piece, next_color = deepcopy(choice(pieces)), get_color()
 
-                piece = deepcopy(choice(pieces))
                 animation_limit = 2000
                 break
 
@@ -126,6 +151,7 @@ while True:
     # It is changing the x and y values to turn into...
     # Actually, I think it is using graphing inverse functions logic, or something like that.
     # I only tried inverse functions on Khan Academy once, so I'm not sure if it is exactly like graphing inverse functions.
+    # But I think that the y-values and x-values are swapped with each other to rotate the piece.
     center = piece[0]
     piece_old = deepcopy(piece)
     if rotate:
@@ -140,7 +166,7 @@ while True:
                 break
 
     # CHECK FOR FILLED LINES
-    line = HEIGHT - 1
+    line, lines = HEIGHT - 1, 0
     for row in range(HEIGHT -1, -1, -1):
         counter = 0
         for i in range(WIDTH):
@@ -149,6 +175,12 @@ while True:
             field[line][i] = field[row][i]
         if counter < WIDTH:
             line -= 1
+        else:
+            animation_speed += 3
+            lines += 1
+
+    #DETERMINE SCORE
+    score += scores[lines]
 
 
     # DRAW TETRIS GRID
@@ -167,9 +199,35 @@ while True:
                 piece_rect.x, piece_rect.y = x *TILE, y * TILE
                 pygame.draw.rect(game_screen, col, piece_rect)
 
+    #DRAWS WHAT NEXT TETRIS PIECE WILL BE
+    for i in range(4):
+        piece_rect.x = next_piece[i].x * TILE + 365
+        piece_rect.y = next_piece[i].y * TILE + 180
+        pygame.draw.rect(screen, next_color, piece_rect)
+
+
     # DRAW TITLES
-    screen.blit(title_tetris, (450, 10))
-    screen.blit(next_piece_title, (450, 30))
+    screen.blit(title_tetris, (450, 8))
+    screen.blit(next_piece_title, (445, 120))
+    screen.blit(title_score, (505, 680))
+    screen.blit(font.render(str(score), True, pygame.Color('white')), (520, 730))
+    screen.blit(title_record, (505, 600))
+    screen.blit(font.render(record, True, pygame.Color('gold')), (550, 710))
+
+    #game over
+    for i in range(WIDTH):
+        if field[0][i]:
+            set_record(record, score)
+            field = [[0 for i in range(WIDTH)] for i in range(HEIGHT)]
+            animation_counter, animation_speed, animation_limit = 0, 60, 2000
+        score = 0
+
+        for i_rect in grid:
+            pygame.draw.rect(game_screen, get_color(), i_rect)
+            screen.blit(game_screen, (20, 20))
+            pygame.display.flip()
+            clock.tick(200)
+
 
     pygame.display.flip()
     clock.tick(FPS)
