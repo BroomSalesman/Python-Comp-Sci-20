@@ -81,7 +81,7 @@ while True:
     space.step(1 / FPS)
     space.debug_draw(draw_options)
 
-[pg.draw.circle(surface, color, ball.position, ball_radius) for color, ball in balls]
+    [pg.draw.circle(surface, color, ball.position, ball_radius) for color, ball in balls]
 
 
     pg.display.flip()
