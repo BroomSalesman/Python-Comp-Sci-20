@@ -50,9 +50,6 @@ def arithmetic_arranger(problems, show_solution=False):
         first_operand_padding.append(2 + len(longest_operand))
         operator_with_operand_padding.append(1 + len(longest_operand))
 
-
-
-
     # Uses the integers from the first_operand_padding and operator_with_operand_padding and applies the appropriate
     # padding to each operand.
     # Determines how many dashes are supposed to be below the second operand line (should be same as the width of the problem)
