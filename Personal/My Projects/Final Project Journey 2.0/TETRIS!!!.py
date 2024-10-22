@@ -79,7 +79,7 @@ def get_record():
         with open('record') as f:
             return f.readline()
     except FileNotFoundError:
-        with open('record' 'w') as f:
+        with open('record', 'w') as f:
             f.write('0')
 
 def set_record(record, score):
