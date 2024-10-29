@@ -83,5 +83,6 @@
         "*.sublime-*": true,
         "env*": true
     },
-    "C_Cpp.intelliSenseEngineFallback": "enabled"
+    "C_Cpp.intelliSenseEngineFallback": "enabled",
+    "liveServer.settings.port": 5501
 }
