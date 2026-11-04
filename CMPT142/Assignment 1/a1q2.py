@@ -31,9 +31,3 @@ user_room_cost = float(input("Enter the hotel room cost per night ($): "))
 user_traveler_count = int(input("Enter the number of travelers on the trip: "))
 user_night = int(input("Enter the number of nights spent in the hotel:"))
 print("The total group cost for the trip is $" + str(calculate_trip_cost(user_flight_cost, user_room_cost, user_traveler_count, user_night)))
-
-"""
---------------------
-add exceptions later for wow factor and remove this reminder before submitting
-----------------------
-"""
